@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <legend><strong>배송 정보</strong></legend>
+            <ul>
+                <li>
+                    <label for="name">이름</label>
+                    <input type="text" id="user_name">
+                </li>
+                <li>
+                    <label for="address">주소</label>
+                    <input type="text" id="user_address">
+                </li>
+                <li>
+                    <label for="email">이메일</label>
+                    <input type="email" id="user_email">
+                </li>
+                <li>
+                    <label for="number">연락처</label>
+                    <input type="number" id="user_number">
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend><strong>상품 선택</strong></legend>
+            <p><strong>주문할 상품을 선택해 주세요.</strong></p>
+            
+            <label><input type="checkbox">선물용 3kg</label>
+            <!-- p.134 value값을 왜 사용하는가 -->
+            <label><input type="checkbox">선물용 5kg</label>
+            <label><input type="checkbox">가정용 3kg</label>
+            <label><input type="checkbox">가정용 5kg</label>
+            <!-- 왜 가로로 안나오는가 >> 답은 legend와 labal 차이. 사용법 다시 숙지하기-->
+
+            <p><strong>포장 선택</strong></p>
+            <input type="radio" name="gift" id="gift_y">
+            <label for="gift_y">선물 포장</label>
+            <input type="radio" name="gift" id="gift_n">
+            <label for="gift_n">선물 포장 안함</label>
+            
+        </fieldset>
+        <br>
+        <input type="submit" value="주문하기">
+        <input type="reset" value="다시 작성하기">
+    </form>
+</body>
+</html>
