@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        .col1 {
+            width: 40px;
+
+        }
+        .col2 {
+            background-color: yellow;
+        }
+
+    </style>
+</head>
+<body>
+    <table>
+        <caption><h3>성적표</h3></caption>
+        <colgroup>
+            <col>
+            <col>
+            <col>
+            <col class="col2">
+            <col>
+            <col>
+        </colgroup>
+        <thead>
+        <tr>
+            <!-- th는 정보,제목 등 td는 데이터,내용 등 -->
+            <th>반</th> 
+            <th>이름</th>
+            <th>국어</th>
+            <th>영어</th>
+            <th>수학</th>
+            <th>과학</th>
+        </tr>
+        </thead>
+
+        <tbody> <tr>
+            <td rowspan="2">1반</td>
+            <td>최현희</td>
+            <td>90점</td>
+            <td>80점</td>
+            <td>50점</td>
+            <td>60점</td>
+        </tr>
+        <tr>
+            <td>김영희</td>
+            <td>50점</td>
+            <td>60점</td>
+            <td>90점</td>
+            <td>100점</td>
+        </tr>
+        </tbody>
+
+       <tfoot>
+        <tr>
+        <th colspan="2">평균</th>
+        <td>70점</td>
+        <td>70점</td>
+        <td>70점</td>
+        <td>80점</td>
+        </tr>
+        </tfoot>
+        
+    </table>
+</body>
+</html>
