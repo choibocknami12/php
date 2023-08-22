@@ -1,0 +1,17 @@
+#h1-id {
+    color: aqua;
+}
+
+.h1-1 {
+    color: blue;
+}
+
+h1 {
+    color: red !important;
+}
+/* !important는 컬러옆에 태그하면댐 */
+
+h1 {
+    color: orange;
+}
+

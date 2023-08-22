@@ -1,0 +1,38 @@
+.check {
+    color: white;
+    background-color: black;
+    padding: 5px
+}
+
+.check2 {
+    text-align: center;
+}
+
+.accent {
+    color: #0000ff;
+}
+
+.smalltext {
+    font-weight: bold;
+}
+
+.point {
+    color: #ff0000;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.container {
+    border: 1px solid black;
+    width: 600px;
+    color:rgb(34, 33, 33)
+}
+
+h2 {
+    font-size: 1.2em;
+    line-height: 2em;
+    font-weight: bold;
+}
+
+
+

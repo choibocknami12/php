@@ -1,0 +1,34 @@
+* {
+    color: skyblue;
+}
+/* *{}전체선택자 */
+
+h1 {
+    color: red;
+}
+/* 태그{} 타입선택자 */
+
+.font-color {
+    color: orange;
+}
+/* 클래스 선택자 */
+
+#p1 {
+    color: black;
+}
+/* 아이디 선택자: #아이디{} */
+
+em, strong {
+    color: purple;
+}
+/* ,로 선택자 지정 후 사용할 수 있음. 그룹 선택자 */
+
+
+
+p {
+    color: red;
+}
+
+#p3 {
+    color: orange
+}

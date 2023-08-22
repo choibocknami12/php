@@ -1,0 +1,17 @@
+.h2-name {
+    color:aquamarine;
+}
+.h2-hex {
+    color: #00ffff;
+} 
+/* 컬러코드로 확인할 수 있음 */
+.h2-rgb {
+    color: rgb(127, 255, 212);
+}
+.h2-rgba {
+    color: rgba(194, 159, 159, 5);
+}
+.h2-hsla {
+    color:hsl(194, 100%, 75%);
+}
+/* hex, rgb, rgba를 가장 많이 사용함. */
