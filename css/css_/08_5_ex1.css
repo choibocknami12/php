@@ -1,0 +1,42 @@
+main, section, article {
+    padding: 20px;
+}
+main {
+    background-color: cornflowerblue;
+}
+section {
+    background-color: antiquewhite;
+}
+article {
+    background-color: aquamarine;
+    position: relative;
+    height: 1000px;
+}
+.div_static {
+    background-color: brown;
+    position: static;
+}
+.div_relative {
+    background-color: violet;
+    position: relative;
+    left: -30px;
+    
+}
+.div_absolute {
+    background-color: gray;
+    position: absolute;
+    top: 10px;
+    left: 50px;
+}
+.div_fixed {
+    background-color: aqua;
+    position: fixed;
+    right: 50%;
+    top: 50%;
+}
+/* fixed의 경우 쇼핑몰같은 페이지의 top버튼에 사용 */
+.div_sticky {
+    background-color: pink;
+    position: sticky;
+    top: 10px;
+}

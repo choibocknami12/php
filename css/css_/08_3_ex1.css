@@ -1,0 +1,25 @@
+.container_1 {
+    border: 5px solid #000;
+    width: 400px;
+    margin: 20px;
+}
+.container_2 {
+    border: 5px solid #000;
+    width: 400px;
+    margin: 20px;
+}
+/* margin 중첩현상이 있음.
+    container_1과 2는 세로로 배치시 겹쳐짐. 
+    span값을 확인하면 가로로 배치시 겹치지 않는 것을 볼 수 있다.
+    margin의 값이 큰쪽의 수치로 잡힘.
+*/
+h1, p {
+    border: 1px solid #000;
+    width: 150px;
+    margin: 10px auto;
+}
+span {
+    border: 1px solid #000;
+    width: 150px;
+    margin: 10px;   
+}

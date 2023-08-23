@@ -1,0 +1,26 @@
+.menu {
+    list-style: none;
+    
+}
+.why {
+    display: inline-block;
+    padding: 40px;
+    margin: -6px;
+    background-color: #666363;
+    color: black;  
+}
+
+/* 방법은 여러가지임
+list-style: none 반드시 필요함. */
+
+.menu1 {
+    list-style: none;
+}
+
+li {
+    display: inline-block;
+    padding: 40px;
+    margin-right: -6px;
+    background-color: #666363;
+    color: black; 
+}

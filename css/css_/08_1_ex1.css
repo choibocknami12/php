@@ -1,0 +1,31 @@
+
+
+.div-1 {
+    width: 150px;
+    height: 150px;
+    border: 5px solid #000;
+    background-color: antiquewhite;
+    padding: 20px;
+    margin: 10px;
+    box-sizing: border-box;
+    /* 설정한 값으로 지정됨. contants+padding+border+mazine 까지 */
+}
+.div-2 {
+    width: 150px;
+    height: 150px;
+    border: 5px solid #000;
+    background-color: antiquewhite;
+    padding: 20px;
+    margin: 10px;
+    box-sizing: content-box;
+    /* 컨텐츠 영역만 150값(지정한 값)이 됨.padding이나 width값은 적용되지 않음 */
+}
+.div-3{
+    width: 150px;
+    height: 150px;
+    border: 5px solid #000;
+    background-color: antiquewhite;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 10px 10px 10px 10px #000 inset;
+}
