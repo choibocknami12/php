@@ -1,0 +1,24 @@
+.div-img {
+    /* width: 500px;
+    height: 500px;
+    border: 1px solid #000; */
+    background-image: url('../img/babycat.jpg') ;
+/* 첫번째 url에 이미지가 불러오지 못한다면 두번째 url이 노출되게 된다. */
+
+    background-size: 300px ;
+    background-repeat: no-repeat;
+    /* no : 1장만 노출
+        x : 가로, y : 세로 */
+    background-position: top 50% left 20%;
+    /* 디테일한 위치 조정도 가능. */
+
+    /* overflow: scroll;
+    잘 사용안함 */
+}
+
+body {
+    background-image: url('../img/babycat.jpg');
+    background-size: cover;
+    /* html에 태그를 하게 되면 작성된 모든 태그에 걸리게 됨.
+    *태그랑 차이가 있음. */
+}

@@ -13,32 +13,46 @@ footer {
     color: white;
     text-align: center;
     padding: 5px;
-    clear: left;
+    font-size: 20px;
+    line-height: 50px;
 }
 
 article {
-    border: 1px solid #ccc;
+    border: 1px dashed #ccc;
     padding: 10px;
     width: 350px;
     height: 200px;
     margin: 10px;
     float: left;
 }
-
-/* .s-1 {
-    float: left;
-}
-
-.s-2 {
-    float: left;
-}
-
-.s-3 {
+div {
     clear: left;
 }
 
-.s-4 {
-    float: left;
-} */
+p {
+    font-size: small;
+}
 
-/* 왜 고정이 안되는가. */
+section {
+    width: 800px;
+    margin: auto;
+}
+
+.s-1 {
+    background-image: url(../img/dog1.jpg);
+}
+
+.s-2 {
+    background-image: url(../img/dog3.jpg);
+    background-size: cover;
+}
+
+.s-3 {
+    background-image: url(../img/dog4.jpg);
+    background-size: cover;
+}
+
+.s-4 {
+    background-image: url(../img/dog5.jpg);
+    background-size: cover;
+}

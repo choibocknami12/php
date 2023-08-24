@@ -1,0 +1,16 @@
+h1 {
+    background-color: thistle;
+    border: 10px dotted #000;
+    background-clip: padding-box;
+    /* clip에는 content-box 가능 */
+}
+
+span {
+    background-color: aquamarine;
+    border: 10px dotted #000;
+    background-clip: content-box;
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    /* padding값을 주어야함. */
+}

@@ -1,0 +1,52 @@
+body {
+    background-color: thistle;
+}
+
+div {
+    width: 800px;
+    height: 800px;
+    border: 1px none #000;
+    border-radius: 25px;
+    background-color: antiquewhite;
+    margin: 0px auto;
+    
+    background-image: url(../img/dog5.jpg);
+    background-size: cover;
+}
+
+section {
+    margin-top: 3em;
+}
+
+header {
+    background-color: tomato;
+    width: 500px;
+    margin: 0px auto;
+    text-align: center;
+    color: antiquewhite;
+}
+
+h3 {
+    border: 1px dashed tomato;
+    border-radius: 10px;
+    width: 300px;
+    text-indent: 2em;
+    margin-left: 2em;
+}
+
+p {
+    text-indent: 2em;
+}
+
+li {
+    list-style: decimal;
+}
+
+.s1, .s3, .s4, .s5 {
+    font-weight: bold;
+}
+
+.s2 {
+    font-style: italic;
+}
+
