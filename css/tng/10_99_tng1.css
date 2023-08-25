@@ -1,0 +1,60 @@
+* {
+    padding: 0%;
+}
+/* 컨텐츠 영역에 지정할 수 있게 패딩값을 없애줌 */
+
+nav ul li {
+    float: left;
+    width: 150px;
+    list-style: none;
+    background-color: #afafaf;
+}
+/* p.337 보고 틀먼저 만듬. */
+ul {
+    box-shadow: 0px 7px 20px 1px #000;
+    display: inline-block;
+    color: #000;
+}
+/* 인라인 레벨과 블록 레벨 속성을 다 가지고 있어 마진과 패딩으로
+영역 사이즈를 지정해주는 display를 이용함. */
+li {
+    border-right: 1px solid #000;
+}
+
+.nav1{
+    width: 1000px;
+    margin: auto;
+}
+/* float 고정시키기 위해 영역 width값과 마진을 줌*/
+
+.nav1 a:link, .nav1 a:visited {
+    display: block;
+    font-size: 14px;
+    padding: 10px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.nav1 a:hover, .nav1 a:focus {
+    background-color: #222;
+    
+}
+
+.nav1 #red:hover {
+    background-color: #f00;
+    color: #fff;
+    border: none;
+}
+
+.solid {
+    border: none;
+}
+
+a{
+    display: block;
+    color: #000000;
+}
+
+/* a:hover{
+    color: #fff;
+}  */

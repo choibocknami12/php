@@ -1,0 +1,31 @@
+header div span {
+    color: violet;
+}
+/* 상위요소-하위요소 전부 지정 */
+header>span {
+    color: brown;
+}
+/* 꺽쇠(>)를 넣으면 상위요소의 직속 하위요소에만 지정됨. */
+
+span+p {
+    color: blue;
+}
+/* 바로 상위요소가 기준이 되어서 바로 밑에 하위 요소만 적용됨
+항상 상위요소가 기준이 됨. 밑에서 위로 적용은 할 수 없음 */
+
+span~p {
+    color: aquamarine;
+}
+/* 상위요소 기준 밑에 있는 모든 p한테 다줌 */
+
+div {
+    border: ;
+}
+
+div p {
+    color: yellowgreen;
+}
+
+div p {
+    border: 1px solid green;
+}

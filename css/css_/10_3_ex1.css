@@ -1,0 +1,69 @@
+a {
+    color: pink;
+}
+
+a:link {
+    color: navy;
+}
+
+a:visited {
+    color: cadetblue;
+    
+}
+
+a:hover {
+    background-color: violet;
+}
+
+
+
+/* #input-1:active {
+    border-color: aquamarine;    
+} */
+
+#input-1:focus {
+    outline: none;
+    border: 2px solid pink;
+}
+
+/* input:checked + label {
+    color: aqua;
+} */
+/* 해석: input에 checked하면 label의 값에 색상 속성을 넣어준다*/
+
+/* label:checked + input {
+    color: yellowgreen;
+}  이건 안됌.. 프로그래밍 실행 순서*/
+
+#target-1:target {
+    background-color: yellowgreen;
+}
+/* 타겟이 되었을때 적용되는 옵션 */
+
+/* .container :nth-child(4) {
+    color: violet;
+} */
+
+/* .container p:nth-of-type(2) {
+    color: yellowgreen;
+} */
+/* 
+.container :not(p) {
+    color: brown;
+} */
+
+#input-2::before {
+    content: '중요';
+    color: red;
+    font-size: x-small;
+}
+
+.korean-1::first-letter {
+    background-color: teal;
+    font-size: 2em;
+}
+
+.korean-2::first-line {
+    background-color: aquamarine;
+    
+}

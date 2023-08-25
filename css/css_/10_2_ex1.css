@@ -1,0 +1,30 @@
+/* 교재 p.333 */
+
+[target] {
+    color: green;
+}
+/* html에서 속성명을 지정하여 값을 줄수 있음. */
+/* 속성 선택자는 무조건 대괄호 */
+[target=daum] {
+    color: blue;
+}
+
+[class*=att_class] {
+    color: aquamarine;
+}
+
+[class~=att_class] {
+    color: yellowgreen;   
+}
+
+[class|=att] {
+    color: chocolate;
+}
+
+[class^=co] {
+    color: rgb(225, 74, 104);
+}
+
+[class$=k1] {
+    color: cornflowerblue;
+}
