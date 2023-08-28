@@ -1,0 +1,12 @@
+* {
+    margin: 0;
+}
+
+fieldset {
+    background-image: url(../img/cat.jpg);
+    background-size: cover;
+    width: 500px;
+    height: 400px;
+    margin: 0px auto;   
+}
+/* form태그 안에 fieldest가 포함되어 있는데 왜 button이랑 메모란이 튀어나감? */

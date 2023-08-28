@@ -8,24 +8,37 @@
 </head>
 <body>
     <form action="">
-        <fieldset>
+        
+        <fieldset class="content">
             <h1>I want YOU</h1>
             <div>
                 <label>이름</label>
                 <input type="text" id="name" required>
             </div>
+            <br>
             <div>
                 <label>나이</label>
-                <input type="number" min="20" >
+                <input type="number" min="20" required>
             </div>
+            <br>
             <div>
                 <label>성별</label>
-                <input type="checkbox" >
+                <label for="female">
+                    <input type="radio" value="male1" name="sex" >남자
+                </label>
+                <label for="female">
+                    <input type="radio" value="female1" name="sex">여자
+                </label>
             </div>
+            <br>
             <div>
-                <legend>요청사항</legend>
+                <label>요청사항</label>
+                <textarea name="memo" id="memo1" cols="30" rows="10" placeholder="요청 사항 입력"></textarea>
             </div>
+        <button type="submit">보내기</button>
+        
         </fieldset>
+        
     </form>
 </body>
 </html>
