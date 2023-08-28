@@ -18,9 +18,7 @@ span~p {
 }
 /* 상위요소 기준 밑에 있는 모든 p한테 다줌 */
 
-div {
-    border: ;
-}
+
 
 div p {
     color: yellowgreen;

@@ -1,0 +1,22 @@
+.container {
+    background-color: gray;
+    margin: 10px;
+    width: 60vw;
+    height: 60vh;
+    display: flex;
+    /* flex-direction: row;
+    flex-wrap: wrap; */
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+/* 주축을 row/colum 으로 지정함. 리버슨는 잘 사용하지 않음. 
+wrap으로 설정하면 정해놓은 설정값에 맞춰서 진열됨. row와 wrap 동시
+사용 가능.*/
+
+.item {
+    width: 15vw;
+    height: 15vh;
+    background-color: beige;
+    border: 1px solid black;
+}

@@ -1,0 +1,68 @@
+*{
+    margin: 0%;
+    
+}
+
+fieldset {
+    width: 500px;
+    height: 400px;
+    margin: auto; 
+    background-image: url(../img/cats.jpg);
+    /* background-position: center; */
+    background-size: cover;
+    position: relative;
+}
+
+li {
+    list-style:none ;
+    list-style-image: url(../img/pngwing.com.png);
+}
+
+.box1 {
+    color: rgb(250, 37, 190);   
+}
+
+
+.name:focus {
+    border: 2px solid red;
+    outline: none;
+}
+
+
+input:checked + label {
+    color: red;
+}
+
+.memo1 {
+    list-style: none;
+    /* vertical-align: top; */
+    position: absolute;
+    bottom: 130px;
+}
+/* 요청사항 올릴 때 vertical align사용해도됨. */
+
+label[for="memo"] {
+    /* position: relative; */
+    /* bottom: 130px; */
+    vertical-align: top;
+}
+
+input[type=text], input[type=number], textarea {
+    background: transparent;
+}
+
+.chk1:hover .check {
+    display: inline-block;
+    background-color: #000;
+    color: aliceblue;
+}
+
+.check {
+    display: none;
+}
+
+.chk1 {
+    position: relative;
+    top: 100px; 
+}
+/* 위치 고쳐놓기 */

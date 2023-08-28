@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../tng/10_99_tng2.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form>
+        <!-- 꼭 form을 필드셋위에 있을필요없음. 사용자가 입력한 내용만 송출되면 됨. -->
+        <fieldset>
+            <legend class="box1">
+                <h1>I want YOU!</h1>
+            </legend>
+        <section class="box2"> 
+           <ul>
+                <li class="name1">
+                    <label for="name">이름</label>
+                    <input type="text" class="name" id="name" required>
+                </li>
+                
+                <li class="age1">
+                    <label for="age">나이</label>
+                    <input type="number" class="name" id="age" min="20" required>
+                </li>
+                
+                <li class="fm1">
+                    <label for="fm">성별</label>
+                    <input type="radio" name="fm" id="fm_m" class="fm_m">
+                    <label for="fm_m">남자</label>
+                    <input type="radio" name="fm" id="fm_f" class="fm_f">
+                    <label for="fm_f">여자</label>
+                </li>
+                
+                <li class="memo1">
+                    <label for="memo">요청사항</label>
+                    <textarea name="memo" class="name" id="memo" cols="30" rows="10" placeholder="요청 사항 입력"></textarea>
+                </li>
+                
+            </ul>
+
+            <div class="chk1">
+                <input type="submit" value="보내기" class="chk">
+                <div class="check">내용을 다시 한번 확인해주세요.</div>
+            </div> 
+        </section>
+        </fieldset> 
+    </form>
+
+</body>
+</html>
