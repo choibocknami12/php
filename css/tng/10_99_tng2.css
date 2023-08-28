@@ -36,7 +36,7 @@ input:checked + label {
 .memo1 {
     list-style: none;
     /* vertical-align: top; */
-    position: absolute;
+    /* position: absolute; */
     bottom: 130px;
 }
 /* 요청사항 올릴 때 vertical align사용해도됨. */
@@ -51,18 +51,38 @@ input[type=text], input[type=number], textarea {
     background: transparent;
 }
 
-.chk1:hover .check {
+/* .chk1:hover .check {
     display: inline-block;
     background-color: #000;
     color: aliceblue;
-}
+} */
 
-.check {
+/* .check {
     display: none;
 }
 
 .chk1 {
     position: relative;
-    top: 100px; 
-}
+    /* top: 100px;  
+}*/
+
 /* 위치 고쳐놓기 */
+/* .chk .check{
+    position: absolute;
+    top: 250px;
+}   */
+
+#chk {
+    position: relative;
+}
+
+#chk:hover::after {
+    content: '내용을 다시 한번 확인해 주세요';
+    background-color: black;
+    color: white;
+    width: 300px;
+    font-size: 20px;
+    position: absolute;
+    top: 0px;
+    left: 56px;
+}
