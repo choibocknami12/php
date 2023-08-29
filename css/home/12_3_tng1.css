@@ -1,0 +1,43 @@
+.container {
+    background-color: gray;
+    width: 600px;
+    height: 600px;
+    display: grid;
+    /* grid-template-columns: 150px 150px 150px;
+    grid-template-rows: 200px 200px 200px; */
+    grid-template-columns: repeat(3, 150px);
+    grid-template-rows: repeat(3, 150px);
+    /* margin: 5px; */
+    padding: 5px;
+    /* 부모태그에 padding 안넣으면 전체 외곽선 이상해짐
+    근데 왜 마진은 자식태그에 넣어야하지..?
+    https://leestrument.tistory.com/entry/%EC%83%81%ED%95%98
+     여긴 왜 border-box를 넣는가*/
+}
+
+.box1 {
+    grid-column: 1/3;
+    margin: 5px;
+}
+
+.box2 {
+    grid-column: 3/5;
+    margin: 5px
+}
+
+.box3 {
+    grid-column: 1/5;
+    margin: 5px
+}
+
+.box4 {
+    grid-row: 3/5;
+    grid-column: 1/3;
+    margin: 5px
+}
+
+.box5, .box6 {
+    grid-column: 3/5;
+    margin: 5px
+}
+

@@ -1,0 +1,39 @@
+
+
+.container {
+    background-color: gray;
+    width: 500px;
+    height: 500px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: space-between;
+    
+}
+
+.box {
+    background-color: pink;
+    border: 1px solid #000;
+    width: 49%;
+    height: 32%;
+
+}
+
+.container1 {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.box1 {
+    width: 100%;  
+}
+
+.box2 {
+    height: 47%;
+}
+
+/* 대체 왜 안될까 */
