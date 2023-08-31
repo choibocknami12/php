@@ -2,10 +2,16 @@
 
 * {
     margin: 0;
+    /* 선택사항입니다. 헤더에 값을 따로 줄때는 전체에 맞춰도됨.
+    아니면 margin 제외해야함. */
     padding: 0;
     box-sizing: border-box;
     font-family:'Sedgwick Ave Display', 'cursive';
 }
+
+/* rem(최상위 요소의 폰트크기에 따라감)
+ em(부모요소의 폰트크기에 배수) px(작은점.px이 모여서 한화면이됨) %(직속 부모영역기준) 
+vw vh(뷰포트 기준의 화면에 따라) fr() */
 a {
     background-color: orange;
     display: inline-block;
@@ -14,7 +20,16 @@ a {
     font-size: 1rem;
     color: #ffffff;
     padding: 1rem;
+    text-decoration: none;
+    /* 밑줄 없애기 */
 }
+a:hover {
+    opacity: 0.6;
+    transition: all 0.5s;
+}
+/* 이부분은 기능부분임. */
+
+
 header {
     background-image: url(../img/img_1.jpg);
     background-size: cover;
@@ -25,6 +40,10 @@ header {
     /* height: 500px; */
     padding: 4rem 2rem;
 }
+/* 반응형을 할땐 hight값을 주면 안댐. 또 튀어나감
+padding값을 주면 여백생성 가능 */
+/* 헤더 마무리시에 p태그와 a태그의 */
+/* 플렉스는 정적(예시로 아티클 영역)그리드는 동적(예시로 header>p태그영역) */
 h1 {
     font-size: 4rem;
     min-width: 300px;
@@ -58,6 +77,8 @@ main {
     grid-gap: 10px;
     margin: 20px;
 }
+/* minmax설정을 해주는게 화면이 줄어들때 최소최대 설정해주어야함. */
+/* dispaly값은 여기에 사용했으면 전부 여기 넣어야함 */
 article{
     display: flex;
     flex-direction: column;
