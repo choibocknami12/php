@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Sedgwick Ave Display', cursive;
+    
+}
+
+a {
+    background-color: rgb(255, 165, 0);
+    border-radius: 3px;
+    padding: 5px 20px;
+}
+
+header {
+    background-image: url(../img/sea.jpg);
+    background-size: cover;
+    color: aliceblue;
+    display: flex;
+    padding: 50px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+    /* 왜  justify가 안먹히는지 알아보자. */
+}
+
+h1 {
+    font-size: 4rem;
+    margin: 2rem 0;
+}
+
+div {
+    font-size: 1rem;
+}
+
+div>p {
+    margin: 2rem 0;
+}
+
+img{
+    
+}
+
+main>article {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #e2e2e2;
+}
+/* 사진 사이즈는 왜 안맞춰지는가 */
+/* flex 는 왜 안먹히는가 */
+
+footer {
+    background-color: #333;
+    color: aliceblue;
+    font-size: 0.5rem;
+    text-align: center;
+    position: fixed;
+    display: inline-block;
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+    bottom: 0;
+}
