@@ -56,6 +56,7 @@ order by first_name ASC;
 SELECT emp_no, AVG(salary)
 FROM salaries 
 GROUP by emp_no ;
+-- group by에 지정해준 값을 꼭 select에 넣어주어야함 (정식문법)
 
 -- 8. 사원별 급여의 평균이 30,000~50,000인 사원번호와 평균급여 조회.o
 
@@ -63,9 +64,21 @@ SELECT emp_no, AVG(salary) AS sal_avg
 FROM salaries 
 GROUP by emp_no
 HAVING sal_avg >= '30000' AND sal_avg <= '50000';
+-- where절은 전체 조건절/ having절은 그룹안의 조건절
 
 -- 9. 사원별 급여 평균이 70,000이상인 사원의 사번.이름.성.성별을 조회.
-
+-- 사원별 그룹짓고 급여평균이 haiving절 이부분은 salaries 테이블에 있음. / 사원,사번,이름.성,성별은 employees에 있음
+    select emp_no 
+            ,emp.first_name
+            ,emp.last_name
+            ,emp.gender
+    FROM employees as emp
+    WHERE emp_no IN (
+        select sal.emp_no
+        from salaries AS sal
+        GROUP by sal.emp_no
+        having AVG(sal.salary) >= 70000
+    );
 
 -- 10.현재 직책이 senior engineer 인 사원의 사원 번호와 성 조회.
 SELECT emp_no, last_name
@@ -74,3 +87,14 @@ WHERE last_name
 IN ( SELECT emp_no
 		FROM titles
 		WHERE title = 'senior engineer');
+
+
+select emp.emp_no
+    ,emp.last_name
+FROM employees AS emp
+WHERE emp.emp_no IN (
+    select tit.emp_no
+    FROM titles as tit
+    WHERE tit.title ='senior engineer'
+    AND tit.to_date >= now()
+);             
