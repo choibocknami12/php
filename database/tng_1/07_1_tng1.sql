@@ -30,7 +30,7 @@ FROM employees emp
 	ON emp.emp_no = sal.emp_no
 WHERE emp.emp_no = 10010;
 -- 월급 이력을 출력해야하므로 salary를 넣어주어야함.
-SELECT concat(emp.first_name,' ' ,emp.last_name) AS full_name, sal.salary, sal.from_date, sal.to_date
+SELECT concat(emp.first_name,' ' ,emp.last_name) AS full_name, sal.salary
 FROM employees emp
 	INNER JOIN salaries sal
 	ON emp.emp_no = sal.emp_no
@@ -71,10 +71,10 @@ LIMIT 10;
 SELECT dn.dept_name, CONCAT(emp.first_name,' ',emp.last_name) AS full_name, dm.from_date
 FROM employees emp
 	INNER JOIN dept_manager dm
-	ON emp.emp_no = dm.emp_no
+		ON emp.emp_no = dm.emp_no
 		AND dm.to_date >= NOW()
 	INNER JOIN departments dn
-	ON dn.dept_no = dm.dept_no;
+		ON dn.dept_no = dm.dept_no;
 -- from_date = 매니저가 된 날짜. hire_date를 사용해야함.
 -- 다틀렸어 ㅅㅂ
 
@@ -82,7 +82,8 @@ FROM employees emp
 SELECT tit.title, AVG(salary)
 FROM salaries sal
 	INNER JOIN titles tit
-	ON sal.emp_no = tit.emp_no
+		ON sal.emp_no = tit.emp_no
+		AND sal.to_date >= NOW()
 WHERE tit.title = 'staff' AND tit.to_date >= NOW();
 -- 테이블마다 말하는 to_date의 값이 다름. 때문에 각 테이블의 to_date값을 현재로 맞춰줘야함.
 SELECT tit.title, AVG(salary)
