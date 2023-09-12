@@ -2,17 +2,19 @@
 // 인덱스 배열. 변수값을 딱히 안주었기 때문에 인덱스(키라고 함)로 방만들어둠. 암꺼나 넣을 수 있음
 // $arr = array(0, 'a', 2); //숫자나 문자가 섞여있으면 멀티타입 배열 이라고도 한다.
 // $arr2 = [0,"a", 2];
+// $arr= array(1,2,3);
+// print_r($arr);
 
 // var_dump($arr[1]);
 // echo $arr[2];
 
-// $arr3 = ["배열", $arr[1], $arr2[1]];
+//$arr3 = ["배열", $arr[1], $arr2[1]];
 
 // 연상 배열
 // $arr4 = [
-//     "name" => "홍길동"
-//     ,"age" => 18
-//     ,"gender" => "남자"  
+//      "name" => "홍길동"
+//      ,"age" => 18
+//      ,"gender" => "남자"  
 // ];
 
 // echo $arr4["name"];
@@ -35,13 +37,12 @@
 // var_dump($arr5[1][1]);
 
 // $arr6 = [
-//     "msg" => "ok"
-//     ,"info" => [
-//         "name" => "홍길동"
-//         ,"age" => 20
-//     ]
+//      "msg" => "ok"
+//      ,"info" => [
+//          "name" => "홍길동"
+//          ,"age" => 20
+//      ]
 // ];
-
 // var_dump($arr6["info"]["age"]);
 
 // unset() : 배열의 원소 삭제
@@ -51,13 +52,13 @@
 
 // 배열의 정렬 : asort(), arsort(), ksort(), krsort()
 // asort(): 배열의 값을 오름차순 정렬
-$arr_asort = ["b", "a", "d", "c"];
+// $arr_asort = ["b", "a", "d", "c"];
 // asort($arr_asort);
 // print_r( $arr_asort );
 
 // arsort() : 배열의 값 내림차순 정렬
-arsort($arr_asort);
-print_r( $arr_asort );
+// arsort($arr_asort);
+// print_r( $arr_asort );
 
 // ksort(), krsort(): 키를 기준으로 오름/내림 차순으로 정렬
 // $arr_ksort =[
@@ -80,19 +81,20 @@ print_r( $arr_asort );
 // $arr_diff = array_diff($arr_diff1, $arr_diff2);
 // print_r($arr_diff);
 
-// array_push() : 기존 배열에 값을 추가하는 함수
+//array_push() : 기존 배열에 값을 추가하는 함수
 // $arr_push = [ 1, 2, 3];
-// array_push( $arr_push, 4, 5);
-// $arr_push[] = 4; 
+// array_push($arr_push, 4, 5);
+// echo $arr_push[4];
 
 //한가지 값만 넣을땐 이렇게도 가능함
 $arr_push2 = [
-    "a" => 1
-    ,"b" => 2
+     "a" => 1
+     ,"b" => 2
 ];
 $arr_push2["c"] = 3;
+echo $arr_push2["c"];
 // 이렇게하면 연상 배열에 삽입할 수 있음.
 
-print_r($arr_push2);
+// print_r($arr_push2);
 
 ?>
