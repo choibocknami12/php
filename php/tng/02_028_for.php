@@ -6,7 +6,7 @@
 // }
 // . 연결 연산자 , 구분 연산자? 
 
-// 구구단2단 작성
+//구구단2단 작성
 // for($num = 1; $num < 10; $num++) {
 //     $mul = 2* $num;
 //     echo "2 x {$num} = {$mul} \n";
@@ -28,17 +28,16 @@
 
 //1단 9단만 뜨게하기.
 // 방법1
-// for($num = 1; $num <= 9; $num++) {
-//     if($num != 1 && $num != 9){
-//         continue;
-//     }
-//     echo "{$num}단 \n";
-
-//     for($num1 = 1; $num1 <= 9; $num1++){
-//         $mul = $num * $num1;
-//         echo "{$num}x{$num1}={$mul}\n";
-//     }
-// }
+for($num = 1; $num <= 9; $num++) {
+    if($num != 1 && $num != 9){
+        continue;
+    }
+    echo "{$num}단 \n";
+    for($num1 = 1; $num1 <= 9; $num1++){
+        $mul = $num * $num1;
+        echo "{$num}x{$num1}={$mul}\n";
+    }
+}
 
 // 방법2
 // for($num = 1; $num <= 9; $num++) {
