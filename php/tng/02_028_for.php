@@ -16,15 +16,15 @@
 
 //
 
-for($num = 1; $num <= 9; $num++) {
-     echo "{$num}단 \n";
+// for($num = 1; $num <= 9; $num++) {
+//      echo "{$num}단 \n";
 
-     for($num1 = 1; $num1 <= 9; $num1++){
-         $mul = $num * $num1;
-         echo "{$num}x{$num1}={$mul}\n";
+//      for($num1 = 1; $num1 <= 9; $num1++){
+//          $mul = $num * $num1;
+//          echo "{$num}x{$num1}={$mul}\n";
 
-     }
-}
+//      }
+// }
 
 //1단 9단만 뜨게하기.
 // 방법1
@@ -63,5 +63,58 @@ for($num = 1; $num <= 9; $num++) {
 //         echo "{$num}x{$num1}={$mul}\n";
 //     }
 // }
+
+//별찍기
+// for ($star = "*";($star >=1 && $star <= 5);$star++) {
+//     if($star === 5) {
+//         break;
+//     }
+//     echo $star;
+// }
+
+//별다섯개 한줄 나옴
+
+// for ($num = 1; $num <= 5; $num++){
+//     for($star = 1; $star <= $num; $star++){
+//        
+//         echo "*";
+//     }
+//     echo "\n";
+// }
+
+for ($num = 5; $num >= 1; $num--) {
+    for($spe = 5; $spe <= 1; $spe++){
+        echo " ";
+            for($star = 5; $star >= $spe; $star--){
+            echo "*";
+            }
+    }
+    echo "\n";
+}
+
+$spe = 5;
+for($num = 1; $num >= $spe; $num++) {
+    for($star = 1; $star <= 5 ; $num++) {
+        echo "*";
+    }
+    echo " ";
+}
+
+// for($i = 1; $i <= 10; $i--) {
+//     echo"{$i} \n";
+// }
+
+
+//while문이 증감식(이건 샘풀이보고 다시 생각해야댐)
+
+// $star = "*";
+// $num = 1;
+// while($num < 10){
+//     $star += $num;
+//     $num;
+//     echo"*";  
+//}
+
+
 
 ?>
