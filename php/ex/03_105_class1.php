@@ -34,6 +34,29 @@ class ClassRoom {
         echo $str;
     }
 
+// 생성자
+// -클래스를 이이ㅛㅇ해 객체를 생성할 때 사용
+// -생성자를 정의 하지 않을때는 디폴트 생성자가 선언 됨
+// -클래스를 인스턴스 할 때 자동으로 실행되는 메소드
+
+    public function __construct() {
+        echo "컨스트럭트 실행";
+        $this->now=date();
+    }
+// getter 메소드
+public function get_now() {
+    return $this->now;
+}    
+// setter 메소드
+public function set_now() {
+    $this->now = "9999-01-01 00:00:00";
+}
+// static : instance 생성안해도 호출할 수 있음
+public static function static_test() {
+    echo "스태틱 메소드";
+}
+
+
 }
 
 // class instence 생성
@@ -43,11 +66,16 @@ $objClassRoom = new ClassRoom();
 // $objClassRoom->computer = "test";
 
 // 지시어를 주어야 호출댐
-$objClassRoom -> class_room_set_value();
+// $objClassRoom -> class_room_set_value();
 // var_dump($objClassRoom->computer);
-$objClassRoom->class_value();
+// $objClassRoom->class_value();
 
-// 컴퓨터, 북, 백의 값을 출력하는 메소드를 만들어 주세요.
+
+//static 사용법
+ClassRoom :: static_test();
+
+
+
 
 
 

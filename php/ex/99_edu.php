@@ -48,24 +48,26 @@
 // }
 
 //true로도 할 수 있다.
-// while(true) {
-//     $mul = $num * 7;
-//     echo "7 x {$num} = {$mul} \n";
-//     $num++;
-//     if($num === 10) {
-//         break;
-//     }
-// }
+$num = 1;
+
+while(true) {
+    $mul = $num * 7;
+    echo "7 x {$num} = {$mul} \n";
+    $num++;
+    if($num === 10) {
+        break;
+    }
+}
 
 // 배열(array)
-$arr = [1, 2, 3];
-$arr2 = [
-    "key1" => "val1"
-    ,"key2" => "val2"
-];
+// $arr = [1, 2, 3];
+// $arr2 = [
+//     "key1" => "val1"
+//     ,"key2" => "val2"
+// ];
 
-echo $arr2["key2"];
-echo $arr[2];
+// echo $arr2["key2"];
+// echo $arr[2];
 
 
 ?>
