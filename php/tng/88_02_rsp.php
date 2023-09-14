@@ -69,10 +69,10 @@
 //         }
 //     }
 
-$user = 2;
+$user = 3;
 $com = rand(1,3);
 
-for (?){}
+//for (?){}
 
 if($user===$com){
     echo "draw";
