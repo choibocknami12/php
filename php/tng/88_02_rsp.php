@@ -69,25 +69,38 @@
 //         }
 //     }
 
-$user = 3;
-$com = rand(1,3);
 
 //for (?){}
+echo "가위(2),바위(1),보(3)를 입력하세요.\n";
+echo "종료시는 (5)를 눌러주세요'ㅅ'";
 
-if($user===$com){
-    echo "draw";
+while(true){
+    echo "\n";
+    $user = (int)trim(fgets(STDIN));
+    $com = rand(1,3);
+    if($user===$com){
+        echo "\nDraw\n";
+    }
+    else if(($user===1 && $com===2)
+        ||($user===2 && $com===3)
+        ||($user===3 && $com===1)){
+            echo "\nU : win\n";
+            echo "COMPUTER : lose\n";
+        }
+    else if(($user===1 && $com===3)
+        ||($user===2 && $com===1)
+        ||($user===3 && $com===2)){
+            echo "\nU : lose\n";
+            echo "COMPUTER : win\n";
+        }
+        // if($user_txt="exit"){
+        //     break; 
+        //     echo "exit";
+        // }
+    else if($user === 5){
+        break;
+    } 
 }
-else if(($user===1 && $com===2)
-    ||($user===2 && $com===3)
-    ||($user===3 && $com===1)){
-        echo "win";
-    }
-else if(($user===1 && $com===3)
-    ||($user===2 && $com===1)
-    ||($user===3 && $com===2)){
-        echo "lose";
-    }
-
 
 
 
