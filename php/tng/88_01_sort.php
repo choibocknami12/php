@@ -30,7 +30,7 @@ $arr = [5, 4, 3, 2];
 
 
 for($arr_zero=0; $arr_zero<=3; $arr_zero++){
-     for($index = 0; $index <= count($arr)-2; $index++) {
+     for($index = 0; $index < count($arr)-1; $index++) {
          if($arr[$index] > $arr[$index+1]) {
              $tmp = $arr[$index];
              $arr[$index] = $arr[$index+1];
