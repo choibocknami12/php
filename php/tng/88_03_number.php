@@ -6,11 +6,52 @@
 //정답일 경우 "정답" 출력하고 게임종료
 //5번의 기회를 다 썼을 경우 정답과 "실패" 출력
 
+//5회 제한을 어떻게 걸지?(마지막 문제해결은 안댐.)
 $num = rand(1,100);
-$user = 1;
+echo "HELLO, GUESS THE NUMBER\n";
+echo "ENTER a number(1~100)\n";
 
-if($user){
+while (true){
+    $user = (int)fgets(STDIN);
 
+    if($user > $num){
+        echo "DOWN\n";
+    }
+    else if($user < $num){
+        echo "UP\n";
+    }
+
+else if($user === $num){
+    echo "congratulations ANSWER!";
+    break;
+}
+}
+
+//배운거
+$i=0;
+$num = rand(1,100);
+echo "HELLO, GUESS THE NUMBER\n";
+echo "ENTER a number(1~100)\n";
+
+while (true){
+    $user = (int)fgets(STDIN);
+    
+    if($user > $num){
+        echo "DOWN\n";
+    }
+    else if($user < $num){
+        echo "UP\n";
+    }
+    else if($user === $num){
+        echo "congratulations ANSWER!";
+        break;
+    }
+
+    $i++;
+ if($i===5){
+    echo "Opportunity is over";
+    break;
+}
 }
 
 
