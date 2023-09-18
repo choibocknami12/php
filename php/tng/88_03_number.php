@@ -48,10 +48,10 @@ while (true){
     }
 
     $i++;
- if($i===5){
-    echo "Opportunity is over";
-    break;
-}
+    if($i===5){
+        echo "Opportunity is over";
+        break;
+    }
 }
 
 

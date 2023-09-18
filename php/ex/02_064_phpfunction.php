@@ -47,10 +47,10 @@
 
 // 가변 파라미터(버전마다 사용방법 다름)
 //5.6이상에서 가능
-function my_args_param(...$items) {
-    echo $items[1];
-}
-my_args_param("a", "b", "c");
+// function my_args_param(...$items) {
+//     echo $items[1];
+// }
+// my_args_param("a", "b", "c");
 
 //5.6이하 버전에서 사용가능
 // function my_args_param() {
@@ -58,7 +58,28 @@ my_args_param("a", "b", "c");
 //     print_r ($items);
 // }
 
+// 레퍼런스 파라미터
 
+// function test1( $str ) {
+//     $str = "함수 test1";
+//     return $str;
+// }
 
+// $str = "???";
+// $result = test1( $str );
+// echo $str. "\n";
+// echo $result;
+// 평소 사용하던 방식임. $str이 같아 보여도 위치가 다른 변수임! 값도 다름!
+
+function test2( &$str ) {
+    $str = "함수 test2";
+    return $str;
+}
+
+$str = "???";
+$result = test2( $str );
+echo $str, "\n";
+echo $result;
+// 여기서 함수의 $str과 메인영역의 $str은 같은거임
 
 ?>
