@@ -23,53 +23,40 @@ $conn = null;
 db_conn($conn);
 
 // 1. 문제 쿼리
-// $sql1 =
-// " SELECT "
-// ." * "
-// ." FROM "
-// ." employees emp "
-// ." LEFT OUTER JOIN "
-// ." titles tit "
-// ." ON emp.emp_no = tit.emp_no "
-// ." WHERE "
-// ." tit.emp_no IS NULL "
-// ;
-
-// 2. 문제 쿼리
-// $sql2 =
-// " INSERT INTO ( "
-// ." titles "
-// ."	emp_no "
-// ."	,title "
-// ."	,from_date "
-// ."	,to_date ) "
-// ." VALUES ( "
-// ." titles "
-// ."	:emp_no "
-// ."	,:title "
-// ."	,:from_date "
-// ."	,:to_date ) "
-// ;
-
-// $arr_ps = [
-//     ":emp_no" => 700000
-//     ,":title" => "Green"
-//     ,":from_date" => 20230919
-//     ,":to_date" => 99990101
-// ];
-
 $sql =
-" INSERT INTO "
-." titles "
-." (:emp_no, :title, :from_date, :to_date) "
-." SELECT "
+" SELECT "
 ." * "
 ." FROM "
 ." employees emp "
 ." LEFT OUTER JOIN "
 ." titles tit "
 ." ON emp.emp_no = tit.emp_no "
-." WHERE tit.emp_no IS NULL ";
+." WHERE "
+." tit.emp_no IS NULL "
+;
+
+$arr_ps = [];
+
+$stmt = $conn->prepare($sql);
+$stmt -> execute($arr_ps); 
+$result = $stmt->fetchALL(); 
+print_r($result);
+
+// 2. 문제 쿼리
+$sql =
+" INSERT INTO ( "
+." titles "
+."	emp_no "
+."	,title "
+."	,from_date "
+."	,to_date ) "
+." VALUES ( "
+." titles "
+."	:emp_no "
+."	,:title "
+."	,:from_date "
+."	,:to_date ) "
+;
 
 $arr_ps = [
     ":emp_no" => 700000
@@ -78,11 +65,36 @@ $arr_ps = [
     ,":to_date" => 99990101
 ];
 
-
 $stmt = $conn -> prepare($sql);
 $result = $stmt->execute($arr_ps);
 $conn->commit();
 print_r($result);
+
+
+// $sql =
+// " INSERT INTO "
+// ." titles "
+// ." (:emp_no, :title, :from_date, :to_date) "
+// ." SELECT "
+// ." * "
+// ." FROM "
+// ." employees emp "
+// ." LEFT OUTER JOIN "
+// ." titles tit "
+// ." ON emp.emp_no = tit.emp_no "
+// ." WHERE tit.emp_no IS NULL ";
+
+// $arr_ps = [
+//     ":emp_no" => 700000
+//     ,":title" => "Green"
+//     ,":from_date" => 20230919
+//     ,":to_date" => 99990101
+// ];
+
+//샘풀이
+
+
+
 
 
 
