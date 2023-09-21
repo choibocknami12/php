@@ -5,13 +5,13 @@ require_once(ROOT."lib/lib_db.php"); // DB관련 라이브러리
 // 서버에 뭐가 있는지 궁금할 때 사용 var_dump($_SERVER);
 
 $conn = null;
+
 //DB 접속
 if(!my_db_conn($conn)) {
     echo "DB Error : PDO Instance";
     db_destroy_conn($conn);
     exit;
 }
-
 
 //--------------------------------------------------------
 //페이징 처리 : 처음에 주소를 치고 들어오면 나오는 페이지도 함께 설정을 해 주어야함. 그래서 밑에처럼 사용
@@ -44,13 +44,11 @@ if($next_page_num > $max_page_num) {
     $next_page_num = $max_page_num;
 }
 
-
 // DB조회시 사용할 데이터 배열
 $arr_param = [
     "list_cnt" => $list_cnt
     ,"offset" => $offset
 ];
-
 
 //게시글 리스트 조회
 $result = db_select_boards_pasging($conn, $arr_param);
