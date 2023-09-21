@@ -20,7 +20,10 @@ if($http_method === "POST") {
             throw new Exception("DB Error : Insert Boards");
         }
 
-        $conn->commit();
+        $conn->commit(); // 모든 처리 완료시 커밋
+
+        header("Location: list.php"); // 리스트 페이지로 이동 명령어 header("Location: path(경로)");
+        exit;
 
     } catch(Exception $e) {
         $conn->rollBack();
