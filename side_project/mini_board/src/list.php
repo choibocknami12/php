@@ -1,26 +1,68 @@
 <?php
-define("ROOT", $_SERVER["DOCUMENT_ROOT"]."/mini_board/src/");
-require_once(ROOT."lib/lib_db.php");
+define("ROOT", $_SERVER["DOCUMENT_ROOT"]."/mini_board/src/"); //웹 서버
+define("FILE_HEADER", ROOT."header.php"); // 헤더 패스
+require_once(ROOT."lib/lib_db.php"); // DB관련 라이브러리
 // 서버에 뭐가 있는지 궁금할 때 사용 var_dump($_SERVER);
 
 $conn = null;
-
 //DB 접속
 if(!my_db_conn($conn)) {
     echo "DB Error : PDO Instance";
+    db_destroy_conn($conn);
     exit;
 }
 
+
+//--------------------------------------------------------
+//페이징 처리 : 처음에 주소를 치고 들어오면 나오는 페이지도 함께 설정을 해 주어야함. 그래서 밑에처럼 사용
+//--------------------------------------------------------
+$list_cnt = 5; //한 페이지 최대 표시 수
+$page_num = 1; //페이지 번호 초기화
+$boards_cnt = db_select_boards_cnt($conn);
+if($boards_cnt === false) {
+    echo "DB Error : SELECT Count";
+    db_destroy_conn($conn);
+    exit;
+}
+
+$max_page_num = ceil($boards_cnt / $list_cnt); //최대 페이지 수
+
+if(isset($_GET["page"])) {
+    $page_num = $_GET["page"]; // 유저가 보내온 페이지 셋팅
+}
+$offset = ($page_num - 1) * $list_cnt; //offset계산
+
+//이전버튼
+$prev_page_num = $page_num - 1;
+if($prev_page_num === 0) {
+    $prev_page_num = 1;
+}
+
+//다음버튼
+$next_page_num = $page_num + 1;
+if($next_page_num > $max_page_num) {
+    $next_page_num = $max_page_num;
+}
+
+
+// DB조회시 사용할 데이터 배열
+$arr_param = [
+    "list_cnt" => $list_cnt
+    ,"offset" => $offset
+];
+
+
 //게시글 리스트 조회
-$result = db_select_boards_pasging($conn);
+$result = db_select_boards_pasging($conn, $arr_param);
 if(!$result) {
     echo "DB Error : SELECT boards";
+    
     exit;
 }
 
 db_destroy_conn($conn); // 이렇게 받아오면 db쓸일이 없어서 파기함
 
-var_dump($result);
+//var_dump($result);
 
 ?>
 
@@ -31,13 +73,14 @@ var_dump($result);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="/mini_board/src/css/common.css">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300" rel="stylesheet">
     <title>리스트 페이지</title>
 </head>
 <body>
-    <header>
-        <h1>mini Board</h1>
-    </header>
+    <?php
+        require_once(FILE_HEADER);
+    ?>
     <main>
         <table>
             <colgroup>
@@ -46,46 +89,33 @@ var_dump($result);
                 <col width = "30%">
             </colgroup>
             <tr class="table-title">
-                <th>번호</th>
+                <th class="radius-left">번호</th>
                 <th>제목</th>
-                <th>작성일자</th>
+                <th class="radius-right">작성일자</th>
             </tr>
-            <tr>
-                <td>5</td>
-                <td>5번게시글</td>
-                <td>2023/09/20 14:50</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>4번게시글</td>
-                <td>2023/09/19 13:50</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>3번게시글</td>
-                <td>2023/09/18 12:50</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>2번게시글</td>
-                <td>2023/09/17 11:50</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>1번게시글</td>
-                <td>2023/09/16 10:50</td>
-            </tr>
-        </table>
+            <?php
+            // 리스트생성 : 데이터베이스의 데이터를 갖고 올것이라 포이치씀
+            foreach($result as $item) {
+            ?>
+                <tr>
+                    <td><?php echo $item["id"]; ?></td>
+                    <td><?php echo $item["title"]; ?></td>
+                    <td><?php echo $item["create_at"]; ?></td>
+                </tr>   
+            <?php } ?>
+            </table>
         <section>
-            <a href="#">이전</a>
-            <a href="#">1</a>
-            <a href="#">2</a>
-            <a href="#">3</a>
-            <a href="#">4</a>
-            <a href="#">5</a>
-            <a href="#">다음</a>
+                <a class="page-btn" href="/mini_board/src/list.php/?page=<?php echo $prev_page_num ?>">이전</a>
+            <?php
+                for($i = 1; $i <= $max_page_num; $i++) {
+            ?>
+                <a class="page-btn" href="/mini_board/src/list.php/?page=<?php echo $i; ?>"><?php echo $i; ?></a>       
+            <?    
+                }
+            ?>
+                <a class="page-btn" href="/mini_board/src/list.php/?page=<?php echo $next_page_num ?>">다음</a>
         </section>
     </main>
-
+            <a href="/mini_board/src/insert.php">글쓰기</a>
 </body>
 </html>
