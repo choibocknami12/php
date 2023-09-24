@@ -1,4 +1,3 @@
-
 * {
     box-sizing: border-box;
     font-family: 'IBM Plex Sans KR', sans-serif;
@@ -19,17 +18,14 @@ header {
     background-color: rgba(80, 80, 80, 0.5);
     padding: 2rem;
     font-weight: bold;
+    text-align: center;
+    font-size: 1.5rem;
 }
 
 header>h1 {
     color: #ffff;
-    text-align: center;
     font-size: 2.5rem;
 }
-
-/* main {
-    
-} */
 
 table {
     border-collapse: collapse;
@@ -39,6 +35,7 @@ table {
     font-size: 1.5rem;
     color: aliceblue;
     font-weight: bold;
+    text-align: center;
 }
 
 section {
@@ -50,7 +47,27 @@ a {
     display: inline-block;  
 }
 
+a:link {
+    color: #ffff;
+}
+
+a:visited {
+    color: #ffff;
+}
+
 .page-btn {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    color: #cac9c9;
+    background-color: rgba(80, 80, 80, 0.5);
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.content-btn {
+    
     width: 50px;
     height: 50px;
     text-align: center;
@@ -83,4 +100,50 @@ tr, td {
 
 td {
     color: rgba(120, 120, 120);
+}
+
+/* insert---------------------------------------------------- */
+
+.insert_cont {
+    border: none;
+    margin: 50px;
+    text-align: center;
+    color: #ffff;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.insert_cont *{
+    vertical-align: middle;
+}
+
+textarea {
+    background-color: transparent;
+    width: 1000px;
+    color: #ffff;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+input {
+    background-color: transparent;
+    width: 1000px;
+    color: #ffff;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+
+
+/* detail--------------------------------------------------------- */
+
+.select-btn {
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    color: #cac9c9;
+    background-color: rgba(80, 80, 80, 0.5);
+    border-radius: 5px;
+    font-weight: bold;
 }

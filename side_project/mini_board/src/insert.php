@@ -50,17 +50,20 @@ if($http_method === "POST") {
     <?php
         require_once(FILE_HEADER);
     ?>
-    <form action="/mini_board/src/insert.php" method="post">
-        <label for="title">제목</label>
-        <input type="text" name="title" id="title">
+    <div class="insert_cont">
+        
+        <form class = "insert_form" action="/mini_board/src/insert.php" method="post">
+            <label for="title">제목</label>
+            <input type="text" name="title" id="title">
         <br>
         <br>
-        <label for="content">내용</label>
-        <textarea name="content" id="content" cols="30" rows="10"></textarea>
+            <label for="content">내용</label>
+            <textarea name="content" id="content" cols="30" rows="10"></textarea>
         <br>
         <br>
-        <button type="submit">작성</button>
-        <a href="/mini_board/src/list.php">취소</a>
-    </form>
+            <button type="submit">작성</button>
+            <a href="/mini_board/src/list.php">취소</a>
+        </form>
+    </div>
 </body>
 </html>

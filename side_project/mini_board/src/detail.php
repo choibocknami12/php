@@ -5,6 +5,7 @@ require_once(ROOT."lib/lib_db.php"); // DB관련 라이브러리
 
 my_db_conn($conn);
 $id = "";
+$conn = null;
 
 try {
     
@@ -22,6 +23,8 @@ try {
 
     $id = $_GET["id"];
     $page = $_GET["page"];
+
+    //var_dump($_GET["page"]);
     // DB 연결
     if(!my_db_conn($conn)) {
         throw new Exception("DB Error : PDO Instance");
@@ -94,8 +97,10 @@ $item = $result[0];
         </tr>
         
     </table>
-    <a href="">수정</a>
-    <a href="/mini_board/src/list.php/?page=<?php echo $page; ?>">취소</a>
-    <a href="">삭제</a>
+    <div class="select-btn">
+        <a class="cor-btn" href="">수정</a>
+        <a class="can-btn" href="/mini_board/src/list.php/?page=<?php echo $page; ?>">취소</a>
+        <a class="del-btn" href="">삭제</a>
+    </div>
 </body>
 </html>

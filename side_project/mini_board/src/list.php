@@ -30,6 +30,7 @@ try {
         $page_num = $_GET["page"]; // 유저가 보내온 페이지 셋팅
     }
     
+    //var_dump($_GET["page"]);
     $offset = ($page_num - 1) * $list_cnt; //offset계산
 
     //이전버튼
@@ -106,7 +107,7 @@ db_destroy_conn($conn); // 이렇게 받아오면 db쓸일이 없어서 파기�
                 <tr>
                     <td><?php echo $item["id"]; ?></td>
                     <td>
-                    <a href="/mini_board/src/detail.php/?id=<?php echo $item["id"]; ?>">   
+                    <a href="/mini_board/src/detail.php/?id=<?php echo $item["id"]; ?>&page=<?php echo $page_num; ?>">   
                         <?php echo $item["title"]; ?>
                     </a>
                     </td>
@@ -126,6 +127,6 @@ db_destroy_conn($conn); // 이렇게 받아오면 db쓸일이 없어서 파기�
                 <a class="page-btn" href="/mini_board/src/list.php/?page=<?php echo $next_page_num ?>">다음</a>
         </section>
     </main>
-            <a href="/mini_board/src/insert.php">글쓰기</a>
+            <a class="content-btn" href="/mini_board/src/insert.php">글쓰기</a>
 </body>
 </html>
