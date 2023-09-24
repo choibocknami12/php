@@ -29,6 +29,7 @@ try {
     if(isset($_GET["page"])) {
         $page_num = $_GET["page"]; // 유저가 보내온 페이지 셋팅
     }
+    
     $offset = ($page_num - 1) * $list_cnt; //offset계산
 
     //이전버튼
