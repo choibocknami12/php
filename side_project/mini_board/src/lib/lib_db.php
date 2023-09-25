@@ -110,7 +110,7 @@ function db_select_boards_cnt(&$conn) {
 // 기능     : boards 레코드 작성
 // 파라미터 : PDO  &$conn
 //            Array &$arr_param          
-// 리턴     : Int / false
+// 리턴     : Boolean
 // -----------------------------------------
 function db_insert_boards(&$conn, &$arr_param) {
     $sql =
@@ -128,9 +128,10 @@ function db_insert_boards(&$conn, &$arr_param) {
     ];
     try {
         $stmt = $conn->prepare($sql);
-        $result = $stmt->fetchAll();
+        $result = $stmt->execute($arr_ps);
         return $result;
     } catch(Exception $e) {
+        echo $e->getMessage();
         return false;
     }
 }
@@ -195,7 +196,40 @@ function db_select_boards_id(&$conn, &$arr_param) {
     } catch(Exception $e) {
          return false; 
     }
-       
-    
 }
+
+//------------------------------------------
+// 함수명   : db_update_boards_id
+// 기능     : boards 레코드 작성
+// 파라미터 : PDO  &$conn
+//            Array &$arr_param          
+// 리턴     : boolean
+// -----------------------------------------
+function db_update_boards_id(&$conn, &$arr_param) {
+    $sql =
+        " UPDATE "
+        ." boards "
+        ." SET "
+        ." title = :title "
+        ." ,content = :content "
+        ." WHERE "
+        ." id = :id "
+        ;
+    $arr_ps = [
+        ":title" => $arr_param["title"]
+        ,":content" => $arr_param["content"]
+        ,":id" => $arr_param["id"]
+    ];
+
+    try {
+        $stmt = $conn->prepare($sql);
+        $result = $stmt ->execute($arr_ps);
+        return $result;
+    } catch(Exception $e) {
+        echo $e->getMessage();
+        return false;
+    }
+}
+
+
 ?>

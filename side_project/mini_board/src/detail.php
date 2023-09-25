@@ -7,6 +7,10 @@ my_db_conn($conn);
 $id = "";
 $conn = null;
 
+//$page_name = $_SERVER["PHP_SELF"];
+//$chk_detail = isset($_GET["test"]) ? $_GET["test"] : "update";
+//머라는지 하나도 못들음.
+
 try {
     
     //id 확인
@@ -98,7 +102,7 @@ $item = $result[0];
         
     </table>
     <div class="select-btn">
-        <a class="cor-btn" href="">수정</a>
+        <a class="cor-btn" href="/mini_board/src/update.php/?id=<?php echo $id; ?>&page=<?php echo $page; ?>">수정</a>
         <a class="can-btn" href="/mini_board/src/list.php/?page=<?php echo $page; ?>">취소</a>
         <a class="del-btn" href="">삭제</a>
     </div>
