@@ -11,6 +11,7 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     /* background-position: 0 172px; */
+    
 }
 
 header {
@@ -32,7 +33,6 @@ table {
     width: 1000px;
     height: 500px;
     margin: 50px auto;
-    /* font-size: 1.5rem; */
     color: aliceblue;
     font-weight: bold;
     text-align: center;
@@ -66,9 +66,18 @@ a:visited {
     font-weight: bold;
 }
 
+.page-btn:hover {
+    color: #ffff;
+    background-color: rgb(195, 195, 90);
+    transition: 0.2s;
+}
+
+/* .bk-a {
+    background-color: yellow;
+} */
+
 .content-btn {
-    
-    width: 50px;
+    width: 80px;
     height: 50px;
     text-align: center;
     line-height: 50px;
@@ -76,6 +85,9 @@ a:visited {
     background-color: rgba(80, 80, 80, 0.5);
     border-radius: 5px;
     font-weight: bold;
+    position: relative;
+    left: 500px;
+    bottom: 50px;
 }
 
 tr, td {
@@ -109,11 +121,15 @@ td {
     text-align: center;
     color: #ffff;
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 .insert_cont *{
     vertical-align: middle;
+}
+
+.write-btn {
+    background-repeat: no-repeat;
 }
 
 textarea {

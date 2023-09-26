@@ -119,14 +119,16 @@ db_destroy_conn($conn); // 이렇게 받아오면 db쓸일이 없어서 파기�
                 <a class="page-btn" href="/mini_board/src/list.php/?page=<?php echo $prev_page_num ?>">이전</a>
             <?php
                 for($i = 1; $i <= $max_page_num; $i++) {
+                    //삼항 연산자 : 조건 ? 참일때처리 : 거짓일때처리
+                    $str = (int)$page_num === $i ? "bk-a" : "";
             ?>
-                <a class="page-btn" href="/mini_board/src/list.php/?page=<?php echo $i; ?>"><?php echo $i; ?></a>       
-            <?    
+                <a class="page-btn <?php echo $str ?>" href="/mini_board/src/list.php/?page=<?php echo $i; ?>"><?php echo $i; ?></a>       
+            <?php    
                 }
             ?>
                 <a class="page-btn" href="/mini_board/src/list.php/?page=<?php echo $next_page_num ?>">다음</a>
         </section>
     </main>
-            <a class="content-btn" href="/mini_board/src/insert.php">글쓰기</a>
+    <a class="content-btn" href="/mini_board/src/insert.php">글쓰기</a>
 </body>
 </html>
