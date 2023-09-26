@@ -104,7 +104,7 @@ $item = $result[0];
     <div class="select-btn">
         <a class="cor-btn" href="/mini_board/src/update.php/?id=<?php echo $id; ?>&page=<?php echo $page; ?>">수정</a>
         <a class="can-btn" href="/mini_board/src/list.php/?page=<?php echo $page; ?>">취소</a>
-        <a class="del-btn" href="">삭제</a>
+        <a class="del-btn" href="/mini_board/src/delete.php/?id=<?php echo $id; ?>&page=<?php echo $page; ?>">삭제</a>
     </div>
 </body>
 </html>

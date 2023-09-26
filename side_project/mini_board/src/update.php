@@ -41,7 +41,7 @@ try {
         ];
 
         // 게시글 수정 처리
-        $conn->beginTransaction(); //트랜젝션 시작(수정,변경,삭제는 반드시 사용해야함)
+        $conn->beginTransaction(); //트랜젝션 시작 (수정,변경,삭제는 반드시 사용해야함)
 
         if(!db_update_boards_id($conn, $arr_param)) {
             throw new Exception("DB Error : Update_Boards_id");

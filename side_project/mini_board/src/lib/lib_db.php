@@ -61,6 +61,8 @@ function db_select_boards_pasging(&$conn, &$arr_param) {
         ." ,create_at"
         ." FROM "
         ." boards "
+        ." WHERE "
+        ." delete_flg = '0' "
         ." ORDER BY "
         ." id DESC "
         ." LIMIT :list_cnt OFFSET :offset"
@@ -94,6 +96,8 @@ function db_select_boards_cnt(&$conn) {
         ." COUNT(id) as cnt"
         ." FROM "
         ." boards "
+        ." WHERE "
+        ." delete_flg = '0' "
         ;
         try {
             $stmt = $conn->query($sql);  // 쿼리 준비 실행 다같이 해줌. stmt에 값을 받을게 없으니까!
@@ -182,6 +186,8 @@ function db_select_boards_id(&$conn, &$arr_param) {
     ." boards "
     ." WHERE "
     ." id = :id "
+    ." AND"
+    ." delete_flg = '0'"
     ;
     
     $arr_ps = [
@@ -224,6 +230,40 @@ function db_update_boards_id(&$conn, &$arr_param) {
     try {
         $stmt = $conn->prepare($sql);
         $result = $stmt ->execute($arr_ps);
+        return $result;
+    } catch(Exception $e) {
+        echo $e->getMessage();
+        return false;
+    }
+}
+
+//------------------------------------------
+// 함수명   : db_delete_boards_id
+// 기능     : 특정 id 레코드 삭제처리
+// 파라미터 : PDO  &$conn
+//            Array &$arr_param          
+// 리턴     : boolean
+// -----------------------------------------
+function db_delete_boards_id(&$conn, &$arr_param) {
+    $sql =
+    " UPDATE "
+    ." boards "
+    ." SET "
+    ." delete_at = now() "
+    ." ,delete_flg = '1' "
+    ." WHERE "
+    ." id = :id "
+    ;
+
+    $arr_ps = [
+        ":id" => $arr_param["id"]
+    ];
+
+    try {
+        //쿼리 실행
+        $stmt = $conn->prepare($sql);
+        $result = $stmt->execute($arr_ps);
+
         return $result;
     } catch(Exception $e) {
         echo $e->getMessage();
