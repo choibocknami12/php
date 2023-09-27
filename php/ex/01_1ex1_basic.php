@@ -5,13 +5,42 @@
 
 // 변수 : 필요한 정보를 저장하는것?
 
-$num = 1;
-$str = '안녕, 변수';
-// 문자열 '',"" 둘다 사용가능함.
-$sum = $num + 5;
-$sum = $sum + $num;
+// $num = 1;
+// $str = '안녕, 변수';
+// // 문자열 '',"" 둘다 사용가능함.
+// $sum = $num + 5;
+// $sum = $sum + $num;
 
-echo $sum;
+// echo $sum;
 
+
+ // while문으로 별찍기
+
+//  $i = 1;
+//  $star = "*";
+//  while($i <= 5) {
+//    $val = 1 + $i;
+//     echo "{$val}*\n";
+//    $i++;
+//  }
+
+ $base = 5;
+ $line = $base;
+ while ($line >= 1) {
+    $space = $line - 1;
+    $one_line = $base;
+    while($one_line >= 1) {
+      if($space >= 1) {
+        echo " ";
+      } else {
+        echo "*";
+      }
+      $space--;
+      $one_line--;
+    }
+    echo "\n";
+    $line--;
+ }
+ 
 
 ?>
