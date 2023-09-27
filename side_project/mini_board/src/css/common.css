@@ -129,7 +129,10 @@ td {
 }
 
 .write-btn {
-    background-repeat: no-repeat;
+    
+    border: 0;
+    outline: 0;
+    
 }
 
 textarea {
