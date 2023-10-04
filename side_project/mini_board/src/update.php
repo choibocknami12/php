@@ -3,7 +3,7 @@ define("ROOT", $_SERVER["DOCUMENT_ROOT"]."/mini_board/src/"); //웹 서버
 define("FILE_HEADER", ROOT."header.php"); // 헤더 패스
 require_once(ROOT."lib/lib_db.php");
 
-$conn = null; // db 연결용 변수
+$conn = null; // db 연결용 변수. 각페이지의 conn은 다른 변수임. 그래서 리셋해주는거임
 $id = isset($_GET["id"]) ? $_GET["id"] : $_POST["id"]; //id셋팅 (삼항변산자?라고하는데 잘모르겠음ㅋ)
 $page = isset($_GET["page"]) ? $_GET["page"] : $_POST["page"];
 $http_method = $_SERVER["REQUEST_METHOD"]; //메소드 확인
@@ -97,11 +97,11 @@ try {
             <td><input type="text" name="title" value="<?php echo $item["title"]?>"></td>
         </tr>
         <tr>
-            <th>내용</th>
+            <th class="update_con">내용</th>
             <td><textarea name="content" id="content" cols="30" rows="10"><?php echo $item["content"]?></textarea></td>
         </tr>
     </table>
-    <div class="select-btn">
+    <div class="btn_group">
         <button type="submit">수정확인</button>
         <a class="can-btn" href="/mini_board/src/list.php/?page=<?php echo $id; ?>&page=<?php echo $page; ?>">수정취소</a>
     </div>

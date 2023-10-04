@@ -36,6 +36,7 @@ table {
     color: aliceblue;
     font-weight: bold;
     text-align: center;
+    
 }
 
 section {
@@ -55,6 +56,14 @@ a:visited {
     color: #ffff;
 }
 
+button {
+    border: none;
+    background-color: transparent;
+    color: #ffff;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
 .page-btn {
     width: 50px;
     height: 50px;
@@ -72,9 +81,10 @@ a:visited {
     transition: 0.2s;
 }
 
-/* .bk-a {
-    background-color: yellow;
-} */
+.btn_group>a:hover, .btn_group>button:hover {
+    color: rgb(195, 195, 90);
+    transition: 0.2s;
+}
 
 .content-btn {
     width: 80px;
@@ -90,10 +100,12 @@ a:visited {
     bottom: 50px;
 }
 
-tr, td {
-    border-bottom: 1px solid rgba(120, 120, 120);
-    text-align: center;
+.content-btn:hover {
+    color: #ffff;
+    background-color: rgb(195, 195, 90);
+    transition: 0.2s;
 }
+
 
 .radius-left {
     border-top-left-radius: 30px;
@@ -111,6 +123,10 @@ tr, td {
 
 td {
     color: rgba(120, 120, 120);
+    padding: 0;
+    text-align: center;
+    border-style: inherit;
+    /* 수 */
 }
 
 /* insert---------------------------------------------------- */
@@ -132,7 +148,6 @@ td {
     
     border: 0;
     outline: 0;
-    
 }
 
 textarea {
@@ -140,7 +155,8 @@ textarea {
     width: 1000px;
     color: #ffff;
     font-weight: bold;
-    /* font-size: 1em; */
+    height: 500px;
+    margin: 10px;
 }
 
 input {
@@ -152,19 +168,86 @@ input {
 }
 
 
-
 /* detail--------------------------------------------------------- */
 
-.select-btn {
-    text-align: center;
-    width: 100px;
-    height: 100px;
-    line-height: 100px;
-    color: #cac9c9;
+.btn_group {
+    /* position: relative;
+    left: 900px;
     background-color: rgba(80, 80, 80, 0.5);
     border-radius: 5px;
+    width: 100px;
+    height: 50px;
+    text-align: center;
     font-weight: bold;
+    top: 10px; */
+    border-radius: 30px;
+    border: none;
+    background-color: rgba(80,80,80,0.5);
+    color: skyblue;
+    padding: 5px;
+    text-align: center;
+    width: 500px;
+    font-weight: bold;
+    position: relative;
+    left: 750px;
+    font-size: 1.5rem;
 }
 
+
+.col-btn {
+    position: relative;
+    left: -50px;
+}
+
+.can-btn {
+    position: relative;
+    
+}
+
+.del-btn {
+    position: relative;
+    left: 50px;
+}
+
+
 /* update---------------------------------------------------------- */
+.update-table{
+    border: none;
+    
+}
+
+
+.update-table th {
+    display: inline-block;
+    width: 50px;
+    
+    vertical-align: middle;
+}
+
+.update_con {
+    line-height: 500px;
+}
+
+/* delete--------------------------------------------------------------- */
+
+
+.delete_btn {
+    border-radius: 30px;
+    border: none;
+    background-color: rgba(80,80,80,0.5);
+    padding: 10px;
+    text-align: center;
+    width: 500px;
+    font-weight: bold;
+    position: relative;
+    left: 750px;
+    font-size: 1.5rem;
+}
+
+
+
+.delete_btn button:hover, .delete_btn a:hover {
+    color: rgb(195, 195, 90);
+    transition: 0.2s;
+}
 

@@ -101,9 +101,11 @@ $item = $result[0];
         </tr>
         
     </table>
-    <div class="select-btn">
-        <a class="cor-btn" href="/mini_board/src/update.php/?id=<?php echo $id; ?>&page=<?php echo $page; ?>">수정</a>
+    <div class="btn_group">
+        <a class="col-btn" href="/mini_board/src/update.php/?id=<?php echo $id; ?>&page=<?php echo $page; ?>">수정</a>
+        
         <a class="can-btn" href="/mini_board/src/list.php/?page=<?php echo $page; ?>">취소</a>
+        
         <a class="del-btn" href="/mini_board/src/delete.php/?id=<?php echo $id; ?>&page=<?php echo $page; ?>">삭제</a>
     </div>
 </body>
