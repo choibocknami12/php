@@ -55,7 +55,8 @@ $item = $result[0];
 // var_dump($item);
 
 } catch(Excepiton $e) {
-    echo $e->getMessage();
+    //echo $e->getMessage();
+    header("Location: error.php/?err_msg={$e->getMessage()}");
     exit;
 } finally {
     db_destroy_conn($conn);

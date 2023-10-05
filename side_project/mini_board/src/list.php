@@ -53,13 +53,16 @@ try {
 
     //게시글 리스트 조회
     $result = db_select_boards_pasging($conn, $arr_param);
+    
+    //게시글 조회 에러
     if(!$result) {
-        throw new Exception("DB Error : SELECT boards");
+        throw new Exception("DB Error : SELECT boards Paging");
     }
 
 }
 catch(Exception $e) {
-    echo $e->getMessage();
+    //echo $e->getMessage(); //v002 del
+    header("Location: error.php/?err_msg={$e->getMessage()}");
     exit;
 }
 finally {

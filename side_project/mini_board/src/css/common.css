@@ -251,3 +251,17 @@ input {
     transition: 0.2s;
 }
 
+/* error */
+
+.container {
+    color: #ffff;
+    font-weight: bold;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.container>a {
+    background-color: rgba(80,80,80,0.5);
+    border-radius: 20px;
+    width: 300px;
+}
