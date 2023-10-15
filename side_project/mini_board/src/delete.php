@@ -18,6 +18,7 @@ try {
     if($http_method === "GET") {
         //3-1. get일 경우
         // 파라미터에서 id, page 획득
+        // if문일때
         // $id = isset($_GET["id"]) ? $_GET["id"] : "";
         // $page = isset($_GET["page"]) ? $_GET["page"] : "";
         // if($id === "") {
@@ -27,6 +28,7 @@ try {
         //     throw new Exception("Parameter Error : page");
         // }
 //-----------------------------------------------------------------
+        //삼항연산자 사용시
         $id = isset($_GET["id"]) ? $_GET["id"] : "";
         $page = isset($_GET["page"]) ? $_GET["page"] : "";
         $arr_err_msg = [];
