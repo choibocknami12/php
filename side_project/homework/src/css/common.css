@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+body {
+    background-image: url(/homework/doc/img/background_img.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+}
+
+p {
+    font-size: 50px;
+}
+
+table {
+    width: 1000px;
+    height: 500px;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255, 0.2);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text_align {
+    text-align: center;
+}
+
+.list_title {
+    font-weight: bold;
+    font-size: 20px;
+}
+
