@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    min-height: 100%; /*다시 검색해보기*/
     text-decoration: none;
 }
 
@@ -18,7 +19,7 @@ p {
 
 table {
     width: 1000px;
-    height: 500px;
+    height: 800px;
     border-radius: 20px;
     background-color: rgb(255, 255, 255, 0.2);
     margin-left: auto;
