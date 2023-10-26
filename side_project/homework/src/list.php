@@ -4,7 +4,7 @@ require_once(ROOT."/lib/db_lib.php");
 
 $conn = null;
 
-$list_cnt = 3;
+$list_cnt = 5;
 $page_num = 1; 
 
 try {
@@ -115,7 +115,15 @@ db_destroy_conn($conn);
     <div class="btn text_align">
         <section>
             <a href="/homework/src/list.php/?page=<?php echo $prev_page_num ?>">이전</a>
-            <a class="page_btn <?php echo $str ?>" href="/mini_board/src/list.php/?page=<?php echo $i; ?>"><?php echo $i; ?></a>
+            <?php
+                for($i = 1; $i <= $max_page_num; $i++) {
+                    //삼항 연산자 : 조건 ? 참일때처리 : 거짓일때처리
+                    $str = (int)$page_num === $i ? "bk-a" : "";
+            ?>
+            <a class="page_btn <?php echo $str ?>" href="/homework/src/list.php/?page=<?php echo $i; ?>"><?php echo $i; ?></a>
+            <?php    
+                }
+            ?>
             <a href="/homework/src/list.php/?page=<?php echo $next_page_num ?>">다음</a>
         </section>
     </div>
