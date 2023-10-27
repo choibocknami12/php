@@ -42,6 +42,11 @@ BTNCLOSE.addEventListener('click', popClose);
 //     fnc();
 // }
 
+// classList
+// 속성인데 클래스를 다 가져오는거?
+
+//console에 getEventListeners(요소); 이렇게 검색하면 어떤 이벤트를 사용했는지 확인할 수 있음.
+
 // 이벤트 타입
 // 1. 마우스 이벤트
 // - mousedown - 마우스가 요소안에서 클릭이 눌릴 때

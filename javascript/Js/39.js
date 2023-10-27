@@ -53,7 +53,7 @@ TITLE.classList.remove('class1'); // 이건 클래스는 남아있음. 클래스
 
 //5. 새로운 요소 생성
 //요소 만들기
-//const LI = document.createElement('li'); //li태그 하나 만든거
+//const LI = document.createElement('li'); //li태그 하나 만든거,h1넣으면 h1태그 생성.
 //LI.innerHTML = "우앙신기해"; //내용적어줌
 
 //삽입 할 부모 요소 접근
