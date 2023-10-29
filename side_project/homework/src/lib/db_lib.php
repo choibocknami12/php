@@ -124,14 +124,14 @@ function db_insert_boards(&$conn, &$arr_param) {
     " INSERT INTO "
     ." boards ( "
     ." title "
-    ." ,content ) "
+    ." ,memo ) "
     ." VALUES ( "
     ." :title "
-    ." ,:content ) "
+    ." ,:memo ) "
     ;
     $arr_ps = [
         ":title" => $arr_param["title"]
-        ,":content" => $arr_param["content"]
+        ,":memo" => $arr_param["memo"]
     ];
     try {
         $stmt = $conn->prepare($sql);
@@ -144,5 +144,79 @@ function db_insert_boards(&$conn, &$arr_param) {
 }
 
 
+//------------------------------------------
+// 함수명   : db_select_boards_id
+// 기능     : boards 레코드 조회
+// 파라미터 : PDO  &$conn
+//            Array &$arr_param          
+// 리턴     : boolean
+// -----------------------------------------
+function db_select_boards_id(&$conn, &$arr_param) {
+    $sql =
+    " SELECT "
+    ." id "
+    ." ,title "
+    ." ,memo "
+    ." ,create_date "
+    ." FROM "
+    ." boards "
+    ." WHERE "
+    ." id = :id "
+    ." OR "
+    ." delete_date = NULL "
+    ;
+    
+    $arr_ps = [
+        ":id" => $arr_param["id"]
+    ];
+
+    try {
+        $stmt = $conn->prepare($sql);
+        $stmt->execute($arr_ps);
+        $result = $stmt->fetchAll();
+        return $result;
+    } catch(Exception $e) {
+        echo $e ->getMessage();
+        return false; 
+    }
+}
+
+
+
+
+
+
+//------------------------------------------
+// 함수명   : db_delete_boards_id
+// 기능     : 특정 id 레코드 삭제처리
+// 파라미터 : PDO  &$conn
+//            Array &$arr_param          
+// 리턴     : boolean
+// -----------------------------------------
+function db_delete_boards_id(&$conn, &$arr_param) {
+    $sql =
+    " UPDATE "
+    ." boards "
+    ." SET "
+    ." delete_date = now() "
+    ." WHERE "
+    ." id = :id "
+    ;
+
+    $arr_ps = [
+        ":id" => $arr_param["id"]
+    ];
+
+    try {
+        //쿼리 실행
+        $stmt = $conn->prepare($sql);
+        $result = $stmt->execute($arr_ps);
+
+        return $result;
+    } catch(Exception $e) {
+        echo $e->getMessage();
+        return false;
+    }
+}
 
 ?>
