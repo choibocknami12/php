@@ -80,18 +80,19 @@ db_destroy_conn($conn);
     <title>list_page</title>
 </head>
 <body>
+    
     <div class="head text_align">
         <p>BOARD</p>
     </div>
 
-    <div class="main text_align">
-        <table class="text_align">
+    <div class="main">
+        <table class="text_align tab_main">
             <colgroup>
                 <col width = "20%">
                 <col width = "60%">
                 <col width = "20%">
             </colgroup>
-            <tr>
+            <tr class="list">
                 <th class="list_title">번호</th>
                 <th class="list_title">제목</th>
                 <th class="list_title">작성일자</th>
@@ -114,7 +115,7 @@ db_destroy_conn($conn);
 
     <div class="btn text_align">
         <section>
-            <a href="/homework/src/list.php/?page=<?php echo $prev_page_num ?>">이전</a>
+            <a class="page_btn" href="/homework/src/list.php/?page=<?php echo $prev_page_num ?>">이전</a>
             <?php
                 for($i = 1; $i <= $max_page_num; $i++) {
                     //삼항 연산자 : 조건 ? 참일때처리 : 거짓일때처리
@@ -124,9 +125,10 @@ db_destroy_conn($conn);
             <?php    
                 }
             ?>
-            <a href="/homework/src/list.php/?page=<?php echo $next_page_num ?>">다음</a>
+            <a class="page_btn" href="/homework/src/list.php/?page=<?php echo $next_page_num ?>">다음</a>
         </section>
     </div>
         <a href="/homework/src/insert.php" class="text_align">작성하기</a>
+    
 </body>
 </html>

@@ -7,9 +7,10 @@
 }
 
 body {
-    background-image: url(/homework/doc/img/homework_img5.jpg);
+    background-image: url(/homework/doc/img/homework_img6.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
     color: #fff;
 }
 
@@ -26,6 +27,14 @@ table {
     margin-right: auto;
 }
 
+a {
+    color: #fff;
+}
+
+section {
+    display: inline-block;
+}
+
 .text_align {
     text-align: center;
 }
@@ -35,3 +44,18 @@ table {
     font-size: 20px;
 }
 
+.tab_main {
+    margin-left: 150px;
+    margin-top: 70px;
+}
+
+.page_btn {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    background-color: rgba(80, 80, 80, 0.5);
+    border-radius: 5px;
+    font-size: 20px;
+}
