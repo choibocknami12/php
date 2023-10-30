@@ -16,11 +16,13 @@
 
 
 //익명함수 : 이름이 없는 함수
-// let num = ( function(a,b){
+// const num = ( function(a,b){
 //     return a + b
 // })
+// 콜백함수때문에 사용함.
 
 //콜백함수 : 다시 호출되는 함수
+// 어떤 처리 후 나중에 실행하고 싶을 떄.
 // function fnc_callback( call ) {
 //     call();
 // }

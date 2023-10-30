@@ -88,7 +88,7 @@ function db_select_boards_pasging(&$conn, &$arr_param) {
         ." FROM "
         ." boards "
         ." WHERE "
-        ." delete_date IS NULL "
+        ." delete_date IS NULL " //이거 확인해보기
         ." ORDER BY "
         ." id DESC "
         ." LIMIT :list_cnt OFFSET :offset "
@@ -162,7 +162,7 @@ function db_select_boards_id(&$conn, &$arr_param) {
     ." boards "
     ." WHERE "
     ." id = :id "
-    ." OR "
+    ." OR " //이부분도 확인해보기
     ." delete_date = NULL "
     ;
     
