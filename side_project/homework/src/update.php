@@ -77,11 +77,9 @@ try {
     ];
 
     $result = db_select_boards_id($conn, $arr_param);
-   
 
         if($result === false) {
             throw new Exception("DB Error : PDO Select_id");
-            var_dump($result);
         } else if(!(count($result)) === 1) {
             throw new Exception("DB Error : PDO Select_id count".count($result));
         }

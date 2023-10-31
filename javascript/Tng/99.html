@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./99.css">
+    <title>Document</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        header {
+            height: 300px;
+            line-height: 300px;
+            font-size: 100px;
+            background-color: #000;
+            color: #fff;
+        }
+
+        .main {
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-gap: 10px;
+        }
+
+        .article {
+            background-color: rgb(197, 195, 195);
+        }
+
+        .article-img {
+            width: 95%;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <p>API 실습</p>
+    </header>
+
+    <input type="text" id="input-url" style="width: 1000px;">
+    <br>
+    <button id="btn-api">API 호출</button>
+    <button id="btn-remove">호출 지우기</button>
+    <br>
+    <br>
+    <div class="main">
+    </div>
+    
+
+    <script src="../Tng/99.js"></script>
+</body>
+</html>

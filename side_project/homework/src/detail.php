@@ -88,7 +88,7 @@ $item = $result[0];
     </table>
     <div>
         <a href="/homework/src/list.php/?id=<?php echo $id; ?>&page=<?php echo $page; ?>">이전</a>
-        <a href="/homework/src/update.php/?page=<?php echo $page; ?>">수정</a>
+        <a href="/homework/src/update.php/?id=<?php echo $id; ?>&page=<?php echo $page; ?>">수정</a>
         <a href="/homework/src/delete.php/?id=<?php echo $id; ?>&page=<?php echo $page; ?>">삭제</a>
     </div>
 </body>
