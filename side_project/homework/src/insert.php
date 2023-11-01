@@ -68,6 +68,7 @@ if($http_method === "POST") {
         <?php            
             }
         ?>
+        
     <form action="/homework/src/insert.php" method="post">
         <label for="title">제목</label>
         <input type="text" name="title" id="title" value="<?php echo $title ?>">
