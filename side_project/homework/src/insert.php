@@ -68,15 +68,19 @@ if($http_method === "POST") {
         <?php            
             }
         ?>
+    
     <form action="/homework/src/insert.php" method="post">
-        <label for="title">제목</label>
-        <input type="text" name="title" id="title" value="<?php echo $title ?>">
+        <div>
+            <label for="title">제목</label>
+            <input type="text" name="title" id="title" value="<?php echo $title ?>">
     <br>
     <br>
-        <label for="memo">내용</label>
-        <textarea name="memo" id="memo" cols="30" rows="10"><?php echo $memo ?></textarea>
+            <label for="memo">내용</label>
+            <textarea name="memo" id="memo" cols="30" rows="10"><?php echo $memo ?></textarea>
+        </div>
     <br>
     <br>
+    
         <div>
             <button type="submit">작성</button>
             <a href="/homework/src/list.php">취소</a>
