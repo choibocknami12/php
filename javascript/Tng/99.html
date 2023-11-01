@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="./99.css">
     <title>Document</title>
     <style>
-
+/* css파일 따로 만들기 */
         * {
             margin: 0;
             padding: 0;
@@ -26,10 +26,13 @@
             margin: 0 auto;
             text-align: center;
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             grid-gap: 10px;
         }
-
+/* 1fr 은 자식요소가 가질 수 있는 넓이의 비율단위? */
+/* repeat() : 반복시키는 함수.
+auto-fit : 창에 맞춰 공간 정렬, minmax설정 안하면 안됨..
+grid-gap, gap어느걸 사용해도됨*/
         .article {
             background-color: rgb(197, 195, 195);
         }

@@ -1,3 +1,4 @@
+
 // 1. HTTP란(s가 붙으면 보안이란 뜻이 붙어서 보안이 좀더 강화됬다는거)
 // 어떻게 Hypertext를 주고받을지 규약한 프로토콜(통신하는데 정해진 규칙)로 
 // 클라이언트가 서버에 데이터를 request(요청)하고,
@@ -140,3 +141,22 @@ function makeImg(data) {
         DIV_IMG.appendChild(NEW_IMG);
     });
 }
+
+
+// fetch 2번째 아규먼트 셋팅 방법
+function infinityLoop() {
+    let apiUrl = "http://192.168.0.82/03_insert.php"
+    let init = {
+        method: "POST"
+        ,body: {
+            title: "yeah"
+            ,content: "ohohoh"
+            ,em_id: "2"
+        }
+    };
+        fetch(apiUrl, init)
+        .then( response => console.log(response))
+        .catch( error => console.log(error) )
+    }
+    
+        
