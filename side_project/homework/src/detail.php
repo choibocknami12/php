@@ -62,12 +62,15 @@ $item = $result[0];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/homework/src/css/common.css">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300" rel="stylesheet">
     <title>detail_page</title>
 </head>
 <body>
+
     <div class="head text_align">
-        <p>BOARD</p>
+        <a href="/homework/src/list.php">BOARD</a>
     </div>
+    
     <table>
         <tr>
             <th>글번호</th>

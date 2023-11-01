@@ -4,15 +4,16 @@
     padding: 0;
     min-height: 100%; /*다시 검색해보기*/
     text-decoration: none;
+    color: #fff;
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    font-weight: bold;
 }
 
 body {
-    /* background-image: url(/homework/doc/img/나만없어고양이_pc.jpg); */
-    background-color: #000;
+    background-image: url(/homework/doc/img/homework_img7.jpg);
+    /* background-color: #000; */
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
-    color: #fff;
 }
 
 p {
@@ -20,12 +21,12 @@ p {
 }
 
 table {
-    width: 1000px;
+    width: 80%;
     height: 600px;
+    margin: 0 auto;
     border-radius: 20px;
-    background-color: rgb(255, 255, 255, 0.2);
-    margin-left: auto;
-    margin-right: auto;
+    background-color: rgba(80, 80, 80, 0.5);
+    
 }
 
 a {
@@ -36,38 +37,98 @@ section {
     display: inline-block;
 }
 
+.main {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.head {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 80px;
+    font-weight: bold;
+    background-color: rgba(80, 80, 80, 0.5);
+}
+
 .text_align {
     text-align: center;
 }
 
-.list_title {
-    font-weight: bold;
+.main_txt {
     font-size: 20px;
 }
 
-.tab_main {
-    margin-left: 150px;
-    margin-top: 70px;
+.list_title {
+    font-weight: bold;
+    font-size: 30px;
+    margin: 0 auto;
 }
 
 .page_btn {
-    width: 100px;
-    height: 100px;
-    text-align: center;
+    display: inline-block;
+    margin-top: 10px;
     line-height: 50px;
+    width: 50px;
+    height: 50px;
     color: #fff;
     background-color: rgba(80, 80, 80, 0.5);
     border-radius: 5px;
     font-size: 20px;
 }
 
+.insert_btn {
+    display: inline-block;
+    line-height: 80px;
+    width: 100px;
+    height: 80px;
+    background-color: rgba(80, 80, 80, 0.5);
+    border-radius: 5px;
+    font-size: 20px;
+    
+}
 
 /* insert */
 
 textarea {
     background-color: transparent;
+    width: 500px;
+    height: 500px;
+    font-size: 2rem;
+}
+
+.form_txt>input {
+    background-color: transparent;
+    width: 500px;
+    height: 50px;
+    font-size: 2rem;
+    margin-top: 20px;
+}
+
+.form_txt>label {
+    font-size: 30px;
+    text-align: center;
 }
 
 form {
+    width: 50%;
+    height: 600px;
+    margin: 0 auto;
+    border-radius: 20px;
     text-align: center;
+    background-color: rgba(80, 80, 80, 0.5)
 }
+
+.form_btn>button, .form_btn>a {
+    border: 0;
+    outline: 0;
+    font-size: 30px;
+    display: inline-block;
+    line-height: 80px;
+    width: 100px;
+    height: 80px;
+    background-color: rgba(80, 80, 80, 0.5);
+    border-radius: 5px;
+}
+
+/* detail */

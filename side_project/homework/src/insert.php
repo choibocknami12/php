@@ -57,9 +57,14 @@ if($http_method === "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/homework/src/css/common.css">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300" rel="stylesheet">
     <title>insert_page</title>
 </head>
 <body>
+    <div class="head text_align">
+        <a href="/homework/src/list.php">BOARD</a>
+    </div>
+    
     <div>
         <?php
             foreach($arr_err_msg as $val) {
@@ -70,18 +75,18 @@ if($http_method === "POST") {
         ?>
     
     <form action="/homework/src/insert.php" method="post">
-        <div>
+        <div class="form_txt">
             <label for="title">제목</label>
             <input type="text" name="title" id="title" value="<?php echo $title ?>">
     <br>
     <br>
             <label for="memo">내용</label>
-            <textarea name="memo" id="memo" cols="30" rows="10"><?php echo $memo ?></textarea>
+            <textarea name="memo" id="memo" cols="50" rows="10"><?php echo $memo ?></textarea>
         </div>
     <br>
     <br>
     
-        <div>
+        <div class="form_btn">
             <button type="submit">작성</button>
             <a href="/homework/src/list.php">취소</a>
         </div>

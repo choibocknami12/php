@@ -76,13 +76,13 @@ db_destroy_conn($conn);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/homework/src/css/common.css">
-    <link rel="stylesheet" href="">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300" rel="stylesheet">
     <title>list_page</title>
 </head>
 <body>
     
     <div class="head text_align">
-        <p>BOARD</p>
+        <a href="/homework/src/list.php">BOARD</a>
     </div>
 
     <div class="main">
@@ -100,7 +100,7 @@ db_destroy_conn($conn);
             <?php
                 foreach($result as $item) {
             ?>
-            <tr>
+            <tr class="main_txt">
                 <td><?php echo $item["id"]; ?></td>
                 <td>
                     <a href="/homework/src/detail.php/?id=<?php echo $item["id"]; ?>&page=<?php echo $page_num; ?>">
@@ -128,7 +128,7 @@ db_destroy_conn($conn);
             <a class="page_btn" href="/homework/src/list.php/?page=<?php echo $next_page_num ?>">다음</a>
         </section>
     </div>
-        <a href="/homework/src/insert.php" class="text_align">작성하기</a>
+        <a href="/homework/src/insert.php" class="text_align insert_btn">작성하기</a>
     
 </body>
 </html>
