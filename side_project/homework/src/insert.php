@@ -74,14 +74,14 @@ if($http_method === "POST") {
             }
         ?>
     
-    <form action="/homework/src/insert.php" method="post">
+    <form class="insert_form" action="/homework/src/insert.php" method="post">
         <div class="form_txt">
             <label for="title">제목</label>
             <input type="text" name="title" id="title" value="<?php echo $title ?>">
     <br>
     <br>
             <label for="memo">내용</label>
-            <textarea name="memo" id="memo" cols="50" rows="10"><?php echo $memo ?></textarea>
+            <textarea class ="insert_memo"name="memo" id="memo" cols="50" rows="10"><?php echo $memo ?></textarea>
         </div>
     <br>
     <br>

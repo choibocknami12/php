@@ -26,7 +26,6 @@ table {
     margin: 0 auto;
     border-radius: 20px;
     background-color: rgba(80, 80, 80, 0.5);
-    
 }
 
 a {
@@ -85,12 +84,15 @@ section {
     background-color: rgba(80, 80, 80, 0.5);
     border-radius: 5px;
     font-size: 20px;
-    
+}
+
+.insert_btn2 {
+    left: 100px;
 }
 
 /* insert */
 
-textarea {
+.insert_memo {
     background-color: transparent;
     width: 500px;
     height: 500px;
@@ -110,7 +112,7 @@ textarea {
     text-align: center;
 }
 
-form {
+.insert_form {
     width: 50%;
     height: 600px;
     margin: 0 auto;
@@ -122,13 +124,134 @@ form {
 .form_btn>button, .form_btn>a {
     border: 0;
     outline: 0;
-    font-size: 30px;
+    font-size: 20px;
     display: inline-block;
-    line-height: 80px;
-    width: 100px;
-    height: 80px;
+    line-height: 70px;
+    width: 70px;
+    height: 70px;
     background-color: rgba(80, 80, 80, 0.5);
     border-radius: 5px;
 }
 
 /* detail */
+
+.detail_table {
+    font-size: 20px;
+    width: 60%;
+    height: 600px;
+}
+
+/* .detail_table>tr>th {
+    font-size: 40px;
+} */
+
+.detail_btn {
+    display: inline-block;
+    /* margin-top: 10px; */
+    line-height: 50px;
+    width: 50px;
+    height: 50px;
+    color: #fff;
+    background-color: rgba(80, 80, 80, 0.5);
+    border-radius: 5px;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* update */
+
+/* .update_div {
+    width: 50%;
+    height: 600px;
+    margin: 0 auto;
+    border-radius: 20px;
+    text-align: center;
+    background-color: rgba(80, 80, 80, 0.5)
+} */
+
+.update_form {
+    width: 50%;
+    height: 600px;
+    margin: 0 auto;
+    border-radius: 20px;
+    text-align: center;
+    /* background-color: rgba(80, 80, 80, 0.5) */
+}
+
+.update_table>tr>th {
+    width: 50px;
+}
+
+.update_table>tr>td {
+    width: 400px;
+}
+
+.update_input, .update_memo {
+    background-color: transparent;
+}
+
+.update_input {
+    width: 500px;
+    height: 10px;
+    font-size: 20px;
+}
+
+.update_memo {
+    margin-top: 10px;
+    width: 500px;
+    height: 200px;
+    font-size: 20px;
+}
+
+.update_btn {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.update_btn>button, .update_btn>a {
+    border: 0;
+    outline: 0;
+    font-size: 20px;
+    display: inline-block;
+    line-height: 70px;
+    width: 70px;
+    height: 70px;
+    background-color: rgba(80, 80, 80, 0.5);
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* delete */
+
+caption {
+    /* width: 100%; */
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 80px;
+    font-weight: bold;
+    border-radius: 20px;
+    background-color: rgba(80, 80, 80, 0.5);
+}
+
+.delet_table {
+    font-size: 20px;
+}
+
+.delet_div {
+    text-align: center;
+}
+
+.delet_form>button, .delet_form>a {
+    border: 0;
+    outline: 0;
+    margin-top: 10px;
+    font-size: 20px;
+    display: inline-block;
+    line-height: 70px;
+    width: 70px;
+    height: 70px;
+    background-color: rgba(80, 80, 80, 0.5);
+    border-radius: 5px;
+    text-align: center;
+}

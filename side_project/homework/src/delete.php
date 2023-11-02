@@ -69,8 +69,8 @@ try {
     if($http_method === "POST") {
         $conn->rollBack();
     }
-    //echo $e->getMessage(); // 에러메세지 출력
-    header("Location: error.php/?err_msg={$e->getMessage()}");
+    echo $e->getMessage(); // 에러메세지 출력
+    //header("Location: error.php/?err_msg={$e->getMessage()}");
     exit; // 처리종료
     
 } finally {
@@ -90,7 +90,7 @@ try {
     <title>delete_page</title>
 </head>
 <body>
-    <table>
+    <table class="delet_table">
         <caption>
             <p>정말 삭제하시겠습니까?</p>
         </caption>
@@ -111,8 +111,8 @@ try {
             <td>><?php echo $item["memo"] ?></td>
         </tr>
     </table>
-    <div>
-        <form action="/homework/src/delete.php" method="post">
+    <div class="delet_div">
+        <form class="delet_form" action="/homework/src/delete.php" method="post">
             <input type="hidden" name="id" value="<?php echo $id; ?>">
             <button type="submit">동의</button>
             <a href="/homework/src/list.php/?id = <?php echo $id; ?>&page=<?php echo $page; ?>">취소</a>

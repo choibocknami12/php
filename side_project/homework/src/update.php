@@ -67,7 +67,7 @@ try {
         }
         $conn->commit();
 
-        //header("Location: detail.php/?id={$id}&page={$page}");
+        header("Location: detail.php/?id={$id}&page={$page}");
         exit;
         }
     }
@@ -117,6 +117,7 @@ try {
         <a href="/homework/src/list.php">BOARD</a>
     </div>
 
+    <div>
         <?php
             foreach($arr_err_msg as $val) {
         ?>
@@ -124,30 +125,35 @@ try {
         <?php            
             }
         ?>
-    <form action="/homework/src/update.php" method="post">
-        <table>
+    
+    <form class="update_form text_ailgn" action="/homework/src/update.php" method="post">
+        <table class="update_table">
+        <!-- <div class="update_div">     -->
             <input type="hidden" name="id" value="<?php echo $id ?>">
             <input type="hidden" name="page" value="<?php echo $page ?>">
-
+         
             <tr>
                 <th>글번호</th>
                 <td><?php echo $item["id"]; ?></td>
             </tr>
             <tr>
                 <th>제목</th>
-                <td><input type="text" name="title" value="<?php echo $item["title"] ?>"></td>
+                <td><input class="update_input" type="text" name="title" value="<?php echo $item["title"] ?>"></td>
             </tr>
             <tr>
                 <th>내용</th>
-                <td><textarea name="memo" id="memo" cols="30" rows="10"><?php echo $item["memo"]?></textarea></td>
+                <td><textarea class="update_memo" name="memo" id="memo" cols="70" rows="10"><?php echo $item["memo"]?></textarea></td>
             </tr>
-
+        <!-- </div> -->
         </table>
-    </form>
-        <div>
+    
+        <div class="update_btn">
             <button type="submit">수정</button>
             <a href="/homework/src/list.php/?page=<?php echo $id; ?>&page=<?php echo $page; ?>">취소</a>
         </div>
+    </form>
     
+    </div>
+
 </body>
 </html>

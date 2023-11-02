@@ -45,8 +45,8 @@ function db_destroy_conn(&$conn) {
 }
 
 //------------------------------------------
-// 함수명   : db_select_boards_paging
-// 기능     : boards pasging 조회
+// 함수명   : db_select_boards_cnt
+// 기능     : boards 게시글 수 조회
 // 파라미터 : PDO  &$conn
 // 리턴     : Int / false
 // -----------------------------------------

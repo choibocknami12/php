@@ -71,7 +71,7 @@ $item = $result[0];
         <a href="/homework/src/list.php">BOARD</a>
     </div>
     
-    <table>
+    <table class="detail_table">
         <tr>
             <th>글번호</th>
             <td><?php echo $item["id"]; ?></td>
@@ -89,10 +89,10 @@ $item = $result[0];
             <td><?php echo $item["create_date"]; ?></td>
         </tr>
     </table>
-    <div>
-        <a href="/homework/src/list.php/?id=<?php echo $id; ?>&page=<?php echo $page; ?>">이전</a>
-        <a href="/homework/src/update.php/?id=<?php echo $id; ?>&page=<?php echo $page; ?>">수정</a>
-        <a href="/homework/src/delete.php/?id=<?php echo $id; ?>&page=<?php echo $page; ?>">삭제</a>
+    <div class="text_align">
+        <a class="detail_btn" href="/homework/src/list.php/?id=<?php echo $id; ?>&page=<?php echo $page; ?>">이전</a>
+        <a class="detail_btn" href="/homework/src/update.php/?id=<?php echo $id; ?>&page=<?php echo $page; ?>">수정</a>
+        <a class="detail_btn" href="/homework/src/delete.php/?id=<?php echo $id; ?>&page=<?php echo $page; ?>">삭제</a>
     </div>
 </body>
 </html>

@@ -4,8 +4,9 @@ require_once(ROOT."/lib/db_lib.php");
 
 $conn = null;
 
-$list_cnt = 5;
-$page_num = 1; 
+$total_page = 5; // 한블럭당 나타나는 페이지 수?
+$list_cnt = 5; // 한 페이지의 게시글 최대 표시 수
+$page_num = 1; // 페이지 번호 초기화
 
 try {
     if(!my_conn($conn)) {
@@ -17,7 +18,8 @@ try {
         throw new Exception("DB Error : SELECT Count");
     }
 
-    $max_page_num = ceil($boards_cnt / $list_cnt); //최대 페이지 수
+    $max_page_num = ceil($boards_cnt / $list_cnt); // 최대 페이지 수 : 올림하는 이유는 데이터수에 따라 페이지는 생겨나야하기때문.
+    
 
     if(isset($_GET["page"])) {
         $page_num = $_GET["page"]; // 유저가 보내온 페이지 셋팅
@@ -36,7 +38,14 @@ try {
     $next_page_num = $page_num + 1;
     if($next_page_num > $max_page_num) {
         $next_page_num = $max_page_num;
-    }
+    } 
+
+    // 1 = 5 / 5
+    $total_block = ceil($page_num / $total_page); // 한블럭당 5페이지/ 나타나는 페이지번호?
+    if($max_page_num > $total_page) {
+        $total_block = 1;
+    } 
+
 
     // DB조회시 사용할 데이터 배열
     $arr_param = [
@@ -125,10 +134,13 @@ db_destroy_conn($conn);
             <?php    
                 }
             ?>
-            <a class="page_btn" href="/homework/src/list.php/?page=<?php echo $next_page_num ?>">다음</a>
+            
+            <a class="page_btn" href="/homework/src/list.php/?page=<?php echo $next_page_num ?>">
+            <?php if($i === $total_block)?>다음<?php ?></a>
         </section>
     </div>
+    <div class="insert_btn2">
         <a href="/homework/src/insert.php" class="text_align insert_btn">작성하기</a>
-    
+    </div>
 </body>
 </html>
