@@ -3,38 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="/view/css/common.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>free_board</title>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand text-light" href="#">미니보드</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  
-                    <li class="nav-item dropdown ">
-                        <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown " role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            게시판
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="./free.html">자유게시판</a></li>
-                        <li><a class="dropdown-item" href="./question.html">질문게시판</a></li>
-                        </ul>
-                    </li>
-
-                </ul>
-                    <a href="./login.html" class="nav-link text-light" role="button">로그아웃</a>
-            </div>
-            
-            </div>
-        </nav>
-    </header>
+    <?php require_once("view/inc/header.php"); ?>
 
         <div class="text-center mt-5 mb-5">
             <h1>자유게시판</h1>
@@ -59,7 +33,7 @@
     
     <main>
         <div class="card">
-            <img src="./img/cat.jpg" class="card-img-top" alt="...">
+            <img src="/view/img/cat.jpg" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">고냥이는 귀여워</h5>
                     <p class="card-text">이 세상 모든 털동물들이 행복하길</p>
@@ -67,7 +41,7 @@
             </div>
         </div>
         <div class="card">
-            <img src="./img/cat.jpg" class="card-img-top" alt="...">
+            <img src="/view/img/cat.jpg" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">고냥이는 귀여워</h5>
                     <p class="card-text">이 세상 모든 털동물들이 행복하길</p>
@@ -75,7 +49,7 @@
             </div>
         </div>
         <div class="card">
-            <img src="./img/cat.jpg" class="card-img-top" alt="...">
+            <img src="/view/img/cat.jpg" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">고냥이는 귀여워</h5>
                     <p class="card-text">이 세상 모든 털동물들이 행복하길</p>
@@ -83,7 +57,7 @@
             </div>
         </div>
         <div class="card">
-            <img src="./img/cat.jpg" class="card-img-top" alt="...">
+            <img src="/view/img/cat.jpg" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">고냥이는 귀여워</h5>
                     <p class="card-text">이 세상 모든 털동물들이 행복하길</p>
@@ -91,7 +65,7 @@
             </div>
         </div>
         <div class="card">
-            <img src="./img/cat.jpg" class="card-img-top" alt="...">
+            <img src="/view/img/cat.jpg" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">고냥이는 귀여워</h5>
                     <p class="card-text">이 세상 모든 털동물들이 행복하길</p>
@@ -116,7 +90,7 @@
                 <p>내 만두그라탕노ㅏ두고옴..</p>
                 <br>
                 <br>
-                <img src="./img/cat.jpg" class="card-img-top">
+                <img src="/view/img/cat.jpg" class="card-img-top">
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
@@ -154,6 +128,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="../bootstrap/js/common.js"></script>
+    <script src="/view/js/common.js"></script>
 </body>
 </html>
