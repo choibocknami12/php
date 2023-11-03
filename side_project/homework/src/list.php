@@ -42,6 +42,11 @@ try {
 
     // 1 = 5 / 5
     $total_block = ceil($page_num / $total_page); // 한블럭당 5페이지/ 나타나는 페이지번호?
+    
+    $start_block = ($total_block - 1) * $total_page +1;
+
+    $end_block = $start_block + $total_page - 1;
+
     if($max_page_num > $total_page) {
         $total_block = 1;
     } 

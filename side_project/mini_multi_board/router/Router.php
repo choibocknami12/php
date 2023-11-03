@@ -26,12 +26,12 @@ class Router {
         if($url === "user/login") {
             if($method === "GET") {
                 // 해당 컨트롤러 호출
-                new UserController("loginGet"); // 해당클래스의 컨스트럭트를 실행한다.소괄호가 그런의미.
+                new UserController("loginGet"); // 해당클래스의 컨스트럭트(constuct)를 실행한다.소괄호가 그런의미.
             } else {
                 // 해당 컨트롤러 호출
-                new UserController("loginPost");
+                new UserController("loginPost"); //
             }
-        } else if($url === "user/login") {
+        } else if($url === "user/logout") {
             if($method === "GET") {
                 // 해당 컨트롤러 호출
                 new UserController("logoutGet");

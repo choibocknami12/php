@@ -11,4 +11,6 @@ require_once("autoload.php"); // 오토로트 파일 불러오기
 
 //echo _EXTENSTION_PHP;
 // 라우터 호출
-new router\Router(); //경로? 주소?
+new router\Router(); // 라우터의 컨스트럭트를 실행한다.
+// 이 라우터가 실행되는 이유는 autoload를 생성해놓아서.
+// 오토로드의 기능 자체가 자동으로 require_once를 실행해줌.

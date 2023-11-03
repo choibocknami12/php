@@ -1,0 +1,42 @@
+CREATE DATABASE mini_multi_board;
+USE mini_multi_board;
+
+CREATE TABLE USER(
+	id INT PRIMARY KEY AUTO_INCREMENT 
+	,u_id VARCHAR(20) NOT NULL 
+	,u_pw VARCHAR(256) NOT NULL 
+	,u_name VARCHAR(50) NOT NULL 
+	,created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP() 
+	,updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP()
+	,deleted_at DATETIME 
+);
+
+-- CREATE TABLE board(
+-- 	board_no INT PRIMARY KEY AUTO_INCREMENT
+-- 	,id INT // user table의 id이름과 같이 사용해도됨.
+-- 	,board_name VARCHAR(20) NOT NULL char(고정)가 속도가 제일 빠름.
+-- 	,board_title VARCHAR(100) NOT NULL
+-- 	,board_con VARCHAR(1000) NOT NULL
+-- 	,board_img DEFAULT NULL
+-- 	,created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP() 
+-- 	,updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP()
+-- 	,deleted_at DATETIME 
+-- );
+
+CREATE TABLE board(
+	id INT PRIMARY KEY AUTO_INCREMENT
+	,u_pk INT NOT NULL  
+	,b_type CHAR(1) NOT NULL 
+	,b_title VARCHAR(30) NOT NULL
+	,b_content VARCHAR(1000) NOT NULL
+	,b_img VARCHAR(50)
+	,created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP() 
+	,updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP()
+	,deleted_at DATETIME 
+);
+
+CREATE TABLE boardname(
+	id INT PRIMARY KEY AUTO_INCREMENT 
+	,b_type CHAR(1) NOT NULL 
+	,b_name VARCHAR(15) NOT NULL
+);
