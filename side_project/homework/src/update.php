@@ -1,5 +1,5 @@
 <?php
-define("ROOT", $_SERVER["DOCUMENT_ROOT"]."/homework/src");
+define("ROOT", $_SERVER["DOCUMENT_ROOT"]);
 define("ERROR_MSG_PARAM", "%s : 필수 입력 사항입니다.");
 require_once(ROOT."/lib/db_lib.php");
 
@@ -107,14 +107,14 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/homework/src/css/common.css">
+    <link rel="stylesheet" href="/css/common.css">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300" rel="stylesheet">
     <title>update_page</title>
 </head>
 <body>
 
     <div class="head text_align">
-        <a href="/homework/src/list.php">BOARD</a>
+        <a href="/list.php">BOARD</a>
     </div>
 
     <div>
@@ -126,7 +126,7 @@ try {
             }
         ?>
     
-    <form class="update_form text_ailgn" action="/homework/src/update.php" method="post">
+    <form class="update_form text_ailgn" action="/update.php" method="post">
         <table class="update_table">
         <!-- <div class="update_div">     -->
             <input type="hidden" name="id" value="<?php echo $id ?>">
@@ -149,7 +149,7 @@ try {
     
         <div class="update_btn">
             <button type="submit">수정</button>
-            <a href="/homework/src/list.php/?page=<?php echo $id; ?>&page=<?php echo $page; ?>">취소</a>
+            <a href="/list.php/?page=<?php echo $id; ?>&page=<?php echo $page; ?>">취소</a>
         </div>
     </form>
     

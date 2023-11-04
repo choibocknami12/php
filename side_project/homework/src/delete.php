@@ -1,5 +1,5 @@
 <?php
-define("ROOT", $_SERVER["DOCUMENT_ROOT"]."/homework/src");
+define("ROOT", $_SERVER["DOCUMENT_ROOT"]."");
 require_once(ROOT."/lib/db_lib.php");
 
 try {
@@ -86,7 +86,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/homework/src/css/common.css">
+    <link rel="stylesheet" href="/css/common.css">
     <title>delete_page</title>
 </head>
 <body>
@@ -112,10 +112,10 @@ try {
         </tr>
     </table>
     <div class="delet_div">
-        <form class="delet_form" action="/homework/src/delete.php" method="post">
+        <form class="delet_form" action="/delete.php" method="post">
             <input type="hidden" name="id" value="<?php echo $id; ?>">
             <button type="submit">동의</button>
-            <a href="/homework/src/list.php/?id = <?php echo $id; ?>&page=<?php echo $page; ?>">취소</a>
+            <a href="/list.php/?id = <?php echo $id; ?>&page=<?php echo $page; ?>">취소</a>
         </form>
     </div>
 </body>

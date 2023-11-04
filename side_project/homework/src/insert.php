@@ -1,5 +1,5 @@
 <?php
-define("ROOT", $_SERVER["DOCUMENT_ROOT"]."/homework/src");
+define("ROOT", $_SERVER["DOCUMENT_ROOT"]);
 define("ERROR_MSG_PARAM", "%s : 필수 입력 사항입니다.");
 require_once(ROOT."/lib/db_lib.php");
 
@@ -56,13 +56,13 @@ if($http_method === "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/homework/src/css/common.css">
+    <link rel="stylesheet" href="/css/common.css">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300" rel="stylesheet">
     <title>insert_page</title>
 </head>
 <body>
     <div class="head text_align">
-        <a href="/homework/src/list.php">BOARD</a>
+        <a href="/list.php">BOARD</a>
     </div>
     
     <div>
@@ -74,7 +74,7 @@ if($http_method === "POST") {
             }
         ?>
     
-    <form class="insert_form" action="/homework/src/insert.php" method="post">
+    <form class="insert_form" action="/insert.php" method="post">
         <div class="form_txt">
             <label for="title">제목</label>
             <input type="text" name="title" id="title" value="<?php echo $title ?>">
@@ -88,7 +88,7 @@ if($http_method === "POST") {
     
         <div class="form_btn">
             <button type="submit">작성</button>
-            <a href="/homework/src/list.php">취소</a>
+            <a href="/list.php">취소</a>
         </div>
     </form>
 

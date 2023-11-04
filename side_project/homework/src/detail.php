@@ -1,6 +1,6 @@
 <?php
-//localhost/homework/src/list.php
-define("ROOT", $_SERVER["DOCUMENT_ROOT"]."/homework/src");
+//localhost/list.php
+define("ROOT", $_SERVER["DOCUMENT_ROOT"]."");
 require_once(ROOT."/lib/db_lib.php");
 
 $id = "";
@@ -61,14 +61,14 @@ $item = $result[0];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/homework/src/css/common.css">
+    <link rel="stylesheet" href="/css/common.css">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300" rel="stylesheet">
     <title>detail_page</title>
 </head>
 <body>
 
     <div class="head text_align">
-        <a href="/homework/src/list.php">BOARD</a>
+        <a href="/list.php">BOARD</a>
     </div>
     
     <table class="detail_table">
@@ -90,9 +90,9 @@ $item = $result[0];
         </tr>
     </table>
     <div class="text_align">
-        <a class="detail_btn" href="/homework/src/list.php/?id=<?php echo $id; ?>&page=<?php echo $page; ?>">이전</a>
-        <a class="detail_btn" href="/homework/src/update.php/?id=<?php echo $id; ?>&page=<?php echo $page; ?>">수정</a>
-        <a class="detail_btn" href="/homework/src/delete.php/?id=<?php echo $id; ?>&page=<?php echo $page; ?>">삭제</a>
+        <a class="detail_btn" href="/list.php/?id=<?php echo $id; ?>&page=<?php echo $page; ?>">이전</a>
+        <a class="detail_btn" href="/update.php/?id=<?php echo $id; ?>&page=<?php echo $page; ?>">수정</a>
+        <a class="detail_btn" href="/delete.php/?id=<?php echo $id; ?>&page=<?php echo $page; ?>">삭제</a>
     </div>
 </body>
 </html>

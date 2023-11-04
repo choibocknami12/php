@@ -1,5 +1,5 @@
 <?php
-define("ROOT", $_SERVER["DOCUMENT_ROOT"]."/homework/src");
+define("ROOT", $_SERVER["DOCUMENT_ROOT"]);
 require_once(ROOT."/lib/db_lib.php");
 
 $conn = null;
@@ -40,15 +40,15 @@ try {
         $next_page_num = $max_page_num;
     } 
 
-    // 1 = 5 / 5
+    // 3block = 5(페이지 수) / 15(총 페이지 수)
     $total_block = ceil($page_num / $total_page); // 한블럭당 5페이지/ 나타나는 페이지번호?
     
-    $start_block = ($total_block - 1) * $total_page +1;
+    $start_block = ($total_block - 1) * $total_page + 1; // 시작블럭 = (총 필요한 블럭수-1) * 총 페이지수 + 1 
 
-    $end_block = $start_block + $total_page - 1;
+    $end_block = $start_block + $total_page - 1; // 마지막블럭 = 시작블럭 + 총페이지 수 - 1 // 
 
-    if($max_page_num > $total_page) {
-        $total_block = 1;
+    if( $end_block > $max_page_num) {
+        $end_block = $max_page_num;
     } 
 
 
@@ -89,14 +89,18 @@ db_destroy_conn($conn);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/homework/src/css/common.css">
+    <link rel="stylesheet" href="/css/common.css">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300" rel="stylesheet">
     <title>list_page</title>
 </head>
 <body>
-    
+
     <div class="head text_align">
-        <a href="/homework/src/list.php">BOARD</a>
+        <a href="/list.php">BOARD</a>
+    </div>
+
+    <div class="timeDiv">
+        
     </div>
 
     <div class="main">
@@ -117,7 +121,7 @@ db_destroy_conn($conn);
             <tr class="main_txt">
                 <td><?php echo $item["id"]; ?></td>
                 <td>
-                    <a href="/homework/src/detail.php/?id=<?php echo $item["id"]; ?>&page=<?php echo $page_num; ?>">
+                    <a href="/detail.php/?id=<?php echo $item["id"]; ?>&page=<?php echo $page_num; ?>">
                         <?php echo $item["title"]; ?>
                     </a>
                 </td>
@@ -129,23 +133,35 @@ db_destroy_conn($conn);
 
     <div class="btn text_align">
         <section>
-            <a class="page_btn" href="/homework/src/list.php/?page=<?php echo $prev_page_num ?>">이전</a>
+            <a class="page_btn" href="/list.php/?page=<?php echo $prev_page_num ?>">이전</a>
             <?php
-                for($i = 1; $i <= $max_page_num; $i++) {
-                    //삼항 연산자 : 조건 ? 참일때처리 : 거짓일때처리
-                    $str = (int)$page_num === $i ? "bk-a" : "";
+                // for($i = 1; $i <= $max_page_num; $i++) {
+                //     //삼항 연산자 : 조건 ? 참일때처리 : 거짓일때처리
+                //     $str = (int)$page_num === $i ? "bk-a" : "";
+                for($page_i = $start_block; $page_i <= $end_block; $page_i++) {
+                    if($page_i == $page_num) {
             ?>
-            <a class="page_btn <?php echo $str ?>" href="/homework/src/list.php/?page=<?php echo $i; ?>"><?php echo $i; ?></a>
+                    <a class="page_btn " href="/list.php/?page=<?php echo $page_i; ?>"><?php echo $page_i; ?></a>
+            
+            <?php } else { ?>
+
+                    <a class="page_btn " href="/list.php/?page=<?php echo $page_i; ?>"><?php echo $page_i; ?></a>    
+
             <?php    
+                    }
                 }
             ?>
             
-            <a class="page_btn" href="/homework/src/list.php/?page=<?php echo $next_page_num ?>">
-            <?php if($i === $total_block)?>다음<?php ?></a>
+            <a class="page_btn" href="/list.php/?page=<?php echo $next_page_num ?>">다음</a>
         </section>
     </div>
     <div class="insert_btn2">
-        <a href="/homework/src/insert.php" class="text_align insert_btn">작성하기</a>
+        <a href="/insert.php" class="text_align insert_btn">작성하기</a>
     </div>
+
+    
+    
+    <script src="/time.js"></script>
+    
 </body>
 </html>
