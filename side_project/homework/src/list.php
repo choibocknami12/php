@@ -143,12 +143,12 @@ db_destroy_conn($conn);
             ?>
                     <a class="page_btn " href="/list.php/?page=<?php echo $page_i; ?>"><?php echo $page_i; ?></a>
             
-            <?php } else { ?>
+            <?php } //else { ?>
 
-                    <a class="page_btn " href="/list.php/?page=<?php echo $page_i; ?>"><?php echo $page_i; ?></a>    
+                    <!-- <a class="page_btn " href="/list.php/?page=<?php echo $page_i; ?>"><?php echo $page_i; ?></a>     -->
 
             <?php    
-                    }
+                //    }
                 }
             ?>
             

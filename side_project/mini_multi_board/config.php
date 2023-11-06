@@ -2,6 +2,7 @@
 // 단순 설정파일. 자주사용하는 이름을?상수 선언으로 미리 설정해둔것임
 // 경로
 define("_ROOT", $_SERVER["DOCUMENT_ROOT"]."/");
+define("_PATH_USERIMG", "view/userImg/");
 
 
 // DB관련

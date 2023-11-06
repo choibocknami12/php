@@ -17,6 +17,7 @@ class Router {
         //      board/[해당기능]
         //      ex) 리스트 : 호스트/board/list
         //      ex) 수정 : 호스트/board/edit
+        //      ex) 작성 : 호스트/board/edit
 
         //print_r($_GET);
         $url = $_GET["url"]; // 접속 URL 획득
@@ -46,8 +47,22 @@ class Router {
             if($method === "GET") {
                 new BoardController("listGet");
             }
+        } else if($url === "board/add") {
+            if($method === "GET") {
+                // 처리없음
+            } else {
+                new BoardController("addPost");
+            }
         }
         
+        // $url = $_POST["url"];
+        // // $method = $_SERVER["REQUEST_METHOD"];
+        
+        // if($url === "board/edit") {
+        //     if($method === "POST") {
+        //         new BoardController("editPost");
+        //     }
+        // }
         
         // 없는 경로일 경우
         echo "이상한 url : ".$url;
