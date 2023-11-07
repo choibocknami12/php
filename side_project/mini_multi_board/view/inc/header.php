@@ -3,7 +3,7 @@
             <div class="container-fluid">
                 <a class="navbar-brand text-light" href="#">미니보드</a>
                 
-                <?php if($this->controllerChkUrl !== "user/login") { ?>
+                <?php if($this->controllerChkUrl !== "user/login" && $this->controllerChkUrl !== "user/regist") { ?>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
