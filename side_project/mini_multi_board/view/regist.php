@@ -32,7 +32,6 @@
                 <span id="u_id_chk_mt" style='color:red;'>ID 중복 확인해주세요.</span>
                 <input type="button" id="u_id_chk" value="ID 중복 확인" onclick="userIdChk();"> -->
                 
-                
             </div>
             <div class="mb-3">
                 <label for="u_pw" class="form-label">비밀번호</label>
