@@ -58,6 +58,10 @@ class Router {
             if($method === "GET") {
                 new BoardController("detailGet");
             }
+        } else if($url === "user/idchk") {
+            if($method === "GET") {
+                new UserController("userIdChk");
+            }
         }
         
         // $url = $_POST["url"];

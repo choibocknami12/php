@@ -57,3 +57,40 @@ function closeDetailModal() {
     MODAL.classList.remove('show');
     MODAL.style = 'display: none;';
 }
+
+// regist.php에서 onclick을 주었기에 함수로 간단하게 사용하기 위해 만듬?
+function userIdChk() {
+    const SPAN = document.querySelector('#id_chk_span');
+    SPAN.innerHTML = "";
+    const IDCHK = document.querySelector('#u_id').value;
+    const URL = '/user/idchk?u_id='+IDCHK; // get으로 보낼경우 이렇게!
+    
+    fetch(URL)
+    .then( response => response.json() )
+    .then( data => {
+        if(data.data.cnt === 0) {
+            SPAN.innerHTML = "사용가능한 아이디 입니다.";
+            SPAN.classList = 'text-success';
+        } else {
+            SPAN.innerHTML = "이미 존재하는 아이디 입니다.";
+            SPAN.classList = 'text-danger';
+        }
+    })
+    .catch( error => console.log(error) );
+}    
+
+// function idChkBtn() {
+//     const IDCHK = document.querySelector('#u_id_chk');
+//     IDCHK.addEventListener('click', idChkBtn);
+// }
+
+// const IDCHK = document.querySelector('#u_id_chk');
+
+// id 중복 체크(post)
+//function idChk() {
+//      const INPUT_ID = document.getElementById('u_id')   ;
+//      const URL = '/user/idchk';
+//
+//      const formData = new FormData();
+//      FormData.append("u_id", INPUT_ID)
+// }

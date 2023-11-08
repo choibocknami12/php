@@ -62,4 +62,30 @@ class UserModel extends ParentsModel {
             }
         
     }
+
+    // 유저 아이디 중복확인
+    public function userChkInfo($u_id) {
+        $sql = 
+            " SELECT "
+            ." count(u_id) as cnt "
+            ." FROM user "
+            ." WHERE "
+            ." u_id = :u_id ";
+
+        $prepare = [
+            ":u_id" => $u_id
+        ];
+
+        try {
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute($prepare);
+            $result = $stmt->fetchAll();
+            
+            return $result;
+
+        } catch(Exception $e) {
+            echo "UserModel->userChkInfo Error : ".$e->getMessage();
+            exit();
+        }
+    }
 }

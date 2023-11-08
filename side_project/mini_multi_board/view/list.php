@@ -84,6 +84,7 @@
             </div>
 
             <div class="modal-footer">
+                <button type="button" onclick="closeDetailModal(); return false;" class="btn btn-secondary" data-bs-dismiss="modal">삭제</button>
                 <button type="button" onclick="closeDetailModal(); return false;" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
             </div>
           </div>
