@@ -110,10 +110,10 @@ function closeDetailModal() {
     MODAL.style = 'display: none;';
 }
 
-// regist.php에서 onclick을 주었기에 함수로 간단하게 사용하기 위해 만듬?
+// id 중복체크 // regist.php에서 onclick을 주었기에 함수로 간단하게 사용하기 위해 만듬?
 function userIdChk() {
     const SPAN = document.querySelector('#id_chk_span');
-    SPAN.innerHTML = "";
+    SPAN.innerHTML = ""; // 기존에 있을지도 모르는 메세지 비우는 처리
     const IDCHK = document.querySelector('#u_id').value;
     const URL = '/user/idchk?u_id='+IDCHK; // get으로 보낼경우 이렇게!
     
