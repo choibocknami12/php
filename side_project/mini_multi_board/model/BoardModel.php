@@ -83,7 +83,7 @@ class BoardModel extends ParentsModel {
     public function getBoardDetail($arrBoardDetailInfo) {
         $sql =
             " SELECT "
-            ." id, u_pk, b_title, b_img, b_content, created_at, updated_at "
+            ." id, u_pk, b_type, b_title, b_img, b_content, created_at, updated_at "
             ." FROM board "
             ." WHERE "
             ." id = :id "
@@ -107,5 +107,61 @@ class BoardModel extends ParentsModel {
 
     }
     
+    // delete
+
+    // public function boardDelete($id) {
+    //     $sql =
+    //         " UPDATE "
+    //         ." board "
+    //         ." SET "
+    //         ." deleted_at = now() "
+    //         ." WHERE "
+    //         ." id = :id "
+    //         ;
+    //     $prepare = [
+    //         ":id" => $id
+    //     ];
+        
+    //     try {
+    //         //쿼리 실행
+    //         $stmt = $this->conn->prepare($sql);
+    //         $result = $stmt->execute($prepare);
+        
+    //         return $result;
+    //     } catch(Exception $e) {
+    //         echo $e->getMessage();
+    //         return false;
+    //     }
+    // }
+
+    // 삭제 처리
+    public function removeBoardCard($arrDeleteBoardInfo) {
+        $sql =
+            " UPDATE board"
+            ." SET "
+            ." deleted_at = NOW() "
+            ." WHERE "
+            ." id = :id "
+            ." AND u_pk = :u_pk "
+            ;
+
+         $prepare = [
+            ":id" => $arrDeleteBoardInfo["id"]
+            ,":u_pk" => $arrDeleteBoardInfo["u_pk"]
+        ];
+
+        try {
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute($prepare);
+            $result = $stmt->rowCount(); // 쿼리에 영향을 받은 레코드 수를 반환
+
+            return $result;
+        } catch(Exception $e) {
+            echo "BoardModel->removeBoardCard Error".$e->getMessage();
+            exit();
+        }
+
+
+    }
 
 }

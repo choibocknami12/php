@@ -36,12 +36,12 @@
         <?php
             foreach($this->arrBoardInfo as $item) {
         ?>
-            <div class="card">
+            <div class="card" id="card<?php echo $item["id"]; ?>">
                 <img src="<?php echo isset($item["b_img"]) ? "/"._PATH_USERIMG.$item["b_img"] : ""; ?>" class="card-img-top" alt="이미지 없음">
                 <div class="card-body">
                     <h5 class="card-title"><?php echo $item["b_title"] ?></h5>
                     <p class="card-text"><?php echo mb_substr($item["b_content"], 0, 10)."..."; ?></p>
-
+                    
                     <!-- <button 
                         class="btn btn-primary" 
                         data-bs-toggle="modal" 
@@ -83,10 +83,25 @@
                 <img id="b_img" src="" class="card-img-top">
             </div>
 
+            <!-- 만든것 -->
+            <!-- <div class="modal-footer">
+                <form action="/board/delete" method="POST">
+                    <input type="hidden" name="id" id="deletId">
+                    <input type="hidden" name="b_type" id="deletb_type">
+                    <button id="del-btn" type="submit" style="" class="btn btn-secondary " data-bs-dismiss="modal">삭제</button>
+                    <button type="button" onclick="closeDetailModal(); return false;" class="btn btn-secondary " data-bs-dismiss="modal">닫기</button>
+                </form>
+            </div> -->
+
+            <!-- 샘이 만든거 -->
             <div class="modal-footer">
-                <button type="button" onclick="closeDetailModal(); return false;" class="btn btn-secondary" data-bs-dismiss="modal">삭제</button>
-                <button type="button" onclick="closeDetailModal(); return false;" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+                <!-- 값을 받아올 곳을 찾아야함. input, span모두 가능함. -->
+                <input type="hidden" id="del_id" value="">
+                <button type="button" id="del_btn" class="btn btn-secondary me-auto p-2 bd-highlight" onclick="deleteCard(); return false;">삭제</button>
+                <button type="button" onclick="closeDetailModal(); return false;" class="btn btn-secondary " data-bs-dismiss="modal">닫기</button>
+                
             </div>
+
           </div>
         </div>
     </div>

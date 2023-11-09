@@ -94,15 +94,19 @@ class BoardController extends ParentsController {
 
         $boardModel = new BoardModel();
         $result = $boardModel->getBoardDetail($arrBoardDetailInfo);
-        
+        //$flg = ($result[0]["u_pk"] === $_SESSION["u_pk"])? "1" : "0";
         // 이미지 패스 재설정
         $result[0]["b_img"] = "/"._PATH_USERIMG.$result[0]["b_img"];
         
+        // 작성 유저 플래그 설정
+        $result[0]["uflg"] = $result[0]["u_pk"] === $_SESSION["u_pk"] ? "1" : "0";
+
         // 레스폰스 데이터 작성
         $arrTmp = [
             "errflg" => "0"
             ,"msg" => ""
             ,"data" => $result[0]
+            //,"flg" => $flg
         ];
         $response = json_encode($arrTmp);
 
@@ -111,5 +115,68 @@ class BoardController extends ParentsController {
         echo $response;
         exit();
     }
+
+    //삭제처리 API
+    protected function removeGet() {
+        $errFlg = "0";
+        $errMsg = "";
+        $arrDeleteBoardInfo = [
+            "id" => $_GET["id"]
+            ,"u_pk" => $_SESSION["u_pk"]
+        ];
+
+        $boardModel = new BoardModel();
+        $boardModel->beginTransaction();
+        $result = $boardModel->removeBoardCard($arrDeleteBoardInfo);
+        if($result !== 1) {
+            $errFlg = "1";
+            $errMsg = "삭제 처리 이상";
+            $boardModel->rollBack();
+        } else {
+            $boardModel->commit();
+        }
+        $boardModel->destroy();
+        
+        // 레스폰스 데이터 작성
+        $arrTmp = [
+            "errflg" => $errFlg
+            ,"msg" => $errMsg
+            ,"id" => $arrDeleteBoardInfo["id"]
+            
+        ];
+        $response = json_encode($arrTmp);
+
+        // response 처리
+        header('Content-type: application/json'); // 데이터 타입이 json인것을 알려주는것.
+        echo $response;
+        exit();
+    }
+
+    
+
+    // 삭제 (내꺼)
+
+    // protected function deletePost() {
+        
+    //     $id = $_POST["id"];
+    //     $b_type = $_POST["b_type"];
+    //     // var_dump($_POST);
+    //     // exit();
+
+    //     $boardModel = new BoardModel();
+    //     $boardModel->beginTransaction();
+    //     $result = $boardModel->boardDelete($id);
+        
+    //     if($result !== true) {
+    //         $boardModel->rollBack();
+    //     } else {
+    //         $boardModel->commit();
+    //     }
+
+    //     $boardModel->destroy();
+        
+    //     return "Location: /board/list?b_type=".$b_type;
+
+    // }
 
 }

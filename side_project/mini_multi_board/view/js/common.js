@@ -29,16 +29,68 @@ function openDetail(id) {
         const IMG = document.querySelector('#b_img');
         const CREATENOW = document.querySelector('#created_at');
         const UPDATENOW = document.querySelector('#updated_at');
+        // 만든것
+        // const DELID = document.querySelector('#deletId');
+        // const DELBTYPE = document.querySelector('#deletb_type');
+        // const DELBTN = document.querySelector('#del-btn');
+
+        // 샘이 만든거
+        const DEL_INPUT = document.querySelector('#del_id');
+
 
         TITLE.innerHTML = data.data.b_title;
         CONTENT.innerHTML = data.data.b_content;
         IMG.setAttribute('src', data.data.b_img);
         CREATENOW.innerHTML = data.data.created_at;
         UPDATENOW.innerHTML = data.data.updated_at;
-        
+        const DEL_BTN = document.querySelector('#del_btn');
+
+        //만든거
+        // DELID.value = data.data.id;
+        // DELBTYPE.value = data.data.b_type;
+        //     if(data.flg === '1'){
+        //         DELBTN.style.display='inline-block';
+        //     }else{
+        //         DELBTN.style.display='none';
+        //     }
+
+        //샘이 만근거
+        DEL_INPUT.value = data.data.id;
+
+        // 삭제버튼 표시 처리
+        if(data.data.uflg === '1') {
+            DEL_BTN.classList.remove('d-none');
+        } else {
+            DEL_BTN.classList.add('d-none');
+        }
+
         // 모달 오픈
         openModal();
     } )
+    .catch( error => console.log(error) )
+}
+
+// 샘이 만든거
+function deleteCard() {
+    const B_PK = document.querySelector('#del_id').value;
+    const URL = '/board/remove?id=' + B_PK;
+
+    fetch(URL)
+    .then( response => response.json() )
+    .then( data => {
+        if(data.errflg === "0") {
+            //모달 닫기
+            closeDetailModal();
+
+            //카드 닫기
+            const MAIN = document.querySelector('main');
+            const CARD_NAME = '#card' + data.id;
+            const DEL_CARD = document.querySelector(CARD_NAME);
+            MAIN.removeChild(DEL_CARD);
+        } else {
+            alert(data.msg);
+        }
+    })
     .catch( error => console.log(error) )
 }
 
@@ -79,6 +131,13 @@ function userIdChk() {
     .catch( error => console.log(error) );
 }    
 
+
+
+
+
+// function boardDel() {
+//     const URL = '/board/delete?id='+id;
+// }
 // function idChkBtn() {
 //     const IDCHK = document.querySelector('#u_id_chk');
 //     IDCHK.addEventListener('click', idChkBtn);
