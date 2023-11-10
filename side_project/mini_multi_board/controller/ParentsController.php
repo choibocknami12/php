@@ -20,7 +20,7 @@ class ParentsController {
 
     public function __construct($action) {
         // 뷰관련 체크 접속 url 셋팅
-        $this -> controllerChkUrl = $_GET["url"];
+        $this -> controllerChkUrl = $_GET["url"]; // 정의한다 초기화한다?
 
         // 세션 시작
         if(!isset($_SESSION)) {

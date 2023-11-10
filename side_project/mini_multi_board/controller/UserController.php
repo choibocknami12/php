@@ -41,7 +41,7 @@ class UserController extends ParentsController {
         }
 
         // 세션에 u_id 저장
-        $_SESSION["u_pk"] = $reultUserInfo[0]["id"];
+        $_SESSION["u_pk"] = $reultUserInfo[0]["id"]; //세션이 시작되어 있기때문에 사용가능.
 
         return "Location: /board/list?b_type=0";
     }
