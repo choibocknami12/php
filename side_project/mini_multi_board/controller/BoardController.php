@@ -118,8 +118,10 @@ class BoardController extends ParentsController {
 
     //삭제처리 API
     protected function removeGet() {
+        //데이터 초기화 : 변수에 최초로 값을 넣는것을 뜻함.
         $errFlg = "0";
         $errMsg = "";
+
         $arrDeleteBoardInfo = [
             "id" => $_GET["id"]
             ,"u_pk" => $_SESSION["u_pk"]
@@ -144,11 +146,11 @@ class BoardController extends ParentsController {
             ,"id" => $arrDeleteBoardInfo["id"]
             
         ];
-        $response = json_encode($arrTmp);
+        $response = json_encode($arrTmp); // 제이슨 형태로 만들어서 보냄
 
         // response 처리
         header('Content-type: application/json'); // 데이터 타입이 json인것을 알려주는것.
-        echo $response;
+        echo $response; // 필요한 변수를 제이슨타입으로 
         exit();
     }
 
@@ -175,7 +177,7 @@ class BoardController extends ParentsController {
 
     //     $boardModel->destroy();
         
-    //     return "Location: /board/list?b_type=".$b_type;
+    //     return "Location: /board/list?b_type=".$b_type; // location을 사용하면 다시 프론트에서 백으로 요청을 보내서 더 느려짐.
 
     // }
 

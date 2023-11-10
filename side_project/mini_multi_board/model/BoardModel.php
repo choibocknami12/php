@@ -153,7 +153,7 @@ class BoardModel extends ParentsModel {
         try {
             $stmt = $this->conn->prepare($sql);
             $stmt->execute($prepare);
-            $result = $stmt->rowCount(); // 쿼리에 영향을 받은 레코드 수를 반환
+            $result = $stmt->rowCount(); // 쿼리에 영향을 받은 레코드 수를 반환(update,insert,delete를 사용했을 경우.)
 
             return $result;
         } catch(Exception $e) {

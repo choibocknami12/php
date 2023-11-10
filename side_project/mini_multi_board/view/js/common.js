@@ -55,7 +55,7 @@ function openDetail(id) {
         //     }
 
         //샘이 만근거
-        DEL_INPUT.value = data.data.id;
+        DEL_INPUT.value = data.data.id; //list.php 에 input태그의 value값을 빈문자열로 만들어서 아이디값을 넣어줌.
 
         // 삭제버튼 표시 처리
         if(data.data.uflg === '1') {
