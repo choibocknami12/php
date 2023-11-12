@@ -1,0 +1,26 @@
+main {
+    width: 95%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    padding-bottom: 70px;
+}
+
+/* #modal {
+    position: absolute; 
+    background-color: rgba(0, 0, 0, 0.5); 
+    width: 100vw; 
+    height: 100vh;
+    z-index: 10;
+}
+
+#modalw {
+    background-color: #fff; 
+    width: 500px; 
+    height: 500px;
+}
+
+.displayNone {
+    display: none;
+} */
