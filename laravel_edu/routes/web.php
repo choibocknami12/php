@@ -107,6 +107,7 @@ Route::get('/name/home/php504/user', function () {
 })->name('name.user'); //체이닝 기법
 
 
+
 // 컨트롤러
 // 커멘드로 컨트롤러 생성 : php artisan make:controller 컨트롤러명
 use App\Http\Controllers\TestController;
@@ -114,7 +115,34 @@ use App\Http\Controllers\TestController;
 Route::get('/test', [TestController::class, 'index'])->name('test.index');
 //          경로       불러올 클래스, 메서드 명             기능명, 액션명
 
+// 모든 액션 메소드를 자동으로 생성
 // php artisan make:controller 컨트롤러명 --resource
 use App\Http\Controllers\TaskController;
 Route::resource('/task', TaskController::class);
+//GET|HEAD        task .................... task.index › TaskController@index  
+//POST            task .................... task.store › TaskController@store  
+//GET|HEAD        task/create ............. task.create › TaskController@create  
+//GET|HEAD        task/{task} ............. task.show › TaskController@show  
+//PUT|PATCH       task/{task} ............. task.update › TaskController@update  
+//DELETE          task/{task} ............. task.destroy › TaskController@destroy  
+//GET|HEAD        task/{task}/edit ........ task.edit › TaskController@edit
 
+
+// 블레이드 템플릿 용
+Route::get('/child1', function() { //본인이 정해주는 url get으로 왔을 때 의미
+    $arr = [
+        'name' => '홍길동'
+        ,'age' => 130
+        ,'gender' => 'W'
+    ];
+    $arr2 = [];
+
+    return view('child1')
+            ->with('gender', '1') // 리턴값에 원하는 경로를 지정해줘야함.
+            ->with('data', $arr) 
+            ->with('data2', $arr2); 
+});
+
+Route::get('/child2', function() { 
+    return view('child2'); 
+});
