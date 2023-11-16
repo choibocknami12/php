@@ -17,7 +17,7 @@ const DIV1 = document.querySelector('#div1'); //접근하려는 요소(div)
 DIV1.addEventListener('mouseenter', dudu); //실행할 이벤트
 
 //2-2. 들킨 상태에서는 알러트가 안나옵니다.(젤 마지막)
-   
+
 //3. 2의 영역을 클릭하면 아래의 알러트를 출력하고 배경이 베이지색으로 바뀌어 나타납니다.
 //  들켰다
 
