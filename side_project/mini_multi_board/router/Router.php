@@ -1,13 +1,18 @@
 <?php
+// 클래스 간 이름 충돌 방지
 namespace router;
 
 // 사용할 컨트롤러들 지정
+// use : namespace에 속하는 클래스 참조가능
+// 자식 컨트롤러를 사용하는 이유 :
+// 1. 기본적으로 부모 컨트롤러를 상속받고 부모 컨트롤러에 실행할 처리 정의
+// 2. 자식 
 use controller\UserController;
 use controller\BoardController;
 
 // 라우터 : 유저의 요청을 분석(url의 path경로를 분석)해서 해당 controller로 연결해주는 클래스
 class Router {
-    public function __construct() {
+    public function __construct() {  // 부모컨트롤러 생성자 호출(P.C로 이동)
         // url 규칙
         // 1. 회원 정보 관련 url
         //      user/[해당기능]
@@ -24,6 +29,7 @@ class Router {
         //print_r($url);
         $method = $_SERVER["REQUEST_METHOD"]; // 메소드 획득
 
+        // if 조건문
         if($url === "user/login") {
             if($method === "GET") {
                 // 해당 컨트롤러 호출
