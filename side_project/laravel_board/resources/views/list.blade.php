@@ -3,6 +3,21 @@
 @section('title', 'List')
 
 @section('main')
+
+<div class="text-center mt-5 mb-5">
+	<a href="{{route('board.create')}}">
+		<svg 
+		xmlns="http://www.w3.org/2000/svg" 
+		width="50" 
+		height="40" 
+		fill="currentColor" 
+		class="bi bi-file-earmark-plus-fill" 
+		viewBox="0 0 16 16">
+			<path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM8.5 7v1.5H10a.5.5 0 0 1 0 1H8.5V11a.5.5 0 0 1-1 0V9.5H6a.5.5 0 0 1 0-1h1.5V7a.5.5 0 0 1 1 0z"/>
+		</svg>
+	</a>
+</div>
+
 {{-- 메인영역을 상속받은 파일이므로 메인영역의 부트스트랩을 가지고 옴 --}}
 {{-- 별도로 사용하는 파일(로그인,회원가입 등)이 있다면 이곳에 각자 사용함 --}}
 	<main>

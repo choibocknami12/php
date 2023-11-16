@@ -21,20 +21,21 @@ class UserController extends Controller
           return view('login');
      }
      public function loginpost(Request $request) {
-          // 유효성 검사 
-          $validator = Validator::make(
-               $request->only('email', 'password')
-               ,[
-                    'email' => 'required|email|max:50'
-                    ,'password' => 'required'
-               ]
-          );
+          // del 231116 미들웨어로 이관
+          // // 유효성 검사 
+          // $validator = Validator::make(
+          //      $request->only('email', 'password')
+          //      ,[
+          //           'email' => 'required|email|max:50'
+          //           ,'password' => 'required'
+          //      ]
+          // );
 
-          // 유효성 검사 실패 시 처리
-          if($validator->fails()) {
-               // 실패시 다시 로그인페이지로 이동 하고 에러메세지 출력하게 함.
-               return view('login')->withErrors($validator->errors());
-          }
+          // // 유효성 검사 실패 시 처리
+          // if($validator->fails()) {
+          //      // 실패시 다시 로그인페이지로 이동 하고 에러메세지 출력하게 함.
+          //      return view('login')->withErrors($validator->errors());
+          // }
 
           // 유저 정보 습득 : 이메일 확인
           $result = User::where('email', $request->email)->first();
@@ -62,18 +63,19 @@ class UserController extends Controller
           return view('registration');
      }
      public function registrationpost(Request $request) {
+          // del 231116 미들웨어로 이관
           // 유효성 검사
-          $validator = Validator::make(
-               // only : 
-               $request->only('email', 'password', 'passwordchk' ,'name')
-               ,[
-                    'email' => 'required|email|max:50'
-                    ,'name' => 'required|regex:/^[a-zA-Z가-힣]+$/|min:2|max:50'
-                    ,'password' => 'required|same:passwordchk'
-               ]
-          );
-           // 바리데이션 에러 체크
-           // var_dump($validator->errors());
+          // $validator = Validator::make(
+          //      // only : 
+          //      $request->only('email', 'password', 'passwordchk' ,'name')
+          //      ,[
+          //           'email' => 'required|email|max:50'
+          //           ,'name' => 'required|regex:/^[a-zA-Z가-힣]+$/|min:2|max:50'
+          //           ,'password' => 'required|same:passwordchk'
+          //      ]
+          // );
+          //  // 바리데이션 에러 체크
+          //  // var_dump($validator->errors());
            // 유효성 검사 실패 시 처리
           if($validator->fails()) {
                // 실패시 다시 회원가입페이지로 이동 하고 에러메세지 출력하게 함.

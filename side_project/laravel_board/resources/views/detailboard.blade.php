@@ -8,14 +8,22 @@
 
 	<div class="card">
 		<div class="card-body">
+			{{-- destroy에 세그먼트 파라미터넣게 셋팅이 되어있어서 안넣으면 에러가남 --}}
+			<form action="{{ route('board.destroy', ['board' => $data->b_id]) }}" method="POST">
+				{{-- 폼사용시 반드시 사용해줘야함. --}}
+				@csrf 
+				@method('delete')
 			<h5 class="card-title">{{$data->b_title}}</h5>
-				<p class="card-text">{{$data->b_hits}}</p>
+				<p class="card-text">조회수 : {{$data->b_hits}}</p>
 				<p class="card-text">{{$data->b_content}}</p>
-				<p class="card-text">{{$data->created_at}}</p>
-				<p class="card-text">{{$data->updated_at}}</p>
+				<p class="card-text">작성일 : {{$data->created_at}}</p>
+				<p class="card-text">수정일 : {{$data->updated_at}}</p>
 				
-			{{-- <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDetail">LOVE CAT</button> --}}
-			<a class="btn btn-primary">LOVE CAT</a>
+				<button type="submit" class="btn btn-primary">삭제</button>
+			
+				<a class="btn btn-primary">수정</a>
+				<a href="{{route('board.index')}}" class="btn btn-primary">닫기</a>
+			</form>
 		</div>
 	</div>
 

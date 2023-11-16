@@ -8,7 +8,7 @@
 						<span class="navbar-toggler-icon"></span>
 					</button>
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					{{-- <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 			
 					<li class="nav-item dropdown ">
 						<a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown " role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -20,8 +20,8 @@
 					</ul>
 					</li>
 
-					</ul>
-						<a href="{{route('user.logout.get')}}" class="nav-link text-light" role="button">로그아웃</a>
+					</ul> --}}
+						<a href="{{route('user.logout.get')}}" class="nav-link text-light float-end" role="button">로그아웃</a>
 				</div>
 			@endauth
 			{{-- 비로그인 상태 --}}
