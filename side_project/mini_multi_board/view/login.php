@@ -1,11 +1,3 @@
-<?php
-
-
-
-
-
-
-?>
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -34,7 +26,7 @@
             </div>
                 <button type="submit" class="btn btn-dark">로그인</button>
                 <a href="/user/regist" class="btn btn-secondary">회원가입</a>
-          </form>
+        </form>
     </main>
 
     <footer class="bg-dark fixed-bottom text-light text-center p-3">

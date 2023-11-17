@@ -6,7 +6,7 @@ namespace router;
 // use : namespace에 속하는 클래스 참조가능
 // 자식 컨트롤러를 사용하는 이유 :
 // 1. 기본적으로 부모 컨트롤러를 상속받고 부모 컨트롤러에 실행할 처리 정의
-// 2. 자식 
+// 
 use controller\UserController;
 use controller\BoardController;
 

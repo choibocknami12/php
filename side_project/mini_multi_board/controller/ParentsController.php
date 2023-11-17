@@ -27,12 +27,15 @@ class ParentsController {
         $this -> controllerChkUrl = $_GET["url"]; // 
 
         // 세션 시작
+        // 세션 : 사용자의 정보를 저장해두는 곳
         // 세션이 없으면 세션시작 함수 실행
         if(!isset($_SESSION)) {
-            session_start();
+            // 새로운 세션을 시작하거나 기존 세션을 다시 시작할 수 있음.
+            session_start(); 
         }
 
         // 유저 로그인 및 권한 체크
+        // 
         $this->chkAuthorization(); // chkAuthorization 메소드 호출
 
         // 헤더 게시판 드롭박스 데이터 획득
@@ -55,6 +58,8 @@ class ParentsController {
         $url = $_GET["url"];
         
         // 접속권한이 없는 페이지 접속차단
+        // 세션에 u_pk값이 없거나 값이 배열안에 있는지 확인해서 있으면 아래의 처리 진행
+        // in_array(확인할 값, 배열, false/ture)
         if( !isset($_SESSION["u_pk"]) && in_array($url, $this->arrNeedAuth) ) {
             header("Location: /user/login"); // 유저에게 보여지는 url을 바꾸어주어야하므로?
             exit();
