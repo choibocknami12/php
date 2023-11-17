@@ -48,10 +48,22 @@ Route::middleware('my.user.validation')->post('/user/registration', [UserControl
 // 보드 관련
 // 이렇게 설정해두면 라라벨이 알아서 생성해줌?
 Route::middleware('auth')->resource('/board', BoardController::class);
-// GET|HEAD        board .......................... board.index › BoardController@index  
-// POST            board .........................board.store › BoardController@store  
+// 게시글 가져오기
+// GET|HEAD        board .......................... board.index › BoardController@index   
+// 선택한 게시글 보여주기
+// GET|HEAD        board/{board} ................ board.show › BoardController@show
+
+// 작성페이지 이동
 // GET|HEAD        board/create ................. board.create › BoardController@create  
-// GET|HEAD        board/{board} ................ board.show › BoardController@show  
-// PUT|PATCH       board/{board} ................ board.update › BoardController@update  
-// DELETE          board/{board} ................ board.destroy › BoardController@destroy  
+// 작성페이지 작성 후 처리
+// POST            board .........................board.store › BoardController@store 
+
+// 수정 페이지 이동
 // GET|HEAD        board/{board}/edit ........... board.edit › BoardController@edit 
+// 수정 페이지 수정 후 처리
+// PUT|PATCH       board/{board} ................ board.update › BoardController@update 
+
+// 삭제 페이지 삭제(논리삭제?)
+// DELETE          board/{board} ................ board.destroy › BoardController@destroy 
+
+// 메소드           url                             name

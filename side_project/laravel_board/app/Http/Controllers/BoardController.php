@@ -105,7 +105,13 @@ class BoardController extends Controller
      */
     public function edit($id)
     {
-        //
+        //수정 페이지 이동
+
+        // 조회(검색)한 id를 먼저 변수에 담아준다
+        $result = Board::find($id);
+        // with 사용 : 화면에 표시할 데이터를 함께 보내줘야함
+        return view('edit')->with('data', $result); 
+        //return '수정페이지';
     }
 
     /**
@@ -117,7 +123,17 @@ class BoardController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $arrData = $request->only('b_title','b_content');
+        $result = Board::find($id);
+        $result->update($arrData);
+        
+        // 어떤 처리를 할땐 리턴뷰가 아닌 리다이렉트로 해주어야, 계속 처리가 안됨.
+        return redirect()->route('board.show', $id);
+
+        //$result = Board::find($id);
+        //$result->b_title = $request->b_title;
+        //$result->b_content = $request->b_content;
+        //$result->save();
     }
 
     /**

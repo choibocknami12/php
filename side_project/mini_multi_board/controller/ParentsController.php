@@ -22,9 +22,9 @@ class ParentsController {
         ,"board/delete"
     ];
 
-    public function __construct($action) { // 여기 $action 뭐가 담기지?
+    public function __construct($action) { // 시작은 로그인 페이지->유저가 입력한 정보가 담김
         // 뷰관련 체크 접속 url 셋팅
-        $this -> controllerChkUrl = $_GET["url"]; // 정의한다 초기화한다?
+        $this -> controllerChkUrl = $_GET["url"]; // 
 
         // 세션 시작
         // 세션이 없으면 세션시작 함수 실행
