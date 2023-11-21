@@ -2,29 +2,44 @@
   <img alt="Vue logo" src="./assets/logo.png">
   
   <!-- 헤더 -->
-  <div class="nav">
+  <Header :data="navList"></Header>
+  <!-- <div class="nav"> -->
     <!-- <a href="#">홈</a>
     <a href="#">상품</a>
     <a href="#">기타</a> -->
     
     <!-- 반복문 -->
     <!-- v-for : 기본문법으로 그대로 적용해야함. -->
-    <a v-for="(item, i) in navList" :key="i">{{ i + ':' + item }}</a>
-  </div>
+    <!-- <a v-for="(item, i) in navList" :key="i">{{ i + ':' + item }}</a>
+  </div> -->
+
+  <!-- 할인 배너 -->
+  <Discount></Discount>
+  <!-- html 문법으로 사용가능 <Discount/> -->
+  <!-- 컴포넌트로 이관 -->
+  <!-- <div class="discount">
+    <p>2장 구매시 30% 할인</p>
+  </div> -->
 
   <!-- 모달 -->
   <!-- v-if : 안의 함수가 참일때 함수실행, 거짓일땐 함수실행 안함 -->
   <Transition name="modalAni">
-  <div class="bg_black"  v-if="modalFlg" >
+    <Modal 
+    v-if = "modalFlg"
+    :data="item"
+    @closeModal = "modalClose()">
+
+    </Modal>
+  <!-- <div class="bg_black"  v-if="modalFlg" >
     <div class="bg_white">
       <img :src="item.img">
       <h4>{{item.name}}</h4>
       <p>{{item.content}}</p>
       <p>{{item.price}}</p>
       <p>신고수 : {{item.reportCnt}}</p>
-      <button @click="modalFlg = false">닫기</button>
+      <button @click="modalClose()">닫기</button>
     </div>
-  </div>
+  </div> -->
   </Transition>
   
 
@@ -45,11 +60,19 @@
     </div> -->
 
     <!-- 한줄로 사용하면 원하는 위치에 사용하는것이 아님! -->
-    <div v-for="(item, i) in products" :key="i">
-      <h4 @click="modalOpen(item)">{{ item.name }}</h4>
+    <div>
+      <Productlist
+      v-for="(item, i) in products" :key="i"
+      :data="item"
+      :productKey="i"
+      @openModal = "modalOpen"
+      @modalPlus = "plusOne">
+
+      </Productlist>
+      <!-- <h4 @click="modalOpen(item)">{{ item.name }}</h4>
       <p>{{ item.price }}</p>
       <button @click="plusOne(i)">허위 매물 신고</button>
-      <span>신고수 : {{ item.reportCnt }}</span>
+      <span>신고수 : {{ item.reportCnt }}</span> -->
     </div>
 
   </div>
@@ -58,6 +81,14 @@
 <script>
 // 설정파일 불러오기(자바스크립트 문법)
 import data from './assets/js/data';
+
+import Discount from './components/Discount.vue';
+
+import Header from './components/Header.vue';
+
+import Modal from './components/Modal.vue';
+
+import Productlist from './components/Productlist.vue';
 
 export default {
   name: 'App',
@@ -88,6 +119,17 @@ export default {
       this.item = item;
       this.modalFlg = true;
     },
+    modalClose() {
+      this.modalFlg = false;
+    },
+  },
+
+  // components : 컴포넌트를 등록하는 영역
+  components: {
+    Discount,
+    Header,
+    Modal,
+    Productlist,
   },
 
 }

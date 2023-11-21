@@ -26,6 +26,14 @@
 	margin: 20px auto;
 }
 
+.discount {
+	background-color: beige;
+	padding: 20px;
+	margin: 10px;
+	border-radius: 10px;
+	font-size: 1rem;
+}
+
 /* 애니메이션 : from-active-to세트 */
 /* 등장 */
 .modalAni-enter-from {
