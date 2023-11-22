@@ -5,7 +5,7 @@
       <li 
         v-if="$store.state.flgTapUI !== 0"
         class="header-button header-button-left"
-        @click="this.$store.commit('setFlgTapUI', 0);">취소</li>
+        @click="$store.commit('setFlgTapUI', 0);">취소</li>
       <li><img class="logo" alt="Vue logo" src="./assets/logo.png"></li>
       <li
         v-if="$store.state.flgTapUI === 1"

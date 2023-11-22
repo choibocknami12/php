@@ -31,6 +31,7 @@ const store = createStore({
 		setBoardList(state, data) {
 			state.boardData = data;
 			state.lastBoardId = data[data.length - 1].id;
+			//console.log(data);
 			
 		},
 		// 탭ui 셋팅용
@@ -55,6 +56,12 @@ const store = createStore({
 			state.postFileData = null;
 		},
 		//
+		setPushBoard(state, data) {
+			state.boardData.push(data);
+			// console.log(data);
+			state.lastBoardId = data.id;
+			// console.log(state.lastBoardId);
+		}
 	},
 
 	// actions : ajax로 서버에 데이터를 요청할 때나 시간 함수등 비동기 처리를 actions에 정의
@@ -114,18 +121,16 @@ const store = createStore({
 
 		// 디테일 페이지 가져오기
 		actionGetBoardShow(context) {
-			const url = 'http://112.222.157.156:6006/api/boards/{board}';
+			const url = 'http://112.222.157.156:6006/api/boards/' + context.state.lastBoardId;
 			const header = {
 				headers: {
 					'Authorization': 'Bearer meerkat',
 				},
 			};
-			
 			axios.get(url, header)
 			.then(res => {
-				console.log(res.data);
-				// console.log(res.status);
-				context.commit('setBoardList', res.data);
+				// console.log(res);
+				context.commit('setPushBoard', res.data);
 			})
 			.catch(err => {
 				console.log(err);
