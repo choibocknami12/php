@@ -30,8 +30,8 @@ const store = createStore({
 		// 초기 데이터 셋팅용
 		setBoardList(state, data) {
 			state.boardData = data;
-			state.lastBoardId = data[data.length - 1].id;
-			//console.log(data);
+			state.lastBoardId = data[data.length - 1].id; // data[2]의 id값
+			//console.log(data); // 데이터가 어떤게 오는지 확인
 			
 		},
 		// 탭ui 셋팅용
@@ -48,6 +48,8 @@ const store = createStore({
 		},
 		// 작성된 글 삽입용 
 		setUnshiftBoard(state, data) {
+			// unshift() : js 의 배열 메소드.
+			// 배열의 맨 앞에 하나 이상의 요소를 추가해줌.
 			state.boardData.unshift(data);
 		},
 		// 작성 후 데이터 초기화 처리
@@ -67,20 +69,27 @@ const store = createStore({
 	// actions : ajax로 서버에 데이터를 요청할 때나 시간 함수등 비동기 처리를 actions에 정의
 	actions: {
 		// 초기 게시글 데이터 획득. ajax 처리
-		// context : store영역에 접근할 수 있는 파라미터. state는 mutations에서 
-		// commit : mutations호출하는 메서드.
+		// context : store영역에 접근할 수 있는 고정된 파라미터.  
+		// commit : mutations호출하는 메소드.
+		// dispatch : action호출 메소드
+		// context : store에 접근용 파라미터
 		actionGetBoardList(context) {
+			// url, header : 권한 여부 설정
 			const url = 'http://112.222.157.156:6006/api/boards';
 			const header = {
 				headers: {
 					'Authorization': 'Bearer meerkat'
 				}
 			};
-			
+			// 서버와 DB 송수신
 			axios.get(url, header)
-			.then(res => {
-				// console.log(res.data);
-				// console.log(res.status);
+			.then(res => { 
+				// res: object. 화면에 출력되는 모든 정보가 담겨있음
+				// console.log(res);
+				// console.log(res.status); // 서버 상태 나타냄
+				// array내 객체로 전송받은 데이터를 res.data에 저장
+				// store에 접근하여 mutation안의 setBoardList메소드를 res.data파라미터로 전달
+				// setBoardList(res.data)
 				context.commit('setBoardList', res.data);
 			})
 			.catch(err => {
@@ -93,13 +102,17 @@ const store = createStore({
 			const url = 'http://112.222.157.156:6006/api/boards';
 			const header = {
 				headers: {
+					// 인증키 등록
 					'Authorization': 'Bearer meerkat',
+					// 서버에 전송하는 데이터형식을 나타냄.
+					// 'multipart/form-data' : 파일 업로드와 같이 여러 종류의 데이터를 동시에 전송할 때 유용
 					'Content-Type': 'multipart/form-data',
 				}
 			};
 			const data = {
-				name: '최복남',
+				name: '최최최',
 				img: context.state.postFileData,
+				// content: 
 				content: document.getElementById('content').value,
 			};
 
