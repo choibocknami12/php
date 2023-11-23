@@ -31,6 +31,7 @@ class PoketMon {
 		return $this->name;
 	}
 
+	// private 데이터를 변경하고싶을땐 setter사용
 	public function setterName($str) {
 		return $this->name = $str;
 	}
