@@ -20,8 +20,11 @@
   <ContainerComponent></ContainerComponent>
 
   <!-- 더보기 버튼 -->
+  <!-- 클릭이벤트 함수안쓰고도 가능 -->
   <button
+    v-if="$store.state.flgTapUI === 0"
     @click="showBoardList()">더보기</button>
+  <!-- v-if="$store.state.flgBtnMore && $store.state.flgTapUI === 0" -->
   
   <!-- 푸터 -->
   <div class="footer">

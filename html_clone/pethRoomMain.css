@@ -1,0 +1,19 @@
+* {
+	margin: 0;
+	padding: 0;
+	
+}
+
+.miniBanner {
+	background-color: rgb(243, 210, 22);
+}
+
+.nav1 {
+	background-color: #fff;
+	color: navy;
+}
+
+.nav2 {
+	background-color: navy;
+	color: #fff;
+}

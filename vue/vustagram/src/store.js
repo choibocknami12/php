@@ -1,4 +1,4 @@
-// vuex의 기본형태
+// vuex의 기본형태 : 데이터를 관리하는 기법
 
 import { createStore } from 'vuex';
 import axios from 'axios';
@@ -19,6 +19,8 @@ const store = createStore({
 			postFileData: null,
 			// 가장 마지막 로드된 게시글 번호 저장용
 			lastBoardId: 0,
+			// 더보기 버튼 활성여부 플래그
+			// flgBtnMore: true,
 		}
 	},
 
@@ -26,14 +28,17 @@ const store = createStore({
 	// 안전장치(데이터 변화되는 것 방지)
 	// 함수안의 첫번째 파라미터에는 state 문법임
 	// state만큼 mutation이 늘어나야함.
+	// state도 mutation에서 변경해야함.
 	mutations: {
 		// 초기 데이터 셋팅용
 		setBoardList(state, data) {
 			state.boardData = data;
+			//아래의 this를 사용하는 이유는 store안에 붙어야하기떄문에
+			//this.commit('setLastBoardId', data[data.length - 1].id);
 			state.lastBoardId = data[data.length - 1].id; // data[2]의 id값
 			//console.log(data); // 데이터가 어떤게 오는지 확인
-			
 		},
+		//setLastBoardId() {}
 		// 탭ui 셋팅용
 		setFlgTapUI(state, num) {
 			state.flgTapUI = num;
@@ -57,13 +62,16 @@ const store = createStore({
 			state.imgURL = '';
 			state.postFileData = null;
 		},
-		//
+		// 더보기 데이터 추가
+		// push() : 기존 배열에 순차적으로 추가하는 것. unshift랑 반대.
 		setPushBoard(state, data) {
 			state.boardData.push(data);
 			// console.log(data);
 			state.lastBoardId = data.id;
 			// console.log(state.lastBoardId);
-		}
+		},
+		// 더보기 버튼 활성화
+		setFlgBtnMore(state, boo) {state.flgBtnMore = boo;}
 	},
 
 	// actions : ajax로 서버에 데이터를 요청할 때나 시간 함수등 비동기 처리를 actions에 정의
@@ -132,7 +140,7 @@ const store = createStore({
 			});
 		},
 
-		// 디테일 페이지 가져오기
+		// 더보기
 		actionGetBoardShow(context) {
 			const url = 'http://112.222.157.156:6006/api/boards/' + context.state.lastBoardId;
 			const header = {
@@ -142,11 +150,18 @@ const store = createStore({
 			};
 			axios.get(url, header)
 			.then(res => {
+
+				if(res.data) {
+					context.commit('setPushBoard', res.data);	
+				} else {
+					context.commit('setFlgBtnMore', false);
+				}
 				// console.log(res);
-				context.commit('setPushBoard', res.data);
+				// context.commit('setAddBoardData', res.data);
 			})
 			.catch(err => {
 				console.log(err);
+				// console.log(err.response.data);
 			}) 
 		}
 	},
