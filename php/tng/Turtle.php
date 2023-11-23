@@ -1,36 +1,20 @@
 <?php
 
-//
 namespace test;
 
-class Turtle {
-	// 접근 제어 지시자
-	public $howling;
-	private	$name;
-	protected $type; // 상속관계시 메소드 안만들어도 접근가능
+//test에 이미 불러놨기때문에 use와 require_once도 굳이 할 필요가없음
+//require_once('./PoketMon.php'); // namespace안에 넣어주어야함
 
-	// construct는 public으로만 생성해야함.
-	public function __construct() {
-		$this->howling = "꼬북꼬북"; // 외부접근 가능
-		$this->name = "꼬부기"; // 외부접근 불가능
-		$this->type = "물"; // 외부접근 불가능
-	}
-
-	public function  attack() {
+class Turtle extends PoketMon {
+	
+	public function waterCannon() {
 		echo $this->name."물대포";
 	}
 
+	// 오버라이딩 : 부모한테 정의되어 있는 메소드를 자식이 다시 재정의하는 것.
 	public function info() {
-		echo $this->name."는 ".$this->type."타입 포켓몬입니다.";
+		echo $this->getterName()."는 꼬북꼬북꼬북.\n";
 	}
 
-	// public static function electronic() {
-	// 	echo "피카츄 백만볼트";
-	// }
-	public function waterCannon() {
-		echo  $this->name."물대포";
-	}
-
-	
 }
 
