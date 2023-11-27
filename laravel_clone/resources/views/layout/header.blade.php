@@ -2,8 +2,11 @@
 	<div class="coupon">
 		쿠폰배너
 	</div>
+	
 	<div class="loginNav">
+		
 		<ul class="nav1">
+			<!-- <img src="/img/logo.jpg" alt=""> -->
 			<li class="loginNavMenu"><a href="">login</a></li>
 			<li class="loginNavMenu"><a href="">join</a></li>
 			<li class="loginNavMenu"><a href="">membership</a></li>
