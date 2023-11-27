@@ -16,6 +16,7 @@
 	</div>
 	<div class="productNav">
 		<ul class="nav2">
+			<li class="productNavMenu">INSIDE PETHROOM</li>
 			<li class="productNavMenu">PRODUCT</li>
 			<li class="productNavMenu">EVENT</li>
 			<li class="productNavMenu">CS CENTER</li>

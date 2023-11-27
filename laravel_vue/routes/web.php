@@ -12,7 +12,18 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+// json형태로 안바꿔주면 데이터값이 안감!
 Route::get('/', function () {
-    return view('welcome');
+    $data = ['name' => '루트', 'id' => '1'];
+    return view('welcome')->with('data', json_encode($data));
+});
+
+Route::get('/login', function () {
+    $data = ['name' => '로그인', 'id' => '1'];
+    return view('welcome')->with('data', json_encode($data));
+});
+
+Route::get('/board', function () {
+    $data = ['name' => '보드', 'id' => '1'];
+    return view('welcome')->with('data', json_encode($data));
 });

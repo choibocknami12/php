@@ -7,6 +7,8 @@
 	border-collapse: collapse;
 }
 
+/* 헤더 */
+
 .header {
 	width: 100%;
 	margin: auto;
@@ -60,6 +62,30 @@
 	height: 40px;
 	
 }
+
+/* 푸터 */
+
+.footer {
+	background-color: #1c3761;
+	color: #fff;
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+}
+
+.logo {
+	font-weight: bold;
+	color: #ffc303;
+	padding: 10px;
+	font-size: 1.5rem;
+}
+
+.footerContent {
+	padding: 10px;
+	font-size: 0.8rem;
+}
+
+/* 메인 상품영역 */
 
 .productNav>div {
 	display: flex;
