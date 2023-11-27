@@ -1,7 +1,5 @@
 body { 
     margin: 0; 
-    font: 14px/1.4 "Microsoft YaHei"; 
-    background-color: #EDEFF0; 
 }
 
 a { 
@@ -15,20 +13,23 @@ a {
 }
 
 .regist-head { 
+    margin-top: 20px;
     height: 60px; 
     line-height: 60px; 
-    padding-left: 30px; 
-    background-color: #1c3761; 
-    color: rgb(222, 200, 33); 
-    font-size: 30px; 
+    color: #1c3761; 
     text-align: center;
 }
 
-.regist-body { 
+.regist-head>span {
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+/* .regist-body { 
     min-height: 400px; 
     padding: 100px 0; 
     background-color: #fff; 
-}
+} */
 
 .regist-main { 
     width: 600px; 
@@ -47,6 +48,7 @@ a {
     padding-top: 10px; 
     float: left; 
 }
+
 .regist-cell { 
     /* display: table-cell;  */
     display: inline-block; 
@@ -54,18 +56,19 @@ a {
 }
 
 .registInput { 
-    height: 18px; 
+    height: 50px; 
     line-height: 18px; 
-    width: 260px; 
+    width: 500px; 
     padding: 10px 5px; 
     margin: 0 10px 0 0; 
     border: 1px solid #d0d6d9; 
     vertical-align: top; 
+    border-radius: 5px;
 }
 
-.regist-code-input { 
+/* .regist-code-input { 
     width: 130px; 
-}
+} */
 
 .registBtn{ 
     display: inline-block; 
@@ -78,14 +81,14 @@ a {
 }
 
 .registBtn:hover { 
-    background-color: #33a646; 
+    background-color: rgb(222, 200, 33); 
 }
 
-.icon-warn { 
+/* .icon-warn { 
     display: inline-block; 
     width: 20px; 
     height: 21px; 
-}
+} */
 
 .regist-star { 
     position: absolute; 
@@ -94,19 +97,16 @@ a {
 }
 
 .regist-remark { 
-    position: absolute; 
-    line-height: 21px; 
-    padding-top: 9px; 
+    margin-top: 10px;
+    position: absolute;
     color: #666; 
 }
 
 .regist-warn { 
-    padding-left: 20px; 
     color: #be3948; 
 }
 
 .regist-warn >.icon-warn { 
     position: absolute; 
-    margin-left: -20px; 
 }
 

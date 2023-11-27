@@ -3,9 +3,71 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./pethroomRegist.css">
 	<title>Regist</title>
 </head>
 <body>
-	
+	<div class="constr">
+		<div class="regist-head">회원정보 입력</div>
+		<div class="regist-body">
+			<div class="regist-main">
+				<div class="regist-group">
+					<label class="regist-label">
+						<span class="regist-star">*</span>
+						아이디
+					</label>
+					<div class="regist-cell">
+						<input type="text" class="registInput">
+						<span class="regist-remark regist-warn">
+							<i class="icon-warn"></i>아이디 중복 사용불가
+						</span>
+					</div>
+				</div>
+				<div class="regist-group">
+					<label class="regist-label">
+						<span class="regist-star">*</span>
+						비밀번호
+					</label>
+					<div class="regist-cell">
+						<input type="password" class="registInput">
+					</div>
+				</div>
+				<div class="regist-group">
+					<label class="regist-label">
+						<span class="regist-star">*</span>
+						비밀번호 확인
+					</label>
+					<div class="regist-cell">
+						<input type="password" class="registInput">
+					</div>
+				</div>
+				<div class="regist-group">
+					<label class="regist-label">
+						<span class="regist-star">*</span>
+						연락처</label>
+					<div class="regist-cell">
+						<input type="tel" class="registInput">
+					</div>
+				</div>
+				<div class="regist-group">
+					<label class="regist-label">
+						<span class="regist-star">*</span>
+						이름
+					</label>
+					<div class="regist-cell">
+						<input class="registInput regist-code-input">
+					</div>
+				</div>
+				<div class="regist-group">
+					<!-- <label class="regist-label">&nbsp;</label> -->
+					<div class="regist-cell">
+						<p>
+							<a href="" class="registBtn">회원가입</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
