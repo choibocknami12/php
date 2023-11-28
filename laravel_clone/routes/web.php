@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,14 +15,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/main', function () {
     return view('main');
 });
 
-Route::get('/login', function () {
-    return view('login');
-});
+// Route::get('/login', function () {
+//     return view('login');
+// });
 
-Route::get('/regist', function () {
-    return view('regist');
-});
+
+Route::get('/login', [userController::class,'loginget'])->name('login.get');
+
+Route::post('/login', [userController::class, 'loginpost'])->name('login.post');
+
+Route::get('/logout', [userController::class,'logoutget'])->name('logout.get');
+// // Route::get('/regist', function () {
+// //     return view('regist');
+// // });
+
+// // 회원가입 화면 이동
+Route::get('/regist', [userController::class, 'registget'])->name('regist.get');
+
+Route::post('/regist', [userController::class, 'registpost'])->name('regist.post');

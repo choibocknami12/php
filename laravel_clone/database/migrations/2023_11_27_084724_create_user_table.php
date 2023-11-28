@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->integer('tell')->unique();
+            $table->string('u_id')->unique();
+            $table->integer('tel'); 
             $table->string('password');
-            $table->string('name', 50);
-            $table->timestamp('email_verified_at')->nullable(); //이메일 인증? 빼도됩니까?
+            $table->string('name', 50); 
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();

@@ -8,11 +8,12 @@
 	<div class="regist-head">
         <span>회원정보 입력</span>
     </div>
-		<form class="regist-body">
+		<form class="regist-body" method="POST" action="{{route('regist.post')}}">
+			@csrf
 			<div class="regist-main">
 				<div class="regist-group">
 					<div class="regist-cell">
-						<input type="text" class="registInput" placeholder="아이디">
+						<input type="text" id="u_id" name="u_id" class="registInput" placeholder="아이디">
 						<span class="regist-remark regist-warn">
 							아이디 중복 사용불가
 						</span>
@@ -20,17 +21,17 @@
 				</div>
 				<div class="regist-group">
 					<div class="regist-cell">
-						<input type="password" class="registInput" placeholder="비밀번호">
+						<input type="password" id="password" name="password" class="registInput" placeholder="비밀번호">
 					</div>
 				</div>
 				<div class="regist-group">
 					<div class="regist-cell">
-						<input type="password" class="registInput" placeholder="비밀번호 확인">
+						<input type="password" id="passwordchk" name="passwordchk" class="registInput" placeholder="비밀번호 확인">
 					</div>
 				</div>
 				<div class="regist-group">
 					<div class="regist-cell">
-						<input type="tel" class="registInput" placeholder="연락처">
+						<input type="tel" id="tel" name="tel" class="registInput" placeholder="연락처">
 					</div>
 				</div>
 				<div class="regist-group">
@@ -39,13 +40,13 @@
 						이름
 					</label> -->
 					<div class="regist-cell">
-						<input class="registInput" placeholder="이름">
+						<input type="text" class="registInput" id="name" name="name" placeholder="이름">
 					</div>
 				</div>
 				<div class="regist-group">
 					<div class="regist-cell">
 						<p>
-							<a href="" class="registBtn">회원가입</a>
+							<button type="submit" class="registBtn">회원가입</button>
 						</p>
 					</div>
 				</div>
