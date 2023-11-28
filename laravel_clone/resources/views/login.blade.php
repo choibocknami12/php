@@ -5,7 +5,8 @@
 @section('main')
 	<div class="wrapper">
 		<form class="form-signin" method="POST" action="{{route('login.post')}}">
-			@csrf
+		@include('layout.errorMsg')	
+		@csrf
 
 			<div class="logoImg">      
 				<img src="./img/logo.jpg" alt="">

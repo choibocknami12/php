@@ -1,13 +1,17 @@
 <div class="header">
 	<div class="coupon">
-		쿠폰배너
+		<span>coupon</span>
 	</div>
 	
 	<div class="loginNav">
-		
-		<ul class="nav1">
-			<!-- <img src="/img/logo.jpg" alt=""> -->
+		<div class="mainLogo">
+			<a href="{{route('main')}}">
+				<img src="/img/logo.jpg" alt="" height="65px" width="120px">
+			</a>
+		</div>
+		<ul class="nav1 text-decoration-none">
 			<li class="loginNavMenu"><a href="{{route('login.get')}}">login</a></li>
+			<li class="loginNavMenu"><a href="{{route('logout.get')}}">logout</a></li>
 			<li class="loginNavMenu"><a href="{{route('regist.get')}}">join</a></li>
 			<li class="loginNavMenu"><a href="">membership</a></li>
 			<li class="loginNavMenu"><a href="">cart</a></li>

@@ -11,6 +11,10 @@ use Illuminate\Support\Facades\Session;
 
 class userController extends Controller
 {
+    // public function mainget() {
+    //     return view('main');
+    // }
+
     public function loginget() {
         // 로그인 한 유저는 보드리스트로 이동
         if(Auth::check()) {
@@ -42,7 +46,6 @@ class userController extends Controller
         // 유저 정보 습득 : 비밀번호 확인(Hash 자체가 암호화처리된 것을 확인하는 메서드)
         if(!$result || !(Hash::check($request->password, $result->password))) {
             // 출력할 에러메세지 설정
-            //console.log("3");
             $errorMsg = '아이디와 비밀번호를 확인해주세요.';
             // 정보가 일치하지 않을 시 돌아갈 페이지와 에러메세지 함께 출력
             return view('login')->withErrors($errorMsg);
@@ -71,7 +74,7 @@ class userController extends Controller
         $validator = Validator::make(
         $request->only('u_id','tel', 'password', 'passwordchk' ,'name')
             ,[
-                'u_id' => 'required|regex:/^[a-zA-Z0-9]+$/'
+                'u_id' => 'required|regex:/^[a-zA-Z0-9]+$/|min:2|max:20'
                 ,'tel' => 'required|regex:/^010[0-9]{8}$/'
                 ,'name' => 'required|regex:/^[a-zA-Z가-힣]+$/|min:2|max:50'
                 ,'password' => 'required|same:passwordchk'

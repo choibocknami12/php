@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\userController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,14 +15,19 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/main', function () {
+Route::get('/', function () {
     return view('main');
-});
+})->name('main');
+// 라우트를 불러내기 위해선 name이 반드시 필요하다!
 
 // Route::get('/login', function () {
 //     return view('login');
 // });
+// Route::get('/', function() {
+//     return view('main');
+// });
 
+// Route::get('/main', [userController::class, 'mainget'])->name('main');
 
 Route::get('/login', [userController::class,'loginget'])->name('login.get');
 
