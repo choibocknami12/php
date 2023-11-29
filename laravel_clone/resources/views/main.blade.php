@@ -2,6 +2,24 @@
 
 @section('main')
 
-<img src="/img/main_01.gif" alt="" width="100%">
+	<div class="mainImg">
+		<img src="/img/main_01.gif" alt="" width="100%">
+	</div>
 
+		<div class="mainProduct">
+			@forelse($data as $item)
+			
+			<div class="box">
+
+				<a href="">
+					<img src="./img/main_02.jpg" alt="">
+					<p>{{$item->p_name}}</p>
+					<span>{{$item->p_price}}</span>
+				</a>
+			
+			</div>
+		@empty
+			
+		@endforelse
+		</div>
 @endsection

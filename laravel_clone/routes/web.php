@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\userController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,9 +16,9 @@ use App\Http\Controllers\userController;
 |
 */
 
-Route::get('/', function () {
-    return view('main');
-})->name('main');
+// Route::get('/', function () {
+//     return view('main');
+// })->name('main');
 // 라우트를 불러내기 위해선 name이 반드시 필요하다!
 
 // Route::get('/login', function () {
@@ -28,6 +29,7 @@ Route::get('/', function () {
 // });
 
 // Route::get('/main', [userController::class, 'mainget'])->name('main');
+//Route::get('/board', [BoardController::class,'boardIndex'])->name('main');
 
 Route::get('/login', [userController::class,'loginget'])->name('login.get');
 
@@ -42,3 +44,6 @@ Route::get('/logout', [userController::class,'logoutget'])->name('logout.get');
 Route::get('/regist', [userController::class, 'registget'])->name('regist.get');
 
 Route::post('/regist', [userController::class, 'registpost'])->name('regist.post');
+
+// main페이지(list페이지와 동일?)
+Route::get('/product', [ProductController::class, 'productIndex'])->name('main');
