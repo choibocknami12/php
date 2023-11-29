@@ -47,3 +47,5 @@ Route::post('/regist', [userController::class, 'registpost'])->name('regist.post
 
 // main페이지(list페이지와 동일?)
 Route::get('/product', [ProductController::class, 'productIndex'])->name('main');
+
+Route::get('/product/{p_id}', [ProductController::class, 'productShow'])->name('show');

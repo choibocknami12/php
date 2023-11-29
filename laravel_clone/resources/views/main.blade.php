@@ -11,7 +11,7 @@
 			
 			<div class="box">
 
-				<a href="">
+				<a href="{{route('show', ['p_id' => $item->p_id])}}">
 					<img src="./img/main_02.jpg" alt="">
 					<p>{{$item->p_name}}</p>
 					<span>{{$item->p_price}}</span>
