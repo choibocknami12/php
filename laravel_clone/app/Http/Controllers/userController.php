@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
 
 class userController extends Controller
 {
@@ -111,4 +113,16 @@ class userController extends Controller
         Auth::logout();
         return redirect()->route('login.get');
     }
+
+    public function useredit($id) {
+
+        $result = User::where('u_id',$id)->first();
+        Log::debug($result);
+        
+        return view('userupdate')->with('data', $result);
+    }
+
+    // public function userput() {
+
+    // }
 }

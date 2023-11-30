@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            //1128 수정할 칼럼
+            //칼럼 추가
             $table->string('u_id')->unique();
         });
     }

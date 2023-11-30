@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id('p_id');
             $table->integer('p_price')->nullable(false);
             $table->string('p_name');
+            $table->string('p_img');
             $table->string('p_content');
             $table->timestamps();
         });

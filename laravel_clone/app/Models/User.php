@@ -17,6 +17,7 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+    // 수정할 수 있는 리스트
     protected $fillable = [
         'name',
         'tel',

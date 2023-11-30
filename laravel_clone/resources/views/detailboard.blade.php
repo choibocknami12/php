@@ -4,15 +4,27 @@
 
 @section('main')
 
-<div>
-        <div class="datailImg">
-            <img src="/img/detail_01.jpg" alt="">
+<div class="detailContent">
+        <div class="detailImg">
+            <img src="{{$data->p_img}}" alt="" width="500px" height="500px">
         </div>
-        <div>
+        <div class="detailInfo">
             <h1>{{$data->p_name}}</h1>
-            <h1>\{{$data->p_price}}</h1>
-            <h1>{{$data->p_content}}</h1>    
-        </div>
+            <p>{{$data->p_content}}</p>
+            <h3>\{{$data->p_price}}</h3>
+            
+            <form action="#">
+                <label>옵션선택</label>
+                <select name="options" id="options">
+                    <option value="">{{$data->p_name}} 6kg</option>
+                    <option value="">{{$data->p_name}} 6kg*2</option>
+                    <option value="">{{$data->p_name}} 14kg</option>
+                </select>
+                <button type="submit">장바구니</button>
+            </form>
+        </div>    
+                
+        
 </div>
 
 @endsection

@@ -1,0 +1,8 @@
+.detailContent {
+	display: flex;
+	margin: 30px;
+}
+
+.detailInfo {
+	padding: 30px;
+}
