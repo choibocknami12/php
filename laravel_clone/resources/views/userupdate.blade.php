@@ -8,9 +8,10 @@
 	<div class="regist-head">
         <span>회원정보 입력</span>
     </div>
-		<form class="regist-body" method="POST" action="{{route('user.put', ['user' => $data->u_id])}}">
+		<form class="regist-body" method="POST" action="{{route('user.update', $user->u_id)}}">
 		@include('layout.errorMsg')		
 		@csrf
+		@method('put')
 			<div class="regist-main">
 				<div class="regist-group">
 					<div class="regist-cell">

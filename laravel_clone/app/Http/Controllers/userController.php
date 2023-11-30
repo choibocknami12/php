@@ -37,6 +37,7 @@ class userController extends Controller
         );
         //var_dump("1");
         
+        
         // 유효성 검사 실패 시 처리
         if($validator->fails()) {
             //console.log("2");
@@ -114,15 +115,32 @@ class userController extends Controller
         return redirect()->route('login.get');
     }
 
-    public function useredit($id) {
+    // public function useredit($u_id) {
 
-        $result = User::where('u_id',$id)->first();
-        Log::debug($result);
-        
-        return view('userupdate')->with('data', $result);
-    }
+    //         //$result = User::where('u_id',$id)->first();
+    //         //$result = User::find($id);
+    //         // Log::debug($result);
+            
+    //         //return view('userupdate')->with('data', $result);
+    //         //return view('user.edit', ['data' => $result]);
+    //         //return view('user.put', ['data' => $result]);
+    //         $result = $request->session()->get('u_id'); 
+    //         $result = User::find($u_id);
+    //         // Log::debug('=================================================================================');
+    //         // Log::debug($result);
+    //         return view('userupdate', ['data' => $result]);
+    // }
 
-    // public function userput() {
+    // public function userput(Request $request, $u_id) {
+    //     $result = User::find($u_id);
+    //     $user->update($request->all());
+    //     // $result->u_id = $request->u_id;
+    //     // $result->tel = $request->tel;
+    //     // $result->password = $request->password;
+    //     // $result->name = $request->name;
+    //     // $result->save();
 
+    //     //return redirect()->route('user.edit');
+    //     return redirect()->route('user.edit', $id)->with('success', '회원 정보가 성공적으로 수정되었습니다.');
     // }
 }

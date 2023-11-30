@@ -13,8 +13,9 @@
 			<li class="loginNavMenu"><a href="{{route('login.get')}}">login</a></li>
 			<li class="loginNavMenu"><a href="{{route('logout.get')}}">logout</a></li>
 			<li class="loginNavMenu"><a href="{{route('regist.get')}}">join</a></li>
-			<li class="loginNavMenu"><a href="{{route('user.edit', ['user' => $data->u_id])}}">membership</a></li>
+			<li class="loginNavMenu"><a href="">membership</a></li>
 			<li class="loginNavMenu"><a href="">cart</a></li>
+			
 		</ul>
 		<div class="searchBtn">
 			<input type="hidden">

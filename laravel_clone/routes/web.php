@@ -50,6 +50,7 @@ Route::get('/product', [ProductController::class, 'productIndex'])->name('main')
 
 Route::get('/product/{p_id}', [ProductController::class, 'productShow'])->name('show');
 
-Route::get('/userUpdate/{u_id}/edit', [userController::class,'useredit'])->name('user.edit');
+//Route::get('/userupdate/{u_id}/edit', [userController::class,'useredit'])->name('user.edit');
+//Route::get('/userupdate/edit', [userController::class,'useredit'])->name('user.edit');
 
-Route::post('/userUpdate/{u_id}', [userController::class,'userput'])->name('user.put');
+//Route::post('/userupdate/{u_id}', [userController::class,'userput'])->name('user.put');
