@@ -115,23 +115,51 @@ class userController extends Controller
         return redirect()->route('login.get');
     }
 
-    // public function useredit($u_id) {
+    public function useredit($u_id) {
 
-    //         //$result = User::where('u_id',$id)->first();
-    //         //$result = User::find($id);
-    //         // Log::debug($result);
+            //$result = User::where('u_id',$id)->first();
+            //$result = User::find($id);
+            // Log::debug($result);
+            $result = User::find($u_id);
+            //return view('userupdate')->with('data', $result);
+            //return view('user.edit', ['data' => $result]);
+            //return view('user.put', ['data' => $result]);
             
-    //         //return view('userupdate')->with('data', $result);
-    //         //return view('user.edit', ['data' => $result]);
-    //         //return view('user.put', ['data' => $result]);
-    //         $result = $request->session()->get('u_id'); 
-    //         $result = User::find($u_id);
-    //         // Log::debug('=================================================================================');
-    //         // Log::debug($result);
-    //         return view('userupdate', ['data' => $result]);
-    // }
+            // Log::debug('=================================================================================');
+            // Log::debug($result);
+            return view('userupdate', ['data' => $result]);
+    }
 
-    // public function userput(Request $request, $u_id) {
+    public function userput(Request $request, $u_id) {
+
+            $validate = $request -> validate([
+                'password' => 'required|same:passwordchk',
+            ]);
+
+            $same = Hash::check($validate['password'], Auth::user() -> password);
+            if ($same) {
+                return redirect() -> back() -> withErrors('message', '이전 비밀번호는 사용할 수 없습니다.');
+            }
+
+            $user = User::where('u_id', $u_id)->first();
+            // find는 pk을 비교해서 데이터를 가지고 오기때문에 지금 u_id로는 값을 찾아올 수 없음.
+            // dump($u_id);
+            // dump($user);
+            // exit();
+            $user -> password = Hash::make($validate['password']);
+            $user -> save();
+
+            Auth::logout();
+            return redirect() -> route('main');
+
+            // $arrData = $request->only('u_id','password');
+            // // Log::debug('=================================================================================');
+            // // Log::debug($result);
+
+            // $result = User::find($u_id);
+            // $result->update($arrData);
+
+            // return redirect()->route('main', $u_id);
     //     $result = User::find($u_id);
     //     $user->update($request->all());
     //     // $result->u_id = $request->u_id;
@@ -142,5 +170,5 @@ class userController extends Controller
 
     //     //return redirect()->route('user.edit');
     //     return redirect()->route('user.edit', $id)->with('success', '회원 정보가 성공적으로 수정되었습니다.');
-    // }
+    }
 }

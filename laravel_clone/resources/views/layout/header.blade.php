@@ -9,12 +9,24 @@
 				<img src="/img/logo.jpg" alt="" height="65px" width="120px">
 			</a>
 		</div>
-		<ul class="nav1 text-decoration-none">
-			<li class="loginNavMenu"><a href="{{route('login.get')}}">login</a></li>
-			<li class="loginNavMenu"><a href="{{route('logout.get')}}">logout</a></li>
-			<li class="loginNavMenu"><a href="{{route('regist.get')}}">join</a></li>
-			<li class="loginNavMenu"><a href="">membership</a></li>
-			<li class="loginNavMenu"><a href="">cart</a></li>
+		<ul class="nav1">
+			{{-- guest : 왜 자동으로 사라지는지 모르겠음. 이해안댐 --}}
+		{{-- @guest
+			<li class="loginNavMenu"><a class="text-decoration-none fw-bold" style="color: #1c3761;" href="{{route('login.get')}}">login</a></li>
+		@endguest --}}
+
+		@if(auth()->check())
+			<li class="loginNavMenu"><a class="text-decoration-none fw-bold" style="color: #1c3761;" href="{{route('logout.get')}}">logout</a></li>
+			<li class="loginNavMenu"><a class="text-decoration-none fw-bold" style="color: #1c3761;" href="{{route('user.edit', [auth()->User()->u_id])}}">membership</a></li>
+		@else
+			<li class="loginNavMenu"><a class="text-decoration-none fw-bold" style="color: #1c3761;" href="{{route('login.get')}}">login</a></li>
+		@endif
+			{{-- <li class="loginNavMenu"><a class="text-decoration-none fw-bold" style="color: #1c3761;" href="{{route('logout.get')}}">logout</a></li> --}}
+			<li class="loginNavMenu"><a class="text-decoration-none fw-bold" style="color: #1c3761;" href="{{route('regist.get')}}">join</a></li>
+		{{-- @if (auth()->check())
+			<li class="loginNavMenu"><a class="text-decoration-none fw-bold" style="color: #1c3761;" href="{{route('user.edit', [auth()->User()->u_id])}}">membership</a></li>
+		@endif --}}
+			<li class="loginNavMenu"><a class="text-decoration-none fw-bold" style="color: #1c3761;" href="">cart</a></li>
 			
 		</ul>
 		<div class="searchBtn">
@@ -31,8 +43,8 @@
 			<li class="productNavMenu">INQUIRY</li>
 		</ul>
 		<div>
-			<a class="nav2Border" href="">고객센터</a>
-			<a class="nav2Border" href="">전화주문</a>
+			<a class="nav2Border text-decoration-none fw-bold" style="color: #1c3761;" href="">고객센터</a>
+			<a class="nav2Border text-decoration-none fw-bold" style="color: #1c3761;" href="">전화주문</a>
 		</div>
 	</div>
 </div>
