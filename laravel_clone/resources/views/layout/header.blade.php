@@ -21,12 +21,14 @@
 		@else
 			<li class="loginNavMenu"><a class="text-decoration-none fw-bold" style="color: #1c3761;" href="{{route('login.get')}}">login</a></li>
 		@endif
-			{{-- <li class="loginNavMenu"><a class="text-decoration-none fw-bold" style="color: #1c3761;" href="{{route('logout.get')}}">logout</a></li> --}}
 			<li class="loginNavMenu"><a class="text-decoration-none fw-bold" style="color: #1c3761;" href="{{route('regist.get')}}">join</a></li>
+			<li class="loginNavMenu"><a class="text-decoration-none fw-bold" style="color: #1c3761;" href="">cart</a></li>
+
+			{{-- <li class="loginNavMenu"><a class="text-decoration-none fw-bold" style="color: #1c3761;" href="{{route('logout.get')}}">logout</a></li> --}}
 		{{-- @if (auth()->check())
 			<li class="loginNavMenu"><a class="text-decoration-none fw-bold" style="color: #1c3761;" href="{{route('user.edit', [auth()->User()->u_id])}}">membership</a></li>
 		@endif --}}
-			<li class="loginNavMenu"><a class="text-decoration-none fw-bold" style="color: #1c3761;" href="">cart</a></li>
+			
 			
 		</ul>
 		<div class="searchBtn">

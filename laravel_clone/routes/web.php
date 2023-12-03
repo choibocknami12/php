@@ -16,6 +16,9 @@ use App\Http\Controllers\ProductController;
 |
 */
 
+// 라우팅 : 어떤 네트워크안에서 통신 데이터를 보낼 때 경로를 선택하는 과정
+// 라우트는 기본적으로 URL을 전달받아 이동한다.
+
 // Route::get('/', function () {
 //     return view('main');
 // })->name('main');
