@@ -10,7 +10,7 @@
 			</a>
 		</div>
 		<ul class="nav1">
-			{{-- guest : 왜 자동으로 사라지는지 모르겠음. 이해안댐 --}}
+			{{-- guest : 비로그인상태때 사용되는 블레이드탬플릿 문법 --}}
 		{{-- @guest
 			<li class="loginNavMenu"><a class="text-decoration-none fw-bold" style="color: #1c3761;" href="{{route('login.get')}}">login</a></li>
 		@endguest --}}
