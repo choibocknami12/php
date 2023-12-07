@@ -117,7 +117,7 @@ class userController extends Controller
     }
 
     public function useredit($u_id) {
-
+            
             //$result = User::where('u_id',$id)->first();
             //$result = User::find($id);
             // Log::debug($result);
