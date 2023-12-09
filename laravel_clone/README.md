@@ -1,64 +1,51 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+1. laravel + vue 함께 설치
+    * 생성하고자 하는 프로젝트 디렉토리에서 실행할 것.
+    * 커멘드 활용시 반드시 관리자 모드로 실행할 것.
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+- composer create-project laravel/laravel="9" 파일명
+    ** Git 푸시 후 다른 환경에서 작업시 **
+        - 깃에서 소스코드 내려받기
+        - 커멘드 > vendor를 내려받을 위치까지 들어가기 > composer install > vendor다운로드 확인
+        - .env 파일생성 >> .env.example 복사해서 바꿔주기
+        - 커멘드 실행 : php artisan key:generate >> .env파일에 APPKEY 생성
+        - env파일 설정 확인하기(DB설정 다름.)
+    ** laravel serve 실행 : php artisan serve **
+    ** laravel controller 생성 : php artisan make:controller 파일명 **
+    ** laravel model 생성 : php artisan make:model 파일명 **
+    ** laravel model 실행 : php artisan migrate **
+        - model,factory,seed 함께 생성 : php artisan make:model 파일명 -mfs
+        - 기존 테이블에 칼럼 추가 : php artisan make:migration 파일명 --table=칼럼 추가할 테이블명
+        - maigration 관리 : 구글검색이나 slack확인할 것.
 
-## About Laravel
+- npm install  
+    ** 컴파일 시도 : npm run dev **
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- npm install --save-dev vue
+    ** package.json 파일의 "devDependencies"에 "vue" 추가되었는지 확인 **
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- resources/components에 Component 생성
+    ** 파일명 2단어 이상의 조합으로 할 것. ex: AppComponent.. **
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- resources/js/app.js 수정
+    ** 코드 추가 **
+        import { createApp } from 'vue'; 
+        import AppComponent from '../components/AppComponent.vue';
+        createApp({
+            components: {
+                AppComponent,
+            }
+        }).mount('#app');
 
-## Learning Laravel
+- webpack.mix.js 수정
+    ** mix 아래 코드 추가 **
+        .vue({ version: 3, })
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- 컴파일 확인하기
+    ** npm run dev **
+    ** 에러 >> npm install --``save-dev vue-loader >> 실행 후 다시 컴파일 시도**
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- resources/views/welcome.blade.php 수정
+    <!-- <script src="{{ asset('js/app.js')}}" defer></script> -->
 
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+2. 현재 프로젝트는 laravel만 사용하다 vue 추가로 연동하여 작업 중.
+    - detailBoard에서 탭UI 시도.
