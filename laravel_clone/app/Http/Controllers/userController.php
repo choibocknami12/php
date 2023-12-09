@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -116,11 +117,14 @@ class userController extends Controller
     }
 
     public function useredit($u_id) {
-
+            
             //$result = User::where('u_id',$id)->first();
             //$result = User::find($id);
             // Log::debug($result);
+            // 
             $result = User::find($u_id);
+            //Log::debug("useredit : ".$u_id);
+            // Log::debug("useredit : ", $result->array());
             //return view('userupdate')->with('data', $result);
             //return view('user.edit', ['data' => $result]);
             //return view('user.put', ['data' => $result]);
@@ -147,6 +151,7 @@ class userController extends Controller
             // dump($user);
             // exit();
             $user -> password = Hash::make($validate['password']);
+            $user->name = $request->name;
             $user -> save();
 
             Auth::logout();
