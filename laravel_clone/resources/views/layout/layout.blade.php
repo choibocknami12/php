@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="/css/pethroomRegist.css">
 	<link rel="stylesheet" href="/css/pethroomDetail.css">
 	<title>@yield('title', 'PETHROOM')</title>
-	
+	<script src="{{ asset('js/app.js') }}" defer></script>
 </head>
 <body>
 	@include('layout.header')

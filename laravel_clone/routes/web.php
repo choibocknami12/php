@@ -53,6 +53,11 @@ Route::get('/product', [ProductController::class, 'productIndex'])->name('main')
 
 Route::get('/product/{p_id}', [ProductController::class, 'productShow'])->name('show');
 
+// Route::get('/coment', function () {
+//     $data = ['name' => '로그인', 'id' => '1'];
+//     return view('detailboard')->with('data', json_encode($data));
+// });
+
 Route::get('/userupdate/{u_id}/edit', [userController::class,'useredit'])->name('user.edit');
 //Route::get('/userupdate/edit', [userController::class,'useredit'])->name('user.edit');
 

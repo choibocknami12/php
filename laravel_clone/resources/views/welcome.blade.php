@@ -9,8 +9,8 @@
 
     </head>
     <body>
-        <div id="app">
+        <!-- <div id="app">
             <App-Component></App-Component>
-        </div>
+        </div> -->
     </body>
 </html>

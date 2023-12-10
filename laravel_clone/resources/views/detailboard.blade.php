@@ -23,11 +23,9 @@
                 <button type="submit">장바구니</button>
             </form>
         </div>    
-    
-        <div id="tab">
-            <Tab-Component></Tab-Component>
-        </div>    
-        
+    <div id="app">
+            <App-Component></App-Component>
+        </div>
 </div>
 
 @endsection
