@@ -57,6 +57,9 @@ class userController extends Controller
         //var_dump("3");
         // 유저 인증작업
         Auth::login($result);
+        // $info = Auth::user();
+        // $info->u_id;
+        // $info->email;
         if(Auth::check()) {
             session($result->only('u_id'));
         } else {
@@ -118,7 +121,7 @@ class userController extends Controller
 
     public function useredit($u_id) {
             
-            //$result = User::where('u_id',$id)->first();
+            //$result = User::where('id',$id)->first();
             //$result = User::find($id);
             // Log::debug($result);
             // 
@@ -157,7 +160,7 @@ class userController extends Controller
             Auth::logout();
             return redirect() -> route('main');
 
-            // $arrData = $request->only('u_id','password');
+            // $arrData = $request->only('id','password');
             // // Log::debug('=================================================================================');
             // // Log::debug($result);
 

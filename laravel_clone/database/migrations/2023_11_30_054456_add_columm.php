@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             //칼럼 추가
-            $table->string('u_id')->unique();
+            $table->string('id')->unique();
         });
     }
 

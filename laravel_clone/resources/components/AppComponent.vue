@@ -1,21 +1,18 @@
 <template>
-    <div id="app">
-        <ul>
-            <li>111</li>
-            <li><a href="/coment">댓글</a></li>
-        </ul>
-        <router-link to="/coment">댓글창</router-link>
+    <div class="coment2">
+        <TabComponent></TabComponent>
         <!-- 라라벨 라우터 찾아가는것 -->
-        <router-view></router-view>
+        <!-- <div><router-view></router-view></div> -->
         <!-- 뷰의 라우터 찾아가는것 -->
     </div>
 </template>
 
 <script>
+import TabComponent from './TabComponent.vue';
 export default {
     name: 'AppComponent',
-    props: {
-        laravelData: Object,
+    components: {
+        TabComponent,
     },
     beforeCreate() {
         this.$store.commit('setLaravelData', this.laravelData);
@@ -24,5 +21,5 @@ export default {
 </script>
 
 <style>
-
+    
 </style>

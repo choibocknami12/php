@@ -47,5 +47,8 @@
 - resources/views/welcome.blade.php 수정
     <!-- <script src="{{ asset('js/app.js')}}" defer></script> -->
 
+- npm vuex@next --save
+    ** vuex 설치 **
+
 2. 현재 프로젝트는 laravel만 사용하다 vue 추가로 연동하여 작업 중.
     - detailBoard에서 탭UI 시도.

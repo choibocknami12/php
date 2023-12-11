@@ -1,5 +1,6 @@
 import { createWebHistory, createRouter } from 'vue-router';
 import TabComponent from '../components/TabComponent.vue';
+import LoginComponent from '../components/LoginComponent.vue';
 
 const routes = [
     {
@@ -9,6 +10,10 @@ const routes = [
     {
         path: '/coment',
         component: TabComponent,
+    },
+    {
+        path: '/login',
+        component: LoginComponent,
     },
 ];
 
