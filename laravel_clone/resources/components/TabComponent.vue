@@ -24,6 +24,7 @@
 	</div>    
 
 	<!-- 인증 체크를 왜 controller에서 하죠? >> 라라벨에서 인증했으니까..? -->
+	<!-- 그럼 뷰에서 인증도 할수잇나요..?auth같은거..? -->
    	<div>
 		<p @click="FlgTab = 0;">후기</p>
 		<p @click="FlgTab = 1;">댓글</p>
@@ -53,7 +54,7 @@ export default {
 	props: {
 		// ProductController에서 데이터값을 number로 가져옴
 		flgUser: Number,
-		// ProductController에서 json data를 배열로 가져오는데 왜 객체로 정해놓았을까요
+		// ProductController에서 json data를 배열로 가져오는데 왜 객체로 해놓았을까요
 		// component에서 객체로 받아서 그런가요..?
 		data: Object,
 	},

@@ -46,7 +46,8 @@ class ProductController extends Controller
 
         // 첫번째 레코드 값을 datailboard뷰로 전달하는데, $result에 담긴 값을 'data'로 전달한다.
         // return view('detailboard', ['data' => $result]);
-        //'detailboard' 뷰로 $result 변수를 'data'라는 이름으로 전달하여 해당 뷰에서 이 데이터를 사용한다.
+        // 'detailboard' 뷰로 $result 변수를 'data'라는 이름으로 전달하여 해당 뷰에서 이 데이터를 사용한다.
+        // vue로 데이터를 넘겨줘야해서 제이슨으로 변경하여 값을 넘겨주고 배열로 값 보내줌.
         return view('detailboard')->with('data', json_encode($result->toArray()))->with('flgUser', $flgUser);
     }
 }

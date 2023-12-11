@@ -15,7 +15,6 @@
 					<p>{{$item->p_name}}</p>
 					<span>{{$item->p_price}}</span>
 				</a>
-			
 			</div>
 		@empty
 			

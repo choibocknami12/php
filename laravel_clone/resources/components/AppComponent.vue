@@ -14,9 +14,6 @@ export default {
     components: {
         TabComponent,
     },
-    beforeCreate() {
-        this.$store.commit('setLaravelData', this.laravelData);
-    },
 }
 </script>
 
