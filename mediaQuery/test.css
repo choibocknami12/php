@@ -1,62 +1,46 @@
 
-@media screen and (min-width: 1920px){
+/* @media screen and (min-width: 1920px){ */
 
-	.class_detail_visual {
+	/* .class_detail_visual {
 		width: 100%;
 		height: 40vh;
 		overflow: hidden;
-		/* display: flex; */
 		padding: 0 10vW;
-		/* justify-content: center; */
-		/* align-items: center; */
+		
 		transition: all 0.2s;
 		background: #000;
 
-	}
+	} */
 
-	.class_detail_content {
+	/* .class_detail_content {
 		height: 40vh;
 		width: 100%;
 		background-color: #7F7F7F;
-	}
+	} */
 
-	.class_detail_content_img {
+	/* .class_detail_content_img {
 		display: inline-block;
 		text-align: center;
 		width: 500px;
-	}
+	} */
 
-	.class_detail_content_img>img {
+	/* .class_detail_content_img>img {
 		width: 100%;
 		height: 300px;
-	}
+	} */
 
-	.class_detail_content_text {
+	/* .class_detail_content_text {
 		height: 300px;
 		width: 500px;
 		display: inline-block;
 		left: 500px;
 		font-size: 1rem;
 		line-height: 30px;
-	}
+	} */
 
-}
+/* } */
 
-@media screen and (max-width: 900px) {
-
-	.class_detail_content_img {
-		display: inline-block;
-		text-align: center;
-		width: 100%;
-	}
-
-	.class_detail_content_img>img {
-		width: 100%;
-		height: 300px;
-	}
-}
-
-@media screen and (max-width: 800px) {
+/* @media screen and (max-width: 900px) {
 
 	.class_detail_content_img {
 		display: inline-block;
@@ -68,9 +52,9 @@
 		width: 100%;
 		height: 300px;
 	}
-}
+} */
 
-@media screen and (max-width: 540px) {
+/* @media screen and (max-width: 800px) {
 
 	.class_detail_content_img {
 		display: inline-block;
@@ -82,4 +66,282 @@
 		width: 100%;
 		height: 300px;
 	}
+} */
+
+/* @media screen and (max-width: 540px) {
+
+	.class_detail_content_img {
+		display: inline-block;
+		text-align: center;
+		width: 100%;
+	}
+
+	.class_detail_content_img>img {
+		width: 100%;
+		height: 300px;
+	}
+} */
+
+/* 원본
+.class_detail_visual {
+	
+	width: 100%;
+	height: 40vh;
+	overflow: hidden;
+	transition: all 0.2s;
+	background: #000;
+	display: flex;
+	justify-content: center;
+}
+
+.class_detail_content {
+	height: 40vh;
+	width: 80%;
+	background-color: #7F7F7F;
+	align-items: center;
+}
+
+.class_detail_content_img {
+	display: inline-block;
+	align-items: center;
+	width: 500px;
+  }
+  
+.class_detail_content_img > img {
+	width: 100%;
+	height: 300px;
+}
+
+.class_detail_content_text {
+	height: 300px;
+	width: 500px;
+	display: inline-block;
+	left: 500px;
+	font-size: 1rem;
+} */
+
+/* 이부분 다시 확인 */
+/* @media (min-width: 540px) and (max-width: 1920px) {
+	.class_detail_visual {
+	  width: 100%;
+	  height: 40vh;
+	  overflow: hidden;
+	  transition: all 0.2s;
+	  background: #000;
+	  display: flex;
+	  justify-content: center;
+	}
+  
+	.class_detail_content {
+	  height: 40vh;
+	  width: 80%;
+	  background-color: #7F7F7F;
+	  align-items: center;
+	}
+
+	.class_detail_content_img {
+	  display: inline-block;
+	  align-items: center;
+	  width: 500px;
+	}
+  
+	.class_detail_content_img > img {
+	  width: 100%;
+	  height: 300px;
+	}
+  
+	.class_detail_content_text {
+	  height: 300px;
+	  width: 500px;
+	  display: inline-block;
+	  left: 500px;
+	  font-size: 1rem;
+	}
+  } */
+
+/* @media (min-width: 540px) {
+	.class_detail_visual {
+		width: 100%;
+		height: 40vh;
+		overflow: hidden;
+		transition: all 0.2s;
+		background: #000;
+		display: flex;
+		justify-content: center;
+	  }
+	
+	  .class_detail_content {
+		height: 40vh;
+		width: 80%;
+		background-color: #7F7F7F;
+		
+	  }
+	
+	
+	  .class_detail_content_img {
+		display: inline-block;
+		align-items: center;
+		width: 500px;
+	  }
+	
+	  .class_detail_content_img > img {
+		width: 100%;
+		height: 300px;
+	  }
+	
+	  .class_detail_content_text {
+		height: 300px;
+		width: 500px;
+		display: inline-block;
+		left: 500px;
+		font-size: 1rem;
+	  }
+} */
+  
+  
+/* @media (max-width: 1920px) {
+	.class_detail_visual {
+		width: 100%;
+		height: 40vh;
+		overflow: hidden;
+		transition: all 0.2s;
+		background: #000;
+	  }
+	
+	  .class_detail_content {
+		height: 40vh;
+		width: 100%;
+		background-color: #7F7F7F;
+	  }
+	
+	  .class_detail_content_text {
+		height: 300px;
+		width: 500px;
+		display: inline-block;
+		left: 500px;
+		font-size: 1rem;
+	  }
+} */
+
+
+  /* @media screen and (min-width: 1920px) { */
+	/* .class_detail_visual {
+	  width: 100%;
+	  height: 40vh;
+	  overflow: hidden;
+	  padding: 0 10vW;
+	  transition: all 0.2s;
+	  background: #000;
+	}
+  
+	.class_detail_content {
+	  height: 40vh;
+	  width: 100%;
+	  background-color: #7F7F7F;
+	}
+  
+	.class_detail_content_text {
+	  height: 300px;
+	  width: 500px;
+	  display: inline-block;
+	  left: 500px;
+	  font-size: 1rem;
+	  line-height: 30px;
+	} */
+  /* } */
+  
+  /* @media screen and (min-width: 1000px) {
+	.class_detail_visual {
+		width: 100%;
+		height: 40vh;
+		overflow: hidden;
+		padding: 0 10vW;
+		transition: all 0.2s;
+		background: #000;
+	  }
+	
+	  .class_detail_content {
+		height: 40vh;
+		width: 100%;
+		background-color: #7F7F7F;
+	  }
+	
+	  .class_detail_content_text {
+		height: 300px;
+		width: 500px;
+		display: inline-block;
+		left: 500px;
+		font-size: 1rem;
+		line-height: 30px;
+	  }
+  } */
+  
+  /* @media screen and (max-width: 800px) {
+	
+  } */
+  
+  /* @media screen and (max-width: 500px) {
+	
+  } */
+
+
+
+
+/* 가격과 버튼 나란히 */
+/* 프로젝트 페이지에서 사용하기. */
+/* 그리드로 크게 영역 두개로 나누고 조절 필요한 부분 div로 묶어서 flex사용해서 정렬함. */
+/* 왜이렇게 안했을까.. */
+/* 이부분 그대로 붙여서 일단 확인 후 미디어 쿼리 적용할 거 생각하기 */
+
+.class_detail_visual {
+	width: 100%;
+	height: 40vh;
+	overflow: hidden;
+	transition: all 0.2s;
+	background: #000;
+	display: flex;
+	justify-content: center;
+  }
+
+.class_detail_content {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 10px;
+	justify-items: center;
+	width: 80%;
+    background-color: rgb(127, 127, 127);
+    align-items: center;
+}
+
+.class_detail_content_img {
+	display: inline-block;
+	align-items: center;
+	width: 500px;
+}
+
+.class_detail_content_img > img {
+	width: 100%;
+	height: 300px;
+}
+
+.class_detail_content_text {
+    height: 300px;
+    width: 500px;
+    display: inline-block;
+    font-size: 1rem;
+}
+
+.class_detail_content_text_div {
+	display: flex;
+	justify-content: space-between;
+}
+
+.class_detail_content_button {
+	margin-top: 10px;
+	text-align: center;
+}
+
+.class_detail_content_button>button {
+	width: 200px;
+	height: 30px;
 }
