@@ -293,7 +293,7 @@
 /* 왜이렇게 안했을까.. */
 /* 이부분 그대로 붙여서 일단 확인 후 미디어 쿼리 적용할 거 생각하기 */
 
-.class_detail_visual {
+/* .class_detail_visual {
 	width: 100%;
 	height: 40vh;
 	overflow: hidden;
@@ -344,4 +344,154 @@
 .class_detail_content_button>button {
 	width: 200px;
 	height: 30px;
+} */
+
+.class_detail_visual {
+	width: 100%;
+	height: 40vh;
+	overflow: hidden;
+	transition: all 0.2s;
+	background: #000;
+	display: flex;
+	justify-content: center;
+}
+
+/* .class_detail_content {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 10px;
+	justify-items: center;
+    padding: 0 10vw;
+    background-color: rgb(127, 127, 127);
+    align-items: center;
+} */
+
+.class_detail_content {
+	display: inline-flex;
+	justify-content: center;
+	background-color: darkgray;
+}
+
+.class_detail_content_img {
+	display: inline-block;
+	align-items: center;
+}
+
+/* .class_detail_content_img > img {
+	width: 100%;
+	height: 300px;
+} */
+
+.class_detail_content_text {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 0 32px;
+}
+
+.class_detail_content_text_category {
+	/* overflow: hidden; */
+	padding-top: 5px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+    flex-wrap: wrap;
+}
+
+.class_detail_content_text_title {
+	line-height: 1.5;
+}
+
+.class_detail_content_text_review {
+	
+}
+
+.class_detail_content_text_div {
+	display: flex;
+	flex-wrap: wrap;
+    align-items: center;
+}
+
+/* .class_detail_content_text_category {
+    height: 40px;
+    line-height: initial;
+}
+
+.class_detail_content_text_title {
+    height: 40px;
+    line-height: initial;
+}
+
+.class_detail_content_text_lnginfo {
+    height: 80px;
+    line-height: initial;
+}
+
+.class_detail_content_text_review {
+    height: 30px;
+    line-height: initial;
+}
+
+.class_detail_content_text_info {
+    height: 80px;
+    line-height: initial;
+} */
+
+.class_detail_content_text_div {
+	display: flex;
+	/* justify-content: space-between; */
+    /* margin-top: 10px; */
+}
+
+.class_detail_content_price {
+    width: 200px;
+	height: 30px;
+    line-height: 30px;
+}
+
+.class_detail_content_button>button {
+	padding: 10px 20px;
+}
+
+
+.class_container {
+	margin: 0;
+	margin-top: 10px;
+	font-size: 1rem;
+	/* background-color: #2E2E2E; */
+	padding: 0 10vw;
+	}
+
+ul.class_tabs {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	}
+
+ul.class_tabs li {
+	background: none;
+	color: #222;
+	display: inline-block;
+	padding: 10px 15px;
+	}
+
+ul.class_tabs li.class_current {
+	background: #ededed;
+	color: #222;
+	}
+
+.class_tab_content {
+	/* display: none; */
+	background: #ededed;
+	margin: 5px;
+	margin-bottom: 40px;
+	padding: 10px;
+	line-height: 20px;
+	}
+
+.class_tab_content>p {
+	text-align: center;
+}
+
+.class_tab_content_title {
+	margin: 10px;
 }
