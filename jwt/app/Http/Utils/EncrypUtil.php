@@ -49,4 +49,14 @@ class EncrypUtil {
 	 public static function getSalt(int $length) {
 		return Str::random($length);
 	 }
+
+	/**
+	  * 솔트 제거
+	* @param string $str 솔트가 포함된 문자열
+	* @param int $saltLength 솔트 문자열 rlfdl
+	* @return int $saltLength 솔트 문자열 rlfdl
+	  */
+	public static function subStrSalt(string $str, int $saltLength) {
+		return substr($str, 0, -1 * $saltLength);
+	}
 }
