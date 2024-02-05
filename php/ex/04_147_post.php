@@ -3,6 +3,7 @@
 // request할 때 데이터를 외부에서 볼수가 없다.
 
 print_r($_POST);
+$_POST["id"];
 
 
 ?>
@@ -17,10 +18,20 @@ print_r($_POST);
 <body>
     <form action="/04_147_post.php" method="post">
 
-        <input type="text" name="user_name" placeholder ="id">
+        <!-- <input type="text" name="user_name" placeholder ="id">
         <input type="password" name="user_password" placeholder="password" >
-        <button type="submit">전송</button>
+        <button type="submit">전송</button> -->
     
+        <fieldset>
+			<label for="id">ID : </label>
+			<input type="text" id="id" name="id">
+			<br>
+			<label for="pw">PW : </label>
+			<input type="text" id="pw" name="pw">
+			<br>
+			<button type="submit">전송</button>
+		</fieldset>
+        
     </form>
 </body>
 </html>
