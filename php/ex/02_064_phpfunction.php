@@ -82,4 +82,18 @@ echo $str, "\n";
 echo $result;
 // 여기서 함수의 $str과 메인영역의 $str은 같은거임
 
+function my_sum_all(...$numbers) {
+
+    $all = 0;
+
+    foreach($numbers as $num) {
+        $all += $num;
+
+    }
+	
+    return $all;
+}
+
+echo my_sum_all(5,5,8,7);
+
 ?>
