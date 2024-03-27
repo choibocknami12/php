@@ -43,6 +43,7 @@ try {
 
     //게시글 조회 예외처리
     if(!$result) {
+    // if(count($result) !== 1) {
         //게시글 조회 에러
         throw new Exception("DB Error : PDO Select_id");
     } else if( !(count($result) === 1) ) {
