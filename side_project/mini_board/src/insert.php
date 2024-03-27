@@ -80,7 +80,7 @@ if($http_method === "POST") {
     
     } finally {
         db_destroy_conn($conn);
-}
+    }
 }
 
 ?>
