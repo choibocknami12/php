@@ -31,7 +31,10 @@ try {
         //삼항연산자 사용시
         $id = isset($_GET["id"]) ? $_GET["id"] : "";
         $page = isset($_GET["page"]) ? $_GET["page"] : "";
+        
+        // 파라미터 예외처리
         $arr_err_msg = [];
+
         if($id === "") {
             $arr_err_msg[] = "Parameter Error : ID";
         }
@@ -46,6 +49,7 @@ try {
         $arr_param = [
             "id" => $id
         ];
+
         $result = db_select_boards_id($conn, $arr_param);
         // 예외처리
         if($result === false) {
@@ -60,6 +64,7 @@ try {
         //파라미터 id획득
         $id = isset($_POST["id"]) ? $_POST["id"] : "";
         $arr_err_msg = [];
+
         if($id === "") {
             $arr_err_msg[] = "Parameter Error : ID";
         }

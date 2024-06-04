@@ -200,7 +200,7 @@ function db_select_boards_id(&$conn, &$arr_param) {
         $result = $stmt->fetchAll();
         return $result;
     } catch(Exception $e) {
-         return false; 
+        return false; 
     }
 }
 

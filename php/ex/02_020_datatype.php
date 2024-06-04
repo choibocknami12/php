@@ -18,15 +18,25 @@ $bool = false;
 $obj = null;
 
 // 변수가 갖고있는 이름의 뜻? 풀네임 이런거 알고싶을때 gettype()사용
-echo gettype($bool);
+// echo gettype($bool);
 
-$num1 = 1;
-$str1 = "1";
+// $num1 = 1;
+// $str1 = "1";
 
 // 형변환 : 변수 앞에 (데이터타입)$num
-echo $num1 + (int)$str1;
+// echo $num1 + (int)$str1;
 
 // 여기서 num1을 str으러 바꾸려면 echo ((string)$num1); <<이렇게 넣어주면됨. 반대도 마찬가지임.
 
+
+$swap1 = '곤드레밥';
+$swap2 = '자장면';
+$tmp = '';
+
+$tmp = $swap2;
+$swap2 = $swap1;
+$swap1 = $tmp;
+
+echo $swap1, $swap2;
 
 ?>

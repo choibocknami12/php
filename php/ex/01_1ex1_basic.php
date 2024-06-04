@@ -55,19 +55,39 @@
 // 	// echo "*";
 // }
 
-for($i = 0; $i <= 5; $i++) {
-	for($j = 0; $j < $i; $j++) {
-		echo "*";
-	}
-	echo "\n";
-}
+// for($i = 0; $i <= 5; $i++) {
+// 	for($j = 0; $j < $i; $j++) {
+// 		echo "*";
+// 	}
+// 	echo "\n";
+// }
 
-for($a = 0; $a <= 5; $a++) {
-	for($b = 5; $b > $a; $b--) {
-		echo "*";
-	}
-	echo "\n";
-}
+// for($a = 0; $a <= 5; $a++) {
+// 	for($b = 5; $b > $a; $b--) {
+// 		echo "*";
+// 	}
+// 	echo "\n";
+// }
 
+// $num = 5;
+// for($i = 0; $i < $num; $i++) {
+
+	
+// 	for($z = 0; $z < $num; $z++) {
+// 		if($z <= $cnt_space) {
+
+// 		}
+// 	}
+// }
+
+$num = 5;
+for($i = 0; $i < $num; $i++) {
+	for($z = $num - 1; $z >= 0; $z++) {
+		if($z <= $i) {
+			echo "*";
+		}
+		echo " ";
+	}
+}
 
 ?>
