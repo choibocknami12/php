@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>responsive-nav</title>
+        <link rel="stylesheet" href="./test.css">
+    </head>
+    <body>
+    <div class="container">
+        <div class="header">
+            <a href="#">
+            <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Netflix_2014_logo.svg/1200px-Netflix_2014_logo.svg.png"
+                alt="logo"
+                class="logo"
+            />
+            </a>
+
+        <ul class="nav">
+            <li><a href="#">스릴러</a></li>
+            <li><a href="#">로멘스</a></li>
+            <li><a href="#">코메디</a></li>
+            <li><a href="#">액션</a></li>
+            <li><a href="#">다큐멘타리</a></li>
+        </ul>
+        </div>
+
+        <div class="bar"><span></span></div>
+
+        <div class="main">
+            <img
+                src="https://www.techquila.co.in/wp-content/uploads/2020/09/My-octopus-teacher-fi-e1599505789801.jpg"
+                alt="image"
+            />
+        </div>
+    </div>
+
+    <script>
+    const bar = document.querySelector(".bar");
+    const nav = document.querySelector(".nav");
+    const link = document.querySelectorAll(".nav a");
+
+    bar.addEventListener("click", function () {
+        bar.classList.toggle("on");
+        nav.classList.toggle("on");
+    });
+
+        link.forEach((item) => {
+            item.addEventListener("click", function () {
+                bar.classList.remove("on");
+                nav.classList.remove("on");
+            });
+        });
+    </script>
+    </body>
+</html>
