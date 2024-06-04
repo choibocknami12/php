@@ -7,6 +7,7 @@ use controller\BoardController;
 
 class Router {
     public function __construct() {
+        echo 'test';
         $url = $_GET["url"];
         $method = $_SERVER["REQUEST_METHOD"];
 
