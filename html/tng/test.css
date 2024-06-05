@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: #111;
+    color: #fff;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  img {
+    width: 100%;
+    display: block;
+  }
+  
+  .header {
+    height: 70px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 120px;
+    padding-left: 16px;
+  }
+  
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100vh;
+    background: #111;
+    padding-top: 80px;
+    transition: left 0.3s;
+  }
+  
+  .nav.on {
+    left: 0;
+  }
+  
+  .nav li a {
+    font-size: 18px;
+    display: block;
+    text-align: center;
+    padding: 26px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  }
+  
+  /* hamburger bar */
+  .bar {
+    position: absolute;
+    top: 20px;
+    right: 16px;
+    width: 30px;
+    height: 30px;
+    /* background: red; */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .bar span {
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    position: relative;
+    transition: background 0.3s;
+  }
+  
+  .bar span::before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: #fff;
+    transition: top 0.3s, transform 0.3s;
+  }
+  
+  .bar span::after {
+    content: "";
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: #fff;
+    transition: bottom 0.3s, transform 0.3s;
+  }
+  
+  .bar.on span {
+    background: transparent;
+  }
+  .bar.on span::before {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+  .bar.on span::after {
+    bottom: 0;
+    transform: rotate(45deg);
+  }
+  
+  /* 반응형 디자인 */
+  @media (min-width: 768px) {
+    .bar {
+      display: none;
+    }
+    .nav {
+      position: initial;
+      top: initial;
+      left: initial;
+      width: initial;
+      height: initial;
+      background: initial;
+      padding-top: initial;
+      display: flex;
+      margin-left: auto;
+      padding-right: 16px;
+    }
+    .nav li a {
+      font-size: 16px;
+      padding: 0 18px;
+      color: #ccc;
+      margin: 0 10px;
+      border-bottom: none;
+    }
+  
+    .nav li a:hover {
+      color: #fff;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .header {
+      height: 90px;
+    }
+    .logo {
+      width: 160px;
+    }
+    .nav li a {
+      font-size: 18px;
+      margin: 0 14px;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .header {
+      height: 110px;
+    }
+    .logo {
+      width: 180px;
+    }
+    .nav li a {
+      font-size: 22px;
+      margin: 0 18px;
+    }
+  }
