@@ -1,15 +1,22 @@
 <?php
 
-namespace Router;
+namespace router;
 
 use controller\UserController;
 use controller\BoardController;
 
 class Router {
     public function __construct() {
-        echo 'test';
+        // echo 'test';
+        // var_dump($_GET);
+        // exit;
+
         $url = $_GET["url"];
+        // print_r($_GET);
+        // print_r($url);
+
         $method = $_SERVER["REQUEST_METHOD"];
+        // print_r($method);
 
         if($url === "user/login") {
             if($method === "GET") {
@@ -18,6 +25,10 @@ class Router {
         } else if($url === "user/logout") {
             if($method === "GET") {
                 new UserController("logoutGet");
+            }
+        } else if($url === "board/list") {
+            if($method === "GET") {
+                new BoardController("listGet");
             }
         }
 

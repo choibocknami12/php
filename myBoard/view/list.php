@@ -7,5 +7,10 @@
 </head>
 <body>
     <?php require_once("view/header.php"); ?>
+    <main>
+        <div>
+
+        </div>
+    </main>
 </body>
 </html>
