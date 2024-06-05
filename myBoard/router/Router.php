@@ -7,13 +7,8 @@ use controller\BoardController;
 
 class Router {
     public function __construct() {
-        // echo 'test';
-        // var_dump($_GET);
-        // exit;
 
-        $url = $_GET["url"];
-        // print_r($_GET);
-        // print_r($url);
+        $url = isset($_GET["url"]) ? $_GET["url"] : '';
 
         $method = $_SERVER["REQUEST_METHOD"];
         // print_r($method);
