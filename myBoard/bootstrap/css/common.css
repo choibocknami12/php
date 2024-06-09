@@ -1,0 +1,96 @@
+* {
+    font-family: 'GmarketSans';
+}
+
+header {
+    width: 80%;
+    height: 50px;
+    margin: 0 auto;
+    /* background-color: beige; */
+}
+
+img {
+    width: 50px;
+    /* height: 50px; */
+}
+
+.header_nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.header_login_btn {
+    display: flex;
+    gap: 10px;
+}
+
+main {
+    margin: 50px 0;
+    display: grid;
+    grid-template-rows: 500px 100px;
+    justify-items: center;
+}
+
+.main_container {
+
+}
+
+.main_list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main_list_todo_tit {
+    display: grid;
+    grid-template-columns: 500px 200px;
+    text-align: center;
+    margin: 20px 0;
+    gap: 10px;
+    font-size: 22px;
+}
+
+.main_list_todo div,
+.main_list_todate div {
+    border-radius: 5px;
+    border: 1px solid #0d6efd;
+    color: #0d6efd;
+    padding: 5px;
+    text-align: center;
+}
+
+.main_list_todo_div {
+    
+}
+
+.main_list_todo_list {
+    /* display: flex; */
+    display: grid;
+    grid-template-columns: 500px 200px;
+    text-align: center;
+}
+
+.pagination {
+    margin: 0;
+}
+
+footer {
+    margin: auto;
+    background-color: #081742;
+    color: white;
+    opacity: 0.9;
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    font-size: 10px;
+    overflow: auto;
+}
+
+.footer_text {
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}

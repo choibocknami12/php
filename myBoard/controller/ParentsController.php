@@ -7,11 +7,20 @@ use model\BoardNameModel;
 
 class ParentsController {
 
-    protected $controllerChkUrl; 
+    protected $controllerChkUrl; // 헤더 표시 제어용 문자열
+
+	protected $arrErrorMsg = []; // 화면에 표시할 에러메세지 리스트
+
+	private $arrNeedAuth = [ // 비로그인 시 접속 불가능한 url 리스트
+		"board/list"
+	];
 
     public function __construct($action) {
         // 뷰관련 체크 접속 url 셋팅
         $this->controllerChkUrl = $_GET["url"];
+
+        // controller 메소드 호출
+		$resultAction = $this->$action();
 
         // view 호출
         $this->callView($resultAction);
