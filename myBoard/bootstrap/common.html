@@ -14,13 +14,14 @@
             <div class="header_nav bg-primary">
                 <div class="header_img">
                     <img src="./img/cat_icon.png" alt="">
+                    <span>nami's daily</span>
                 </div>
                 <div class="header_login_btn">
                     <div class="header_login_btn_user">
-                        <button href="">login</button>
+                        <button class="btn btn-outline-light" href="">login</button>
                     </div>
                     <div class="header_login_btn_regist">
-                        <button href="">regist</button>
+                        <button class="btn btn-outline-light" href="">regist</button>
                     </div>
                 </div>
             </div>
@@ -38,37 +39,50 @@
                     <div class="main_list_todate">
                         <div>
                             <span>작성일자</span>
+
                         </div>
                     </div>
                 </div>
                 <div class="main_list_todo_list">
                     <div class="main_list_todo_div">
-                        <div>복남이 똥치우기</div>
+                        <div>
+                            <button id="btnDetail" data-bs-toggle="modal" data-bs-target="#modalDetail" style="border: none; background-color: transparent;">
+                                <span>복남이 똥치우기</span>
+                            </button>
+                        </div>
                     </div>
                     <div class="main_list_todate_time">
-                        24.06.09
+                        <span>24.06.09</span>
                     </div>
                 </div>
                 <div class="main_list_todo_list">
                     <div class="main_list_todo_div">
-                        <div>복남이 똥치우기</div>
+                        <div>
+                            <button style="border: none; background-color: transparent;">
+                                <span>복남이 똥치우기</span>
+                            </button>
+                        </div>
                     </div>
                     <div class="main_list_todate_time">
-                        24.06.09
+                        <span>24.06.09</span>
                     </div>
                 </div>
                 <div class="main_list_todo_list">
                     <div class="main_list_todo_div">
-                        <div>복남이 똥치우기</div>
+                        <div>
+                            <button style="border: none; background-color: transparent;">
+                                <span>복남이 똥치우기</span>
+                            </button>
+                        </div>
                     </div>
                     <div class="main_list_todate_time">
-                        24.06.09
+                        <span>24.06.09</span>
                     </div>
                 </div>
             </div>
         </div>
         <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
-            <div class="main_search_bar">
+            <div class="main_search_bar" style="display: flex; align-items: center;">
                 <nav class="navbar navbar-light">
                     <div class="container-fluid">
                         <form class="d-flex">
@@ -77,7 +91,13 @@
                         </form>
                     </div>
                 </nav>
+                <div>
+                    <div>
+                        <button class="btn btn-outline-primary" type="submit">write</button>
+                    </div>
+                </div>
             </div>
+            
             <div class="main_pagination">
                 <nav aria-label="...">
                     <ul class="pagination pagination-m">
@@ -91,6 +111,45 @@
             </div>
         </div>
     </main>
+    <!-- 상세모달 -->
+    <div class="modal fade" id="modalDetail" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">아니 내 연습장 표지 어디갔는데</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<span>이럴거면 a4쓰지 왜 연습장 쓰냐고</span>
+					<img src="" alt="">
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+				</div>
+			</div>
+		</div>
+	</div>
+    <!-- 작성 Modal -->
+	<div class="modal fade" id="modalInsert" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<form action="">
+					<div class="modal-header">
+						<input type="text" class="form-control" placeholder="제목 적어라ㅡㅡ">
+					</div>
+					<div class="modal-body">
+						<textarea class="form-control" cols="30" rows="10" placeholder="내용 적어라ㅡㅡ"></textarea>
+						<br><br>
+						<input type="file" accept="image/*">
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+						<button type="submit" class="btn btn-primary" data-bs-dismiss="modal">작성</button>
+					</div>
+				</form>
+			</div>
+		</div>		
+	</div>
     <footer>
         <div class="footer_text">
             <div class="footer_text_tit">
@@ -103,5 +162,6 @@
             </div>
         </div>
     </footer>
+    <script src="./js/common.js"></script>
 </body>
 </html>
