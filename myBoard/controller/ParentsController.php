@@ -38,7 +38,7 @@ class ParentsController {
 		// 유저 권한 체크 
 		private function chkAuthorization() {
 			$url = $_GET["url"];
-			if(!isset($_SESSION["u_id"]) && in_array($url, $this->arrNeedAuth)) {
+			if(!isset($_SESSION["user_id"]) && in_array($url, $this->arrNeedAuth)) {
 				header("Location: /user/login");
 				exit();
 			}

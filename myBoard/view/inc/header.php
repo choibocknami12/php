@@ -7,13 +7,20 @@
                 <!-- <img src="/view/img/cat_icon.png" alt=""> -->
                 <span>nami's daily</span>
             </div>
-            <?php if($this->controllerChkUrl !== "user/login") { ?>
+            <?php if($this->controllerChkUrl === "user/login") { ?>
                 <div class="header_login_btn">
                     <div class="header_login_btn_user">
                         <button class="btn btn-outline-light" href="">login</button>
                     </div>
                     <div class="header_login_btn_regist">
-                        <button class="btn btn-outline-light" href="">regist</button>
+                        <a class="btn btn-outline-light" role="button" href="/user/regist">regist</a>
+                    </div>
+                </div>
+            <?php } ?>
+            <?php if($this->controllerChkUrl !== "user/login" && $this->controllerChkUrl !== "user/regist") { ?>
+                <div class="header_login_btn">
+                    <div class="header_login_btn_regist">
+                        <a class="btn btn-outline-light" role="button" href="/user/logout">logout</a>
                     </div>
                 </div>
             <?php } ?>

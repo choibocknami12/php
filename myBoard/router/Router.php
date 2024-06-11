@@ -29,7 +29,7 @@ class Router {
 				// 해당 컨트롤러 호출
 				new UserController("registGet");
 			} else {
-				// 해당 컨트롤러 호출
+				new UserController("registPost");
 			}
         } else if($url === "board/list") {
             if($method === "GET") {

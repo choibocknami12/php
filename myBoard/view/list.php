@@ -8,9 +8,9 @@
     <link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet">
     <title>메인페이지</title>
 </head>
-<body class="vh-100">
+<body class="vh-100 vw-100">
     <?php require_once("view/inc/header.php"); ?>
-    <main>
+    <main class="d-flex justify-content-center align-items-center h-75">
     <div class="main_container">
             <div class="main_list">
                 <div class="main_list_todo_tit">

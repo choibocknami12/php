@@ -14,8 +14,9 @@ class UserController extends ParentsController {
 	protected function loginPost() {
 		// ID, PW 설정(DB에서 사용할 데이터 가공)
 		$arrInput = [];
-		$arrInput["u_id"] = $_POST["u_id"];
-		$arrInput["u_pw"] = $this->encrtptionPassword($_POST["u_pw"]);
+		$arrInput["user_id"] = $_POST["user_id"];
+		// $arrInput["user_pw"] = $this->encrtptionPassword($_POST["user_pw"]);
+		$arrInput["user_pw"] = $_POST["user_pw"];
 
 		$modelUser = new UserModel();
 		$resultUserInfo =  $modelUser->getUserInfo($arrInput, true);
@@ -27,8 +28,10 @@ class UserController extends ParentsController {
 		} 
 
 		// 세션에 u_id 정의
-		$_SESSION["u_id"] = $resultUserInfo[0]["u_id"];
+		$_SESSION["user_id"] = $resultUserInfo[0]["user_id"];
 		return "Location: /board/list";
+
+		echo $resultUserInfo;
 	}
 
 	// 로그아웃 처리
@@ -42,7 +45,7 @@ class UserController extends ParentsController {
 
 	// 회원가입 페이지 이동
 	protected function registGet() {
-		return "view/regist.php"._EXTENSION_PHP;
+		return "view/regist.php";
 	}
 
 	// 비밀번호 암호화
