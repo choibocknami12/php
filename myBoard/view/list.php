@@ -62,27 +62,9 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
-            <div class="main_search_bar" style="display: flex; align-items: center;">
-                <nav class="navbar navbar-light">
-                    <div class="container-fluid">
-                        <form class="d-flex">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-primary" type="submit">Search</button>
-                        </form>
-                    </div>
-                </nav>
-                <div>
-                    <div>
-                        <button class="btn btn-outline-primary" type="submit">write</button>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="main_pagination">
+            <div class="main_pagination" style="margin: 20px 0;">
                 <nav aria-label="...">
-                    <ul class="pagination pagination-m">
+                    <ul class="pagination pagination-m justify-content-center">
                         <li class="page-item active" aria-current="page">
                             <span class="page-link">1</span>
                         </li>
@@ -91,7 +73,25 @@
                     </ul>
                 </nav>
             </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+                <div class="main_search_bar" style="display: flex; align-items: center;">
+                    <nav class="navbar navbar-light">
+                        <div class="container-fluid">
+                            <form class="d-flex">
+                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                                <button class="btn btn-outline-primary" type="submit">Search</button>
+                            </form>
+                        </div>
+                    </nav>
+                    <div>
+                        <div>
+                            <button class="btn btn-outline-primary" type="submit">write</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+        
     </main>
 
     <!-- 상세모달 -->

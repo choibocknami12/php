@@ -13,6 +13,10 @@ img {
     height: 50px;
 }
 
+.header_img {
+    display: flex;
+}
+
 .header_nav {
     display: flex;
     align-items: center;
@@ -65,9 +69,6 @@ main {
     padding: 20px;
 }
 
-.pagination {
-    margin: 0;
-}
 
 footer {
     margin: auto;
