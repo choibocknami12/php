@@ -15,7 +15,9 @@ img {
 
 .header_img {
     display: flex;
+    align-items: center;
 }
+
 
 .header_nav {
     display: flex;

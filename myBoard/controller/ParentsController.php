@@ -27,6 +27,13 @@ class ParentsController {
 		// 유저 로그인 및 권한 체크 
 		$this->chkAuthorization();
 
+		// 헤더 게시판 드롭박스 데이터 획득
+        $boardNameModel = new BoardNameModel(); // 보드네임모델 호출(실행)
+        // 
+        $this->arrBoardNameInfo = $boardNameModel->getBoardNameList();
+        //
+        $boardNameModel->destroy();
+
         // controller 메소드 호출
 		$resultAction = $this->$action();
 

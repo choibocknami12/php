@@ -10,8 +10,10 @@
 </head>
 <body class="vh-100 vw-100">
     <?php require_once("view/inc/header.php"); ?>
+
     <main class="d-flex justify-content-center align-items-center h-75">
-    <div class="main_container">
+
+        <div class="main_container">
             <div class="main_list">
                 <div class="main_list_todo_tit">
                     <div class="main_list_todo">
@@ -29,30 +31,6 @@
                     <div class="main_list_todo_div">
                         <div>
                             <button id="btnDetail" data-bs-toggle="modal" data-bs-target="#modalDetail" style="border: none; background-color: transparent;">
-                                <span>복남이 똥치우기</span>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="main_list_todate_time">
-                        <span>24.06.09</span>
-                    </div>
-                </div>
-                <div class="main_list_todo_list">
-                    <div class="main_list_todo_div">
-                        <div>
-                            <button style="border: none; background-color: transparent;">
-                                <span>복남이 똥치우기</span>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="main_list_todate_time">
-                        <span>24.06.09</span>
-                    </div>
-                </div>
-                <div class="main_list_todo_list">
-                    <div class="main_list_todo_div">
-                        <div>
-                            <button style="border: none; background-color: transparent;">
                                 <span>복남이 똥치우기</span>
                             </button>
                         </div>
